@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="bg-black p-8 text-white flex justify-between">
+            <a href="index.html" title="Home" class="font-bold text-2xl">
+                Syncro
+            </a>
+            <nav>
+                <ul class="flex gap-8 text-xl font-medium">
+                    <li>
+                        <a href="about.html" title="About">
+                            About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html" title="Contact">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container mx-auto py-32">
+        <div class="grid lg:grid-cols-2 gap-8">
+            <h2 class="text-4xl font-bold">
+                About us
+            </h2>
+            <div class="space-y-8 text-xl">
+                <p>
+                    We craft bold packaging, displays, and visual identities from startups to Large businesses. We collaborate with brands
+                    ready to push boundaries and make lasting impressions.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="px-8 py-32 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold">
+                What we offer
+            </h2>
+            <p class="max-w-lg">
+                In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
+                project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
+            </p>
+            <ul class="grid lg:grid-cols-2 gap-8 lg:gap-16 mt-8">
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    Retail Packaging
+                </li>
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    E-commerce
+                </li>
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    Luxury Packaging
+                </li>
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    Visual Identity, Branding and Assets
+                </li>
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    Point of sale and Displays
+                </li>
+                <li class="border-b border-black py-4 text-2xl font-bold">
+                    Print Managment
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="bg-green-500 p-16">
+        <div class="grid lg:grid-cols-4 gap-16">
+            <div>
+                <h3 class="text-3xl font-bold">Syncro</h3>
+                <p class="uppercase font-semibold">Where design aligns</p>
+            </div>
+            <p>
+                Send us a message
+                <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-xl">
+                    team@studiosyncro.co.uk
+                </a>
+                Give us a call
+                <a href="tel:01536111111" class="block font-bold text-xl">
+                    +44 (0)1536 111 111
+                </a>
+            </p>
+            <div>
+                Studio Syncro, Shelton Road,<br>
+                Willowbrook East Industrial Estate,<br>
+                Corby, Northamptonshire,<br>
+                NN17 5XH
+            </div>
+            <div class="lg:text-right">
+                <small>
+                    All work copyright of<br> Studio SYNCRO 2024
+                </small>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
