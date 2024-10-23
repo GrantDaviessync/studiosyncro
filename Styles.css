@@ -1,20 +1,20 @@
-.container {
-    padding: 10rem 12rem; 
-}
+/*.container {
+   padding: 10rem 12rem;
+}*/
 
 footer {
-    padding: 0rem 12rem; 
-    color: black; 
+    padding: 0rem 12rem;
+    color: black;
 }
 
 footer .grid {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 footer .grid-item {
-    text-align: center; 
+    text-align: center;
 }
 
 .logo-container {
