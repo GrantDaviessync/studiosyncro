@@ -19,159 +19,14 @@
         }
     </script>
     <style>
-        .container {
-            padding-left: 12rem;
-            padding-right: 12rem;
-            padding-top: 10rem;
-            padding-bottom: 10rem;
-        }
-
-        footer {
-            padding: 2rem 12rem;
-            background-color: #4BFA82;
-            color: black;
-        }
-
-        footer h3 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-
-        footer p {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            text-transform: capitalize;
-        }
-
-        footer a {
-            font-size: 1.25rem;
-            color: black;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer .footer-column {
-            margin-bottom: 1rem;
-        }
-
-        footer .contact {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            font-size: 1.25rem;
-        }
-
-        footer .contact-label {
-            font-size: 1.25rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 0.2rem;
-        }
-
-        footer small {
-            font-size: 1rem;
-            color: black;
-        }
-
-        footer .grid {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        footer .grid-item {
-            flex: 1;
-            min-width: 200px;
-        }
-
-        footer .address p {
-            font-size: 1.25rem;
-            font-weight: normal;
-            line-height: 1.2;
-        }
-
-        a:hover {
-            background-color: #4BFA82;
-            transition: background-color 0.3s ease;
-        }
-
-        h2 {
-            font-size: 6rem;
-            line-height: 1.1;
-            margin-bottom: 0;
-            margin-top: 1.5rem;
-        }
-
-        p {
-            line-height: 1.75;
-        }
-
-        .navbar {
-            padding: 1rem 12rem;
-            background: transparent;
-        }
-
-        .video-background {
-            position: relative;
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .video-background iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        footer h3 {
-            font-size: 3rem;
-            font-weight: bold;
-        }
-
-        footer p {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-
-        footer a {
-            font-size: 1.25rem;
-        }
-
-        footer .flex {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .find-out-more {
-            padding-left: 1.5rem;
-            padding-right: 1.5rem;
-            padding-top: 0.75rem;
-            padding-bottom: 0.75rem;
-            border-width: 2px;
-            border-style: solid;
-            border-color: black;
-            transition: background-color 0.3s ease;
-        }
-
-        .find-out-more:hover {
-            background-color: #4BFA82;
-        }
+       
     </style>
 </head>
 
 <body>
     <header>
         <div class="navbar absolute top-0 left-0 w-full z-10 flex justify-between py-4 px-16">
-            <img src="Syncro website/Syncro_Logo.png" width="150" height="27" alt="" />
+            <img src="Syncro website/Syncro_Logo.png" alt="Syncro Logo" width="200" class="h-auto max-w-full" /> <!-- Ensuring proper aspect ratio -->
             <a href="index.html" title="Home" class="font-bold text-2xl text-white">&nbsp;</a>
             <nav>
                 <ul class="flex gap-8 text-xl font-medium text-white">
@@ -187,7 +42,9 @@
 
         <div class="video-background">
             <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
+                <iframe src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
 
@@ -203,47 +60,34 @@
                 Where design aligns
             </h2>
             <div class="space-y-12 text-xl leading-relaxed">
-                <p>
+                <p class="mt-9"> 
                     With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
                 </p>
                 <p>
                     We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
                 </p>
-                <a href="about.html" title="About" class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
+                <a href="about.html" title="About"
+                    class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="grid">
-            <div class="grid-item">
-                <img src="Syncro_WDA.png" width="160" height="56" alt="" />
-            </div>
-
-            <div class="grid-item contact">
-                <div>
-                    <p class="contact-label">Send us a message</p>
-                    <a href="mailto:team@studiosyncro.co.uk">team@studiosyncro.co.uk</a>
+    <footer class="bg-[#4BFA82] text-black">
+        <div class="container mx-auto py-4 px-12"> 
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-left"> 
+                    <img src="Syncro website/Syncro_WDA.png" width="150" height="45" alt=""/>
+                    <h3 class="text-2xl font-bold">&nbsp;</h3>
+                    <p class="mt-2">
+                  &nbsp; </p>
                 </div>
-                <div>
-                    <p class="contact-label">Give us a call</p>
-                    <a href="tel:+441536111111">+44 (0)1536 111 111</a>
+                <div class="text-right"> 
+                    <small>© 2024 Studio SYNCRO. All rights reserved.</small>
                 </div>
-            </div>
-
-            <div class="grid-item address">
-                <p>Studio Syncro, Shelton Road,<br>
-                    Willowbrook East Industrial Estate,<br>
-                    Corby, Northamptonshire,<br>
-                    NN17 5XH
-                </p>
-            </div>
-
-            <div class="grid-item lg:text-right">
-                <small>All work copyright of Studio SYNCRO 2024</small>
             </div>
         </div>
     </footer>
 </body>
 
 </html>
+
