@@ -20,33 +20,32 @@
 
 <body>
     <header>
-        <div class="bg-white p-8 text-white flex justify-between max-w-9xl ">
-            <img src="Syncro/Syncro_Logo_black.png" width="195" height="35" alt=""/>
-            <a href="index.html" title="Home" class="font-bold text-2xl">&nbsp; </a>
-            <nav>
-                <ul class="flex gap-8 text-xl font-medium">
-                    <li>
-                        <a href="about.html" title="About" class="text-black">
-                            About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contact.html" title="Contact" class="text-black">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+        <div class="absolute top-0 left-0 right-0">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
+                <img src="Syncro/Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                <a href="index.html" title="Home" class="font-bold text-2xl text-white">&nbsp;</a>
+                <nav>
+                    <ul class="flex gap-8 text-xl font-medium text-black">
+                        <li>
+                            <a href="about.html" title="About">About</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" title="Contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <div class="container mx-auto py-32 max-w-7xl">
-        <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-7xl">
+    <!-- Reduced top and bottom padding for "About us" section -->
+    <div class="container mx-auto py-32 max-w-7xl"> <!-- Changed from py-48 to py-32 -->
+        <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-7xl items-baseline">
             <h2 class="text-4xl font-bold">
                 About us
             </h2>
-            <div class="space-y-8 text-xl">
-                <p>
+            <div class="space-y-8 text-3xl">
+                <p class="mt-1"> <!-- Adjusted mt-1 for vertical alignment -->
                     We craft bold packaging, displays, and visual identities from startups to large businesses. We collaborate with brands
                     ready to push boundaries and make lasting impressions.
                 </p>
@@ -54,32 +53,35 @@
         </div>
     </div>
 
-    <div class="px-6 sm:px-8 lg:px-16 py-32 bg-gray-100 ">
+    <!-- Reduced top and bottom padding for "What we offer" section -->
+    <div class="px-6 sm:px-8 lg:px-16 py-24 bg-gray-100"> <!-- Changed from py-32 to py-24 -->
         <div class="container mx-auto max-w-6xl">
-            <h2 class="text-4xl font-bold">
+            <h2 class="text-4xl font-bold mb-8">
                 What we offer
             </h2>
-            <p class="max-w-lg">
+            <p class="max-w-xl text-xl mb-12">
                 In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
                 project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
             </p>
-            <ul class="grid lg:grid-cols-2 gap-8 lg:gap-16 mt-max-w-7xl">
-                <li class="border-b border-black py-4 text-2xl font-bold">
+
+            <!-- Adjusted the spacing between the items in the grid -->
+            <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     Retail Packaging
                 </li>
-                <li class="border-b border-black py-4 text-2xl font-bold">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     E-commerce
                 </li>
-                <li class="border-b border-black py-4 text-2xl font-bold">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     Luxury Packaging
                 </li>
-                <li class="border-b border-black py-4 text-2xl font-bold">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     Visual Identity, Branding and Assets
                 </li>
-                <li class="border-b border-black py-4 text-2xl font-bold">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     Point of sale and Displays
                 </li>
-                <li class="border-b border-black py-4 text-2xl font-bold">
+                <li class="border-b border-black py-2 text-2xl font-bold">
                     Print Management
                 </li>
             </ul>
@@ -111,4 +113,5 @@
 </body>
 
 </html>
+
 
