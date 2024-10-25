@@ -23,22 +23,66 @@
         .no-hover-bg:hover {
             background-color: transparent !important;
         }
+
         /* Ensure body and html take up the full height */
         html, body {
             height: 100%;
             margin: 0;
         }
+
         /* Main container should take up remaining space to push footer to the bottom */
         body {
             display: flex;
             flex-direction: column;
         }
+
         /* Adjust main content area to flex and grow */
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
             background-color: #f3f4f6; /* Tailwind's bg-gray-100 color */
+        }
+
+        /* Fullscreen dropdown menu styles */
+        #mobileMenu {
+            background-color: black; /* Black background for the dropdown */
+            color: white; /* White text for contrast */
+            position: fixed; /* Make it fixed to fill the screen */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack links vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            font-size: 2.5rem; /* Increase font size for readability */
+            font-weight: bold; /* Make font bold */
+            z-index: 100; /* Ensure it's above other content */
+            transform: translateY(-100%); /* Hide by default */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        /* Show menu when toggled */
+        #mobileMenu.active {
+            transform: translateY(0); /* Show the menu */
+        }
+
+        #mobileMenu a {
+            padding: 1rem; /* Increase padding around each link */
+            width: 100%; /* Make links fill width */
+            text-align: center; /* Center align text */
+        }
+
+        /* Close button styles */
+        .close-button {
+            position: absolute; /* Position at the top right */
+            top: 20px; /* Spacing from top */
+            right: 20px; /* Spacing from right */
+            color: white; /* Close button color */
+            font-size: 2rem; /* Close button size */
+            cursor: pointer; /* Pointer cursor on hover */
         }
     </style>
 </head>
@@ -66,9 +110,10 @@
                 </nav>
 
                 <!-- Mobile Navigation Menu -->
-                <nav id="mobileMenu" class="absolute top-full left-0 w-full bg-black text-white text-center space-y-4 py-4 hidden">
-                    <a href="about.html" class="block py-2 no-hover-bg">About</a>
-                    <a href="contact.html" class="block py-2 no-hover-bg">Contact</a>
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
                 </nav>
             </div>
         </div>
@@ -139,12 +184,15 @@
 
     <script>
         function toggleMenu() {
-            document.getElementById("mobileMenu").classList.toggle("hidden");
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden"); // Toggle visibility
+            mobileMenu.classList.toggle("active"); // Toggle fullscreen effect
         }
     </script>
 </body>
 
 </html>
+
 
 
 
