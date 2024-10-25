@@ -18,6 +18,17 @@
         }
     </script>
     <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            overflow-x: hidden;
+        }
+
         /* Remove hover background from links */
         a.no-hover-bg:hover {
             background-color: transparent !important;
@@ -31,7 +42,7 @@
         .video-background {
             position: relative;
             overflow: hidden;
-            width: 100%;
+            width: 100vw;
             height: 100vh;
         }
         .video-background iframe {
@@ -46,6 +57,7 @@
         @media (max-width: 768px) {
             .video-background {
                 height: 100vh;
+                width: 100vw;
             }
         }
     </style>
@@ -163,6 +175,7 @@
 
 </body>
 </html>
+
 
 
 
