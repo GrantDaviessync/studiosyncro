@@ -43,7 +43,7 @@
             position: relative;
             overflow: hidden;
             width: 100vw;
-            height: 100vh;
+            height: 100vh; /* Set default height */
         }
         .video-background iframe {
             position: absolute;
@@ -56,8 +56,7 @@
         /* Adjust video for mobile screens */
         @media (max-width: 768px) {
             .video-background {
-                height: 100vh;
-                width: 100vw;
+                height: 100vh; /* fallback for mobile browsers */
             }
         }
     </style>
@@ -83,9 +82,8 @@
             </div>
         </div>
 
-        <div class="video-background">
-            <!-- Added an id to the iframe for JavaScript control -->
-            <iframe id="backgroundVideo" 
+        <div class="video-background" id="videoBackground">
+            <iframe id="backgroundVideo"
                 src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
                 frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                 title="Home_Vid_01"></iframe>
@@ -154,7 +152,7 @@
         </div>
     </div>
 
-    <!-- JavaScript to switch video based on screen size -->
+    <!-- JavaScript to switch video source and handle viewport height -->
     <script>
         function updateVideoSource() {
             const videoFrame = document.getElementById('backgroundVideo');
@@ -168,13 +166,26 @@
             }
         }
 
-        // Run on load and on resize
-        window.addEventListener('load', updateVideoSource);
-        window.addEventListener('resize', updateVideoSource);
+        // Adjust the video background height to the viewport height on mobile
+        function setVideoBackgroundHeight() {
+            const videoBackground = document.getElementById('videoBackground');
+            videoBackground.style.height = `${window.innerHeight}px`;
+        }
+
+        // Run on load and resize
+        window.addEventListener('load', () => {
+            updateVideoSource();
+            setVideoBackgroundHeight();
+        });
+        window.addEventListener('resize', () => {
+            updateVideoSource();
+            setVideoBackgroundHeight();
+        });
     </script>
 
 </body>
 </html>
+
 
 
 
