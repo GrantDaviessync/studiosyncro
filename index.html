@@ -18,7 +18,6 @@
         }
     </script>
     <style>
-        /* Reset margin and padding */
         * {
             margin: 0;
             padding: 0;
@@ -28,36 +27,26 @@
             height: 100%;
             overflow-x: hidden;
         }
-
-        /* Remove hover background from links */
         a.no-hover-bg:hover {
             background-color: transparent !important;
         }
-        /* Remove hover background from the logo */
         a.logo-link:hover {
             background-color: transparent !important;
         }
-
-        /* Video background styles */
         .video-background {
             position: relative;
             overflow: hidden;
             width: 100vw;
-            height: 100vh; /* Set default height */
+            height: 100vh;
         }
         .video-background iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        /* Adjust video for mobile screens */
-        @media (max-width: 768px) {
-            .video-background {
-                height: 100vh; /* fallback for mobile browsers */
-            }
+            width: 100vw;
+            height: 100vh;
+            min-width: 100%;
+            min-height: 100%;
         }
     </style>
 </head>
@@ -152,7 +141,6 @@
         </div>
     </div>
 
-    <!-- JavaScript to switch video source and handle viewport height -->
     <script>
         function updateVideoSource() {
             const videoFrame = document.getElementById('backgroundVideo');
@@ -166,13 +154,11 @@
             }
         }
 
-        // Adjust the video background height to the viewport height on mobile
         function setVideoBackgroundHeight() {
             const videoBackground = document.getElementById('videoBackground');
             videoBackground.style.height = `${window.innerHeight}px`;
         }
 
-        // Run on load and resize
         window.addEventListener('load', () => {
             updateVideoSource();
             setVideoBackgroundHeight();
@@ -185,6 +171,7 @@
 
 </body>
 </html>
+
 
 
 
