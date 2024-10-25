@@ -51,33 +51,39 @@
                 </a>
 
                 <!-- Burger menu button for small screens -->
-                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
+                <button id="burgerMenu" class="lg:hidden text-black" aria-label="Toggle navigation" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
 
                 <!-- Desktop Navigation Links -->
-                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black" aria-label="Main Navigation">
                     <a href="about.html" title="About" class="no-hover-bg">About</a>
                     <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                    <a href="services.html" title="Services" class="no-hover-bg">Services</a> <!-- New Link -->
+                    <a href="portfolio.html" title="Portfolio" class="no-hover-bg">Portfolio</a> <!-- New Link -->
+                    <a href="blog.html" title="Blog" class="no-hover-bg">Blog</a> <!-- New Link -->
                 </nav>
 
                 <!-- Mobile Navigation Menu -->
-                <nav id="mobileMenu" class="absolute top-full left-0 w-full bg-black text-white text-center space-y-4 py-4 hidden">
+                <nav id="mobileMenu" class="absolute top-full left-0 w-full bg-black text-white text-center space-y-4 py-4 hidden" aria-label="Mobile Navigation">
                     <a href="about.html" class="block py-2 no-hover-bg">About</a>
                     <a href="contact.html" class="block py-2 no-hover-bg">Contact</a>
+                    <a href="services.html" class="block py-2 no-hover-bg">Services</a> <!-- New Link -->
+                    <a href="portfolio.html" class="block py-2 no-hover-bg">Portfolio</a> <!-- New Link -->
+                    <a href="blog.html" class="block py-2 no-hover-bg">Blog</a> <!-- New Link -->
                 </nav>
             </div>
         </div>
     </header>
 
     <!-- Main content to fill vertical space if needed -->
-    <div class="main-content">
+    <main class="main-content">
         <!-- About Us section with container padding adjustments -->
-        <div class="container mx-auto py-32 max-w-7xl">
+        <section class="container mx-auto py-32 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-7xl items-baseline">
-                <h2 class="text-4xl font-bold">About us</h2>
+                <h2 class="text-4xl font-bold">About Us</h2>
                 <div class="space-y-8 text-3xl">
                     <p class="mt-1">
                         We craft bold packaging, displays, and visual identities from startups to large businesses. We collaborate with brands
@@ -85,12 +91,12 @@
                     </p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- What We Offer section with grey background that can expand -->
-        <div class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
+        <section class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
             <div class="container mx-auto max-w-6xl">
-                <h2 class="text-4xl font-bold mb-8">What we offer</h2>
+                <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
                 <p class="max-w-xl text-xl mb-12">
                     In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
                     project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
@@ -105,15 +111,15 @@
                     <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
                 </ul>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer is fixed in height, only the content area will expand -->
     <footer class="bg-[#4BFA82] text-black">
         <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-8xl">
             <div class="lg:flex justify-between">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
+                    <img src="./Syncro_WDA.png" alt="Syncro WDA" class="h-12 relative -top-2" />
                     <p class="text-1xl">
                         Call us
                         <a href="tel:+441536111111" class="block font-bold">+44 (0)1536 111 111</a>
@@ -140,6 +146,7 @@
 </body>
 
 </html>
+
 
 
 
