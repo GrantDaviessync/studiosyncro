@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,7 +51,9 @@
 
         <div class="video-background">
             <div style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
+                <!-- Added an id to the iframe -->
+                <iframe id="backgroundVideo" 
+                    src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
                     frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
                     style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
             </div>
@@ -119,9 +120,29 @@
             </div>
         </div>
     </div>
-</body>
 
+    <!-- JavaScript to switch video based on screen size -->
+    <script>
+        function updateVideoSource() {
+            const videoFrame = document.getElementById('backgroundVideo');
+            const mobileVideoSrc = "https://player.vimeo.com/video/1023296343?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1";
+            const desktopVideoSrc = "https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1";
+            
+            if (window.innerWidth <= 768) {
+                videoFrame.src = mobileVideoSrc;
+            } else {
+                videoFrame.src = desktopVideoSrc;
+            }
+        }
+
+        // Run on load and on resize
+        window.addEventListener('load', updateVideoSource);
+        window.addEventListener('resize', updateVideoSource);
+    </script>
+
+</body>
 </html>
+
 
 
 
