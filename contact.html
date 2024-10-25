@@ -19,18 +19,20 @@
         }
     </script>
     <style>
+        /* Prevent hover background on burger menu links */
+        .no-hover-bg:hover {
+            background-color: transparent !important;
+        }
         /* Ensure body and html take up the full height */
         html, body {
             height: 100%;
             margin: 0;
         }
-
         /* Main container should take up remaining space to push footer to the bottom */
         body {
             display: flex;
             flex-direction: column;
         }
-
         /* Adjust main content area to flex and grow */
         .main-content {
             flex: 1;
@@ -49,11 +51,24 @@
                 <a href="index.html" title="Home">
                     <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
-                <nav>
-                    <ul class="flex gap-8 text-xl font-medium text-black">
-                        <li><a href="about.html" title="About">About</a></li>
-                        <li><a href="contact.html" title="Contact">Contact</a></li>
-                    </ul>
+
+                <!-- Burger menu button for small screens -->
+                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation Links -->
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
+
+                <!-- Mobile Navigation Menu -->
+                <nav id="mobileMenu" class="absolute top-full left-0 w-full bg-black text-white text-center space-y-4 py-4 hidden">
+                    <a href="about.html" class="block py-2 no-hover-bg">About</a>
+                    <a href="contact.html" class="block py-2 no-hover-bg">Contact</a>
                 </nav>
             </div>
         </div>
@@ -121,8 +136,15 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("mobileMenu").classList.toggle("hidden");
+        }
+    </script>
 </body>
 
 </html>
+
 
 
