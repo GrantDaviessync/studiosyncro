@@ -28,50 +28,58 @@
 
         /* Fullscreen dropdown menu styles */
         #mobileMenu {
-            background-color: black; /* Black background for the dropdown */
-            color: white; /* White text for contrast */
-            position: fixed; /* Make it fixed to fill the screen */
-            top: 0; /* Align to top */
-            left: 0; /* Align to left */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            display: flex; /* Use flexbox to center content */
-            flex-direction: column; /* Stack links vertically */
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
-            font-size: 2.5rem; /* Increase font size for readability */
-            font-weight: bold; /* Make font bold */
-            z-index: 100; /* Ensure it's above other content */
-            transform: translateY(-100%); /* Hide by default */
-            transition: transform 0.3s ease; /* Smooth transition */
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
         }
 
         /* Show menu when toggled */
         #mobileMenu.active {
-            transform: translateY(0); /* Show the menu */
+            transform: translateY(0);
         }
 
         #mobileMenu a {
-            padding: 1rem; /* Increase padding around each link */
-            width: 100%; /* Make links fill width */
-            text-align: center; /* Center align text */
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
         }
 
         /* Close button styles */
         .close-button {
-            position: absolute; /* Position at the top right */
-            top: 20px; /* Spacing from top */
-            right: 20px; /* Spacing from right */
-            color: white; /* Close button color */
-            font-size: 2rem; /* Close button size */
-            cursor: pointer; /* Pointer cursor on hover */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Desktop-specific styles */
+        @media (min-width: 1024px) {
+            /* Desktop spacing for h2 */
+            h2 {
+                margin-bottom: 2rem; /* Adjust this if you need a specific spacing for desktop */
+            }
         }
 
         /* Mobile-specific styles */
         @media (max-width: 1024px) {
-            /* Reduce spacing between heading and paragraph */
+            /* Mobile spacing for h2 */
             h2 {
-                margin-bottom: 0.5rem; /* Adjust this value to control the spacing below the heading */
+                margin-bottom: 0.5rem; /* Adjust this value to control mobile spacing below the heading */
             }
 
             /* Add "Home" link to mobile menu only */
@@ -80,11 +88,9 @@
             }
         }
 
-        @media (min-width: 1025px) {
-            /* Hide "Home" link on desktop */
-            .home-link {
-                display: none;
-            }
+        /* Hide "Home" link on desktop */
+        .home-link {
+            display: none;
         }
     </style>
 </head>
@@ -199,12 +205,13 @@
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden"); // Toggle visibility
-            mobileMenu.classList.toggle("active"); // Toggle fullscreen effect
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
         }
     </script>
 </body>
 </html>
+
 
 
 
