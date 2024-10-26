@@ -1,82 +1,205 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syncro Website</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        .no-hover-bg:hover { background-color: transparent !important; }
-        html, body { height: 100%; margin: 0; }
-        body { display: flex; flex-direction: column; }
-        .main-content { flex: 1; display: flex; flex-direction: column; background-color: #f3f4f6; }
-        .header-bg { background-color: white; }
-        #mobileMenu { background-color: black; color: white; position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 2.5rem; font-weight: bold; z-index: 100; transform: translateY(-100%); transition: transform 0.3s ease; }
-        #mobileMenu.active { transform: translateY(0); }
-        #mobileMenu a { padding: 1rem; width: 100%; text-align: center; }
-        .close-button { position: absolute; top: 20px; right: 20px; color: white; font-size: 2rem; cursor: pointer; }
+        /* Prevent hover background on burger menu links */
+        .no-hover-bg:hover {
+            background-color: transparent !important;
+        }
+
+        /* Ensure body and html take up the full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        /* Main container should take up remaining space to push footer to the bottom */
+        body {
+            display: flex; /* Keep flex layout for desktop */
+            flex-direction: column; /* Stack elements vertically */
+        }
+
+        /* Adjust main content area to flex and grow */
+        .main-content {
+            flex: 1; /* Allow main content to grow */
+            display: flex; /* Keep flex layout for desktop */
+            flex-direction: column; /* Stack elements vertically */
+            background-color: #f3f4f6; /* Tailwind's bg-gray-100 color */
+        }
+
+        /* Fullscreen dropdown menu styles */
+        #mobileMenu {
+            background-color: black; /* Black background for the dropdown */
+            color: white; /* White text for contrast */
+            position: fixed; /* Make it fixed to fill the screen */
+            top: 0; /* Align to top */
+            left: 0; /* Align to left */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            display: flex; /* Use flexbox to center content */
+            flex-direction: column; /* Stack links vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            font-size: 2.5rem; /* Increase font size for readability */
+            font-weight: bold; /* Make font bold */
+            z-index: 100; /* Ensure it's above other content */
+            transform: translateY(-100%); /* Hide by default */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        /* Show menu when toggled */
+        #mobileMenu.active {
+            transform: translateY(0); /* Show the menu */
+        }
+
+        #mobileMenu a {
+            padding: 1rem; /* Increase padding around each link */
+            width: 100%; /* Make links fill width */
+            text-align: center; /* Center align text */
+        }
+
+        /* Close button styles */
+        .close-button {
+            position: absolute; /* Position at the top right */
+            top: 20px; /* Spacing from top */
+            right: 20px; /* Spacing from right */
+            color: white; /* Close button color */
+            font-size: 2rem; /* Close button size */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+
+        /* Mobile-specific styles */
         @media (max-width: 640px) {
-            .letstalk-section { margin-top: 48px; display: flex; align-items: flex-start; }
-            .letstalk-title { margin-bottom: 24px; display: flex; align-items: flex-start; }
+            body {
+                display: block; /* Remove flexbox on mobile */
+            }
+
+            .main-content {
+                flex: unset; /* Remove flex properties for mobile */
+                display: block; /* Ensure block layout for mobile */
+            }
+
+            .letstalk-section {
+                margin-top: 24px; /* Adjust this value to move "Let's Talk" section up */
+            }
+            .letstalk-title {
+                margin-bottom: 24px; /* Increase spacing below "Let's Talk" */
+            }
+        }
+
+        /* Ensure footer remains fixed size and doesn't grow */
+        footer {
+            background-color: #4BFA82; /* Footer background color */
+            color: black; /* Footer text color */
         }
     </style>
 </head>
+
 <body>
-    <header class="header-bg">
-        <div class="container mx-auto flex justify-between py-4">
-            <a href="index.html">
-                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" />
-            </a>
-            <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
-            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
-            </nav>
-            <nav id="mobileMenu" class="hidden">
-                <span class="close-button" onclick="toggleMenu()">✖</span>
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
-                <a href="index.html" class="no-hover-bg">Home</a>
-            </nav>
+    <header>
+        <div class="absolute top-0 left-0 right-0">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
+                <!-- Logo link -->
+                <a href="index.html" title="Home">
+                    <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                </a>
+
+                <!-- Burger menu button for small screens -->
+                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+
+                <!-- Desktop Navigation Links -->
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
+
+                <!-- Mobile Navigation Menu -->
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
+                    <a href="index.html" class="no-hover-bg">Home</a> <!-- Added Home link -->
+                </nav>
+            </div>
         </div>
     </header>
 
+    <!-- Grey background area grows to fill space -->
     <div class="main-content pt-48 pb-32 sm:pt-32">
-        <div class="container m-auto px-6 max-w-7xl">
+        <div class="container m-auto px-6 sm:px-8 lg:px-16 max-w-7xl">
             <h2 class="text-4xl font-bold letstalk-section">Let's talk!</h2>
             <div class="grid lg:grid-cols-2 gap-16">
                 <div class="text-xl space-y-8">
-                    <p class="max-w-lg letstalk-title">Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.</p>
-                    <p class="max-w-lg">With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.</p>
-                    <a href="mailto:team@studiosyncro.co.uk" class="inline-block px-4 py-2 border border-black rounded-xl transition-colors hover:bg-[#4BFA82]">Say Hello!</a>
+                    <p class="max-w-lg letstalk-title">
+                        Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
+                    </p>
+                    <p class="max-w-lg">
+                        With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
+                    </p>
+                    <a href="mailto:team@studiosyncro.co.uk" title="Say Hello!" class="inline-block px-4 py-2 border border-black rounded-xl transition-colors hover:bg-[#4BFA82] hover:border-2">
+                        Say Hello!
+                    </a>
                 </div>
                 <div class="text-xl md:text-3xl">
                     <p>Send us a message</p>
                     <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
+                    <br>
                     <p>Give us a call</p>
                     <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 111 111</a>
                     <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
-                    <p class="text-xl">Studio Syncro,<br>Shelton Road,<br>Willowbrook East Industrial Estate,<br>Corby, Northamptonshire,<br>NN17 5XH</p>
+                    <p class="text-xl">
+                        Studio Syncro,<br>
+                        Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto py-8">
+    <!-- Footer remains a fixed size and doesn't grow -->
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
             <div class="lg:flex justify-between">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">Call us <a href="tel:+441536111111" class="block font-bold">+44 (0)1536 111 111</a></p>
-                    <p class="text-1xl">Send us a message <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a></p>
+                    <p class="text-1xl">
+                        Call us
+                        <a href="tel:+441536111111" class="block font-bold">+44 (0)1536 111 111</a>
+                    </p>
+                    <p class="text-1xl">
+                        Send us a message
+                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
+                    </p>
                 </div>
                 <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span></p>
+                    <p>
+                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>.
+                            2024</span>
+                    </p>
                 </div>
             </div>
         </div>
@@ -85,12 +208,10 @@
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
+            mobileMenu.classList.toggle("hidden"); // Toggle visibility
+            mobileMenu.classList.toggle("active"); // Toggle fullscreen effect
         }
     </script>
 </body>
+
 </html>
-
-
-
