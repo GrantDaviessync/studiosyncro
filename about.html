@@ -82,6 +82,13 @@
             font-size: 2rem; /* Close button size */
             cursor: pointer; /* Pointer cursor on hover */
         }
+
+        /* Reduce space between sections on mobile */
+        @media (max-width: 768px) { /* Targeting mobile screens */
+            .main-content > section + section {
+                margin-top: 1rem; /* Adjust this value as needed */
+            }
+        }
     </style>
 </head>
 
@@ -110,7 +117,7 @@
                 <!-- Mobile Navigation Menu -->
                 <nav id="mobileMenu" class="hidden">
                     <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
-                    <a href="index.html" class="no-hover-bg">Home</a> <!-- New Home link -->
+                    <a href="index.html" class="no-hover-bg">Home</a>
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
                 </nav>
@@ -188,4 +195,3 @@
 </body>
 
 </html>
-
