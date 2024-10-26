@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncro Website</title>
+    <title>Contact - Syncro Website</title>
     <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -74,19 +74,9 @@
 
         /* Mobile-specific styles */
         @media (max-width: 1024px) {
-            /* Reduce spacing between heading and paragraph */
-            h2 {
-                margin-bottom: 0.5rem; /* Adjust this value to control the spacing below the heading */
-            }
-
             /* Move "Let's Talk" section higher for mobile */
             .lets-talk {
                 order: -1; /* Move to the top of the flex container */
-            }
-
-            /* Add "Home" link to mobile menu only */
-            #mobileMenu a.home-link {
-                display: block;
             }
         }
 
@@ -108,7 +98,7 @@
                 </a>
                 
                 <!-- Burger menu button for small screens -->
-                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
+                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -129,44 +119,41 @@
                 </nav>
             </div>
         </div>
-
-        <div class="video-background">
-            <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
-                <iframe src="https://player.vimeo.com/video/1022047397?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
-            </div>
-            <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
-                <iframe
-                    src="https://player.vimeo.com/video/1023296343?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&autoplay=1&muted=1&loop=1&background=1"
-                    frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-                    style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
-            </div>
-            <script src="https://player.vimeo.com/api/player.js"></script>
-
-            <div class="content-on-video hidden">
-                <h1 class="text-7xl font-bold text-white">&nbsp;</h1>
-            </div>
-        </div>
     </header>
 
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
+    <main class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
+        <div class="text-center mb-12">
+            <h1 class="text-5xl font-bold">Contact Us</h1>
+            <p class="text-xl leading-relaxed">We'd love to hear from you! Please fill out the form below to get in touch.</p>
+        </div>
+
         <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold leading-tight lets-talk">
-                Where design aligns
-            </h2>
-            <div class="space-y-12 text-xl leading-relaxed">
-                <p>
-                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
-                </p>
-                <p>
-                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
-                </p>
-                <a href="about.html" title="About"
-                    class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Let's Talk</h2>
+                <form action="submit_form.php" method="POST">
+                    <div class="mb-4">
+                        <label for="name" class="block text-lg">Name:</label>
+                        <input type="text" id="name" name="name" class="border border-gray-300 rounded w-full py-2 px-3" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="block text-lg">Email:</label>
+                        <input type="email" id="email" name="email" class="border border-gray-300 rounded w-full py-2 px-3" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="message" class="block text-lg">Message:</label>
+                        <textarea id="message" name="message" class="border border-gray-300 rounded w-full py-2 px-3" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-[#4BFA82] text-black rounded-xl px-6 py-2 transition-colors">Send Message</button>
+                </form>
+            </div>
+            <div>
+                <h2 class="text-3xl font-bold mb-6">Our Contact Information</h2>
+                <p class="text-lg">Feel free to reach out via phone or email.</p>
+                <p class="text-lg font-bold">Phone: <a href="tel:+441536111111" class="text-[#4BFA82]">+44 (0)1536 111 111</a></p>
+                <p class="text-lg font-bold">Email: <a href="mailto:team@studiosyncro.co.uk" class="text-[#4BFA82]">team@studiosyncro.co.uk</a></p>
             </div>
         </div>
-    </div>
+    </main>
 
     <footer class="bg-[#4BFA82] text-black hidden">
         <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-4 max-w-7xl">
@@ -190,7 +177,7 @@
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
                     <p class="text-1xl">
                         Call us
-                        <a href="" class="block font-bold">+44 (0)1536 111 111</a>
+                        <a href="tel:+441536111111" class="block font-bold">+44 (0)1536 111 111</a>
                     </p>
                     <p class="text-1xl">
                         Send us a message
@@ -215,3 +202,4 @@
     </script>
 </body>
 </html>
+
