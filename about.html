@@ -83,10 +83,10 @@
             cursor: pointer; /* Pointer cursor on hover */
         }
 
-        /* Reduce space between sections on mobile */
+        /* Adjust space between sections on mobile */
         @media (max-width: 768px) { /* Targeting mobile screens */
-            .main-content > section + section {
-                margin-top: 1rem; /* Adjust this value as needed */
+            .flex-grow {
+                margin-top: -4rem; /* Negative margin to reduce space */
             }
         }
     </style>
@@ -195,3 +195,4 @@
 </body>
 
 </html>
+
