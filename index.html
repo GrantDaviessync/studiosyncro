@@ -69,14 +69,14 @@
 
         /* Desktop-specific styles */
         @media (min-width: 1024px) {
-            /* Desktop spacing for h2 */
-            h2 {
-                margin-bottom: 2rem; /* Adjust this if you need a specific spacing for desktop */
+            /* Retain original spacing on desktop */
+            .desktop-h2-spacing {
+                margin-bottom: 2rem; /* This replicates the original spacing */
             }
         }
 
         /* Mobile-specific styles */
-        @media (max-width: 1024px) {
+        @media (max-width: 1023px) {
             /* Mobile spacing for h2 */
             h2 {
                 margin-bottom: 0.5rem; /* Adjust this value to control mobile spacing below the heading */
@@ -148,7 +148,7 @@
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
         <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold leading-tight">
+            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
                 Where design aligns
             </h2>
             <div class="space-y-12 text-xl leading-relaxed">
