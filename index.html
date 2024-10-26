@@ -1,3 +1,9 @@
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -66,6 +72,26 @@
             font-size: 2rem; /* Close button size */
             cursor: pointer; /* Pointer cursor on hover */
         }
+
+        /* Mobile-specific styles */
+        @media (max-width: 1024px) {
+            /* Reduce spacing between heading and paragraph even further */
+            h2 + .space-y-12 > p:first-child {
+                margin-top: 0.25rem; /* Adjust this value to control spacing */
+            }
+
+            /* Add "Home" link to mobile menu only */
+            #mobileMenu a.home-link {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            /* Hide "Home" link on desktop */
+            .home-link {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -93,6 +119,7 @@
                 <!-- Mobile Navigation Menu -->
                 <nav id="mobileMenu" class="hidden">
                     <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
+                    <a href="index.html" class="no-hover-bg home-link">Home</a> <!-- Home link for mobile only -->
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
                 </nav>
@@ -184,11 +211,6 @@
     </script>
 </body>
 </html>
-
-
-
-
-
 
 
 
