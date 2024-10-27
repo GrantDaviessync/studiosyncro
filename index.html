@@ -18,23 +18,84 @@
         }
     </script>
     <style>
-        /* Ensure html and body take full viewport height */
-        html, body {
-            height: 100%;
-            margin: 0;
+        /* Prevent hover background on burger menu links */
+        a.no-hover-bg:hover {
+            background-color: transparent !important;
+        }
+        a.logo-link:hover {
+            background-color: transparent !important;
         }
 
-        /* Main content will expand to fill available space */
-        .main-content {
-            flex-grow: 1;
+        /* Fullscreen dropdown menu styles */
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center; /* Center content vertically */
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        /* Show menu when toggled */
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Close button styles */
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Desktop-specific styles */
+        @media (min-width: 1024px) {
+            /* Adjust the margin on the paragraph container to align with the h2 */
+            .paragraph-container {
+                margin-top: 1.5rem; /* Adjust this value as needed */
+            }
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 1023px) {
+            /* Mobile spacing for h2 */
+            h2 {
+                margin-bottom: 0.5rem; /* Adjust this value to control mobile spacing below the heading */
+            }
+
+            /* Add "Home" link to mobile menu only */
+            #mobileMenu a.home-link {
+                display: block;
+            }
+        }
+
+        /* Hide "Home" link on desktop */
+        .home-link {
+            display: none;
         }
     </style>
 </head>
 
-<body class="flex flex-col min-h-screen">
+<body>
     <header>
         <div class="absolute top-0 left-0 right-0">
             <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
@@ -55,18 +116,18 @@
                     <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
                 </nav>
 
-<!-- Mobile Navigation Menu -->
-<nav id="mobileMenu" class="hidden">
-    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
-    <a href="index.html" class="no-hover-bg home-link">Home</a> <!-- Home link for mobile only -->
-    <a href="about.html" class="no-hover-bg">About</a>
-    <a href="contact.html" class="no-hover-bg">Contact</a>
+                <!-- Mobile Navigation Menu -->
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
+                    <a href="index.html" class="no-hover-bg home-link">Home</a> <!-- Home link for mobile only -->
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
 
-    <!-- Footer text at the bottom of the mobile menu -->
-    <div class="text-sm text-gray-400 text-center absolute bottom-20">
-        SYNCRO - Where Design Aligns 2024
-    </div>
-</nav>
+                    <!-- New footer text at the bottom of the mobile menu -->
+                    <div class="text-sm mt-8 text-gray-400 text-center">
+                        SYNCRO - where design aligns 2024
+                    </div>
+                </nav>
             </div>
         </div>
 
@@ -83,13 +144,14 @@
                     style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Home_Vid_01"></iframe>
             </div>
             <script src="https://player.vimeo.com/api/player.js"></script>
+
             <div class="content-on-video hidden">
                 <h1 class="text-7xl font-bold text-white">&nbsp;</h1>
             </div>
         </div>
     </header>
 
-    <main class="main-content container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
         <div class="grid lg:grid-cols-2 gap-16">
             <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
                 Where design aligns
@@ -105,10 +167,25 @@
                     class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
             </div>
         </div>
-    </main>
+    </div>
 
-    <footer class="bg-[#4BFA82] text-black py-8">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl">
+    <footer class="bg-[#4BFA82] text-black hidden">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-4 max-w-7xl">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-left">
+                    <img src="Syncro website/Syncro_WDA.png" width="150" height="45" alt="" />
+                    <h3 class="text-2xl font-bold">&nbsp;</h3>
+                    <p class="mt-2">&nbsp;</p>
+                </div>
+                <div class="text-right">
+                    <small>© 2024 Studio SYNCRO. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="bg-[#4BFA82] text-black">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
             <div class="lg:flex justify-between">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
@@ -128,7 +205,7 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
         function toggleMenu() {
@@ -139,6 +216,7 @@
     </script>
 </body>
 </html>
+
 
 
 
