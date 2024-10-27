@@ -18,75 +18,78 @@
         }
     </script>
     <style>
-        /* Prevent hover background on burger menu links */
         .no-hover-bg:hover {
             background-color: transparent !important;
         }
 
-        /* Ensure full height for html and body */
         html, body {
             height: 100%;
             margin: 0;
         }
 
-        /* Body takes up full height and allows content to grow */
         body {
             display: flex;
             flex-direction: column;
         }
 
-        /* Main content section expands to fill space */
         .main-content {
             flex: 1;
             display: flex;
             flex-direction: column;
         }
 
-        /* Fullscreen dropdown menu styles */
         #mobileMenu {
-            background-color: black; /* Black background for the dropdown */
-            color: white; /* White text for contrast */
-            position: fixed; /* Make it fixed to fill the screen */
-            top: 0; /* Align to top */
-            left: 0; /* Align to left */
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            display: flex; /* Use flexbox to center content */
-            flex-direction: column; /* Stack links vertically */
-            justify-content: center; /* Center vertically */
-            align-items: center; /* Center horizontally */
-            font-size: 2.5rem; /* Increase font size for readability */
-            font-weight: bold; /* Make font bold */
-            z-index: 100; /* Ensure it's above other content */
-            transform: translateY(-100%); /* Hide by default */
-            transition: transform 0.3s ease; /* Smooth transition */
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
         }
 
-        /* Show menu when toggled */
         #mobileMenu.active {
-            transform: translateY(0); /* Show the menu */
+            transform: translateY(0);
         }
 
         #mobileMenu a {
-            padding: 1rem; /* Increase padding around each link */
-            width: 100%; /* Make links fill width */
-            text-align: center; /* Center align text */
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
         }
 
-        /* Close button styles */
         .close-button {
-            position: absolute; /* Position at the top right */
-            top: 20px; /* Spacing from top */
-            right: 20px; /* Spacing from right */
-            color: white; /* Close button color */
-            font-size: 2rem; /* Close button size */
-            cursor: pointer; /* Pointer cursor on hover */
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
         }
 
-        /* Adjust space between sections on mobile */
-        @media (max-width: 768px) { /* Targeting mobile screens */
+        /* Footer text styling in the mobile menu */
+        .mobile-footer-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
             .flex-grow {
-                margin-top: -4rem; /* Negative margin to reduce space */
+                margin-top: -4rem;
             }
         }
     </style>
@@ -96,19 +99,16 @@
     <header>
         <div class="absolute top-0 left-0 right-0">
             <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
-                <!-- Logo link -->
                 <a href="index.html" title="Home">
                     <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
 
-                <!-- Burger menu button for small screens -->
                 <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
 
-                <!-- Desktop Navigation Links -->
                 <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
                     <a href="about.html" title="About" class="no-hover-bg">About</a>
                     <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
@@ -116,18 +116,21 @@
 
                 <!-- Mobile Navigation Menu -->
                 <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
                     <a href="index.html" class="no-hover-bg">Home</a>
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
+
+                    <!-- Footer text near the bottom of the menu -->
+                    <div class="mobile-footer-text">
+                        SYNCRO - Where Design Aligns 2024
+                    </div>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Main content to fill vertical space if needed -->
     <main class="main-content">
-        <!-- About Us section with container padding adjustments -->
         <section class="container mx-auto py-32 max-w-7xl">
             <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-7xl items-baseline">
                 <h2 class="text-4xl font-bold">About Us</h2>
@@ -140,9 +143,8 @@
             </div>
         </section>
 
-        <!-- What We Offer section with light grey background -->
         <section class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
-            <div class="container mx-auto max-w-6xl bg-gray-100"> <!-- Background color restored -->
+            <div class="container mx-auto max-w-6xl bg-gray-100">
                 <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
                 <p class="max-w-xl text-xl mb-12">
                     In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
@@ -161,7 +163,6 @@
         </section>
     </main>
 
-    <!-- Footer is fixed in height, only the content area will expand -->
     <footer class="bg-[#4BFA82] text-black">
         <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-8xl">
             <div class="lg:flex justify-between">
@@ -188,11 +189,12 @@
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden"); // Toggle visibility
-            mobileMenu.classList.toggle("active"); // Toggle fullscreen effect
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
         }
     </script>
 </body>
 
 </html>
+
 
