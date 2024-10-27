@@ -79,9 +79,10 @@
         }
 
         @media (max-width: 640px) {
-            /* Remove excessive padding to bring content higher */
+            /* Remove top padding and set custom padding for mobile */
             .main-content {
-                padding-top: 16px; /* Reduce or remove top padding */
+                padding-top: 16px; /* Add minimal padding on mobile */
+                padding-bottom: 16px;
             }
 
             /* Adjust margin for "Let's Talk" section */
@@ -124,7 +125,7 @@
         </div>
     </header>
 
-    <div class="main-content pt-48 pb-32 sm:pt-32">
+    <div class="main-content pb-32 sm:pt-32">
         <div class="container m-auto px-6 sm:px-8 lg:px-16 max-w-7xl">
             <h2 class="text-4xl font-bold letstalk-section">Let's talk!</h2>
             <div class="grid lg:grid-cols-2 gap-16">
@@ -192,6 +193,7 @@
 </body>
 
 </html>
+
 
 
 
