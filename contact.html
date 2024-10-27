@@ -79,15 +79,20 @@
         }
 
         @media (max-width: 640px) {
-            /* Move "Let's Talk" section higher */
-            .letstalk-section {
-                margin-top: 0;
-                padding-top: 8px; /* Minimal padding */
+            /* Adjustments for mobile layout */
+            .main-content {
+                padding-top: 24px; /* Reduce padding from top */
+                padding-bottom: 16px;
             }
 
-            .main-content {
-                padding-top: 0; /* Remove extra top padding */
-                padding-bottom: 16px; /* Small padding below content */
+            .letstalk-section {
+                margin-top: 0;
+                padding-top: 0; /* Reduce gap above "Let's Talk" */
+            }
+
+            /* Ensure alignment for Send us a message */
+            .letstalk-title {
+                margin-bottom: 24px;
             }
         }
     </style>
@@ -188,6 +193,7 @@
 </body>
 
 </html>
+
 
 
 
