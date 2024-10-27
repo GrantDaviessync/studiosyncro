@@ -80,24 +80,23 @@
 
         /* Mobile-specific styling adjustments */
         @media (max-width: 640px) {
-            /* Moves "Let's Talk" section higher up without affecting desktop view */
+            /* Adjust "Let's Talk" positioning to match other pages' mobile layout */
             .main-content {
-                padding-top: 8px;
+                padding-top: 64px; /* Adjust to match "About" page spacing on mobile */
             }
 
             .letstalk-section {
-                margin-top: -40px; /* Adjust this to control the height */
+                margin-top: 0;
                 padding-top: 0;
             }
         }
 
-        /* Reset for desktop view */
+        /* Desktop styling reset */
         @media (min-width: 641px) {
             .main-content {
-                padding-top: 120px;
+                padding-top: 120px; /* Matches original desktop layout */
             }
 
-            /* Additional reset for desktop to ensure no changes */
             .letstalk-section {
                 margin-top: 0;
             }
@@ -200,6 +199,7 @@
 </body>
 
 </html>
+
 
 
 
