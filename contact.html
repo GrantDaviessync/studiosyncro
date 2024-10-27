@@ -79,20 +79,15 @@
         }
 
         @media (max-width: 640px) {
-            /* Reduce the top padding for main-content and remove center alignment */
-            .main-content {
-                padding-top: 16px; /* Minimal padding to bring content near the top */
-                padding-bottom: 16px;
-            }
-
-            /* Ensure "Let's Talk" section sits close to the top */
+            /* Move "Let's Talk" section higher */
             .letstalk-section {
-                margin-top: 0; /* Remove extra top margin */
+                margin-top: 0;
+                padding-top: 8px; /* Minimal padding */
             }
 
-            /* Optional: Adjust spacing below title */
-            .letstalk-title {
-                margin-bottom: 12px; /* Adjust this as needed */
+            .main-content {
+                padding-top: 0; /* Remove extra top padding */
+                padding-bottom: 16px; /* Small padding below content */
             }
         }
     </style>
@@ -193,6 +188,7 @@
 </body>
 
 </html>
+
 
 
 
