@@ -79,11 +79,19 @@
         }
 
         @media (max-width: 640px) {
-            .letstalk-section {
-                margin-top: 24px; /* Adjust this value to move "Let's Talk" section up */
+            /* Remove excessive padding to bring content higher */
+            .main-content {
+                padding-top: 16px; /* Reduce or remove top padding */
             }
+
+            /* Adjust margin for "Let's Talk" section */
+            .letstalk-section {
+                margin-top: 0; /* Remove extra top margin */
+            }
+
+            /* Optional: Adjust spacing below title */
             .letstalk-title {
-                margin-bottom: 24px; /* Increase spacing below "Let's Talk" */
+                margin-bottom: 16px; /* Adjust this value as needed */
             }
         }
     </style>
@@ -184,6 +192,7 @@
 </body>
 
 </html>
+
 
 
 
