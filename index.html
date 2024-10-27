@@ -18,74 +18,18 @@
         }
     </script>
     <style>
-        /* Prevent hover background on burger menu links */
-        a.no-hover-bg:hover {
-            background-color: transparent !important;
-        }
-        a.logo-link:hover {
-            background-color: transparent !important;
-        }
-
-        /* Fullscreen dropdown menu styles */
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        /* Show menu when toggled */
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Close button styles */
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
         /* Ensure html and body take full viewport height */
         html, body {
             height: 100%;
             margin: 0;
         }
 
-        /* Main content to fill available space */
+        /* Main content will expand to fill available space */
         .main-content {
-            flex: 1;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
             justify-content: center; /* Center content vertically */
-        }
-
-        /* Footer at the bottom of the viewport */
-        .footer {
-            background-color: #4BFA82;
-            color: black;
-            padding: 16px 0;
         }
     </style>
 </head>
@@ -161,8 +105,8 @@
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
+    <footer class="bg-[#4BFA82] text-black py-8">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl">
             <div class="lg:flex justify-between">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
@@ -193,6 +137,7 @@
     </script>
 </body>
 </html>
+
 
 
 
