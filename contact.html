@@ -78,28 +78,37 @@
             cursor: pointer;
         }
 
+        /* Footer text styling in the mobile menu */
+        .mobile-footer-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #a0a0a0;
+            text-transform: uppercase;
+        }
+
         /* Mobile-specific styling adjustments */
         @media (max-width: 640px) {
-            /* Adjust "Let's Talk" positioning to match other pages' mobile layout */
             .main-content {
-                padding-top: 64px; /* Adjust to match "About" page spacing on mobile */
+                padding-top: 64px;
             }
 
             .letstalk-section {
                 margin-top: 0;
                 padding-top: 0;
-                margin-bottom: 16px; /* Added margin below "Let's Talk" for spacing */
+                margin-bottom: 16px;
             }
 
             .last-line-space {
-                margin-bottom: 32px; /* Add space between "NN17 5XH" and footer */
+                margin-bottom: 32px;
             }
         }
 
-        /* Desktop styling reset */
         @media (min-width: 641px) {
             .main-content {
-                padding-top: 120px; /* Matches original desktop layout */
+                padding-top: 120px;
             }
 
             .letstalk-section {
@@ -127,11 +136,17 @@
                 <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
             </nav>
 
+            <!-- Mobile Navigation Menu -->
             <nav id="mobileMenu" class="hidden">
                 <span class="close-button" onclick="toggleMenu()">✖</span>
                 <a href="about.html" class="no-hover-bg">About</a>
                 <a href="contact.html" class="no-hover-bg">Contact</a>
                 <a href="index.html" class="no-hover-bg">Home</a>
+
+                <!-- Footer text near the bottom of the menu -->
+                <div class="mobile-footer-text">
+                    SYNCRO - Where Design Aligns 2024
+                </div>
             </nav>
         </div>
     </header>
@@ -204,16 +219,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
