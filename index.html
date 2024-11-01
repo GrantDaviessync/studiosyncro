@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syncro - Where Design Aligns</title>
-    <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,25 +30,12 @@
                         sm: '2rem',
                     },
                 },
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
             }
         }
     </script>
     <style>
-        /* Prevent hover background on burger menu links */
-        a.no-hover-bg:hover {
-            background-color: transparent !important;
-        }
-        a.logo-link:hover {
-            background-color: transparent !important;
-        }
-
         .container {
-            width: 100%;
+            width: 100% !important;
             max-width: 1280px !important;
         }
 
@@ -94,28 +80,8 @@
             cursor: pointer;
         }
 
-
-        /* Footer styling */
-        footer {
-            width: 100%;
-            background-color: #4BFA82;
-            padding: 1rem 0; /* Vertical padding for the footer */
-        }
-
-        .footer-content {
-            max-width: 1440px; /* Set max width similar to header */
-            margin: 0 auto;    /* Center footer content */
-            padding: 0 2rem;   /* Horizontal padding */
-            display: flex;      /* Use flexbox for alignment */
-            justify-content: space-between; /* Space between elements */
-            align-items: center; /* Vertically center items */
-        }
-
         /* Mobile-specific styles */
         @media (max-width: 1023px) {
-            h2 {
-                margin-bottom: 0.5rem;
-            }
             #mobileMenu a.home-link {
                 display: block;
             }
