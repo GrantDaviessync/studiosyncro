@@ -83,19 +83,11 @@
             .main-content {
                 padding-top: 64px; /* Space for fixed header */
             }
-
-            .footer-container {
-                padding: 2rem 1rem; /* Padding for mobile footer */
-            }
         }
 
         @media (min-width: 641px) {
             .main-content {
                 padding-top: 120px; /* Space for fixed header */
-            }
-
-            .footer-container {
-                padding: 2rem 0; /* Padding for larger screens */
             }
         }
 
@@ -109,7 +101,7 @@
 
 <body>
     <header class="bg-white shadow">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between items-center py-4"> <!-- Added 'items-center' for vertical alignment -->
             <a href="index.html" title="Home">
                 <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" /> <!-- Keeping original logo -->
             </a>
@@ -208,6 +200,7 @@
 </body>
 
 </html>
+
 
 
 
