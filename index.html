@@ -6,35 +6,19 @@
     <title>Syncro Website</title>
     <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        /* Adjust the body background for visual consistency */
-        body {
-            margin: 0;
-            padding: 0;
-        }
-    </style>
 </head>
 
 <body>
-    <header class="w-full">
-        <div class="absolute top-0 left-0 right-0 w-full">
-            <div class="relative z-50 container mx-auto px-4 sm:px-6 lg:px-16 max-w-9xl flex justify-between py-4">
-                <a href="index.html" title="Home" class="logo-link">
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black text-white">
+        <!-- Responsive padding on the header container -->
+        <div class="container mx-auto px-4 sm:px-6 lg:px-16">
+            <div class="flex justify-between items-center py-4">
+                <a href="index.html" title="Home">
                     <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
 
-                <!-- Burger menu button for small screens -->
+                <!-- Burger menu button for mobile -->
                 <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
@@ -42,104 +26,75 @@
                 </button>
 
                 <!-- Desktop Navigation Links -->
-                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
-                    <a href="about.html" title="About" class="no-hover-bg">About</a>
-                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-                </nav>
-
-                <!-- Mobile Navigation Menu -->
-                <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span>
-                    <a href="index.html" class="no-hover-bg home-link">Home</a>
-                    <a href="about.html" class="no-hover-bg">About</a>
-                    <a href="contact.html" class="no-hover-bg">Contact</a>
-
-                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
-                        SYNCRO - Where Design Aligns 2024
-                    </div>
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium">
+                    <a href="about.html" class="hover:text-gray-300">About</a>
+                    <a href="contact.html" class="hover:text-gray-300">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <div class="video-background">
-        <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
-            <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                <source src="/Home_Vid_01.mp4" type="video/mp4">
-            </video>
-        </div>
-        <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
-            <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                <source src="/Home_Vid_01P.mp4" type="video/mp4">
-            </video>
-        </div>
-    </div>
+    <!-- Mobile Navigation Menu -->
+    <nav id="mobileMenu" class="hidden fixed top-0 left-0 w-full h-full bg-black text-white flex flex-col justify-center items-center z-40">
+        <span class="absolute top-4 right-4 text-3xl cursor-pointer" onclick="toggleMenu()">✖</span>
+        <a href="index.html" class="text-2xl py-4">Home</a>
+        <a href="about.html" class="text-2xl py-4">About</a>
+        <a href="contact.html" class="text-2xl py-4">Contact</a>
+    </nav>
 
-    <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-16 lg:py-40 max-w-7xl">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
-                Where design aligns
-            </h2>
-            <div class="paragraph-container space-y-12 text-xl leading-relaxed">
-                <p>
-                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
-                </p>
-                <p>
-                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
-                </p>
-                <a href="about.html" title="About"
-                    class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
+    <!-- Main Content -->
+    <main class="pt-20"> <!-- Add padding to offset fixed header -->
+        <div class="video-background">
+            <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
+                <video width="320" height="240" autoplay muted loop style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <source src="/Home_Vid_01.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
+                <video width="320" height="240" autoplay muted loop style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <source src="/Home_Vid_01P.mp4" type="video/mp4">
+                </video>
             </div>
         </div>
-    </div>
 
-    <footer class="bg-[#4BFA82] text-black w-full">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-4 max-w-7xl">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-left">
-                    <img src="Syncro website/Syncro_WDA.png" width="150" height="45" alt="" />
-                    <h3 class="text-2xl font-bold">&nbsp;</h3>
-                    <p class="mt-2">&nbsp;</p>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-16">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <h2 class="text-5xl font-bold leading-tight">Where design aligns</h2>
+                <div class="space-y-12 text-xl leading-relaxed">
+                    <p>With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.</p>
+                    <p>We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.</p>
+                    <a href="about.html" class="inline-block border rounded-xl px-4 py-2 hover:bg-[#4BFA82] transition-colors">Find out more</a>
                 </div>
-                <div class="text-right">
-                    <small>© 2024 Studio SYNCRO. All rights reserved.</small>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#4BFA82] text-black">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="text-center md:text-left mb-4 md:mb-0">
+                    <img src="./Syncro_WDA.png" alt="" class="h-12" />
+                    <p class="text-sm">© 2024 Studio SYNCRO. All rights reserved.</p>
+                </div>
+                <div class="text-center md:text-right">
+                    <p>Call us at <a href="tel:+441536648548" class="font-bold">+44 (0)1536 648 548</a></p>
+                    <p>Email us at <a href="mailto:team@studiosyncro.co.uk" class="underline">team@studiosyncro.co.uk</a></p>
                 </div>
             </div>
         </div>
     </footer>
 
-    <div class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
-                        Call us
-                        <a href="" class="block font-bold">+44 (0)1536 648 548</a>
-                    </p>
-                    <p class="text-1xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
-                </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <!-- Script to toggle mobile menu visibility -->
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
         }
     </script>
 </body>
 </html>
+
 
 
 
