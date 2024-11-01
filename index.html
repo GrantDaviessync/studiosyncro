@@ -81,7 +81,7 @@
             width: 100%;
             max-width: 1440px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1rem 2rem; /* Header padding */
         }
 
         /* Adjust header padding on smaller screens */
@@ -96,13 +96,13 @@
         footer {
             width: 100%;
             background-color: #4BFA82;
+            padding: 1rem 0; /* Vertical padding for the footer */
         }
 
         .footer-content {
             max-width: 1440px; /* Set max width similar to header */
             margin: 0 auto;    /* Center footer content */
-            padding: 0.5rem 2rem; /* Match header padding but reduce vertical padding */
-            width: 100%;
+            padding: 0 2rem;   /* Horizontal padding */
             display: flex;      /* Use flexbox for alignment */
             justify-content: space-between; /* Space between elements */
             align-items: center; /* Vertically center items */
@@ -113,16 +113,22 @@
             .footer-content {
                 flex-direction: column; /* Stack elements vertically on smaller screens */
                 align-items: flex-start; /* Align items to the left */
-                padding-left: 1rem;  /* Match reduced padding in header */
-                padding-right: 1rem; /* Match reduced padding in header */
-                padding-top: 1rem;   /* Additional top padding for better spacing */
-                padding-bottom: 1rem; /* Additional bottom padding for better spacing */
+                padding: 0 1rem; /* Reduced padding for mobile */
             }
         }
 
         /* Remove default margins from paragraphs and headings */
         p {
             margin: 0; /* Reset margin for paragraphs */
+        }
+
+        /* Additional styling resets */
+        .footer-content img {
+            margin: 0; /* Remove margin from footer images */
+        }
+
+        .footer-content h2 {
+            margin: 0; /* Remove margin from footer headings */
         }
 
         /* Desktop-specific styles */
@@ -209,9 +215,9 @@
 
     <footer>
         <div class="footer-content">
-            <div class="lg:flex justify-between py-4 w-full">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="Syncro WDA Logo" class="h-12 relative -top-2" />
+            <div class="lg:flex justify-between items-center w-full"> <!-- Ensure full width -->
+                <div class="lg:flex gap-16 items-center"> <!-- Center items vertically -->
+                    <img src="./Syncro_WDA.png" alt="Syncro WDA Logo" class="h-12" />
                     <p class="text-xl">
                         Call us
                         <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
@@ -239,3 +245,4 @@
     </script>
 </body>
 </html>
+
