@@ -101,7 +101,7 @@
         .footer-content {
             max-width: 1440px; /* Set max width similar to header */
             margin: 0 auto;    /* Center footer content */
-            padding: 1rem 2rem; /* Match header padding */
+            padding: 0.5rem 2rem; /* Match header padding but reduce vertical padding */
             width: 100%;
             display: flex;      /* Use flexbox for alignment */
             justify-content: space-between; /* Space between elements */
@@ -115,7 +115,14 @@
                 align-items: flex-start; /* Align items to the left */
                 padding-left: 1rem;  /* Match reduced padding in header */
                 padding-right: 1rem; /* Match reduced padding in header */
+                padding-top: 1rem;   /* Additional top padding for better spacing */
+                padding-bottom: 1rem; /* Additional bottom padding for better spacing */
             }
+        }
+
+        /* Remove default margins from paragraphs and headings */
+        p {
+            margin: 0; /* Reset margin for paragraphs */
         }
 
         /* Desktop-specific styles */
@@ -215,7 +222,7 @@
                     </p>
                 </div>
                 <div class="lg:text-right mt-6 lg:mt-0">
-                    <p class="text-xl">
+                    <p class="text-lg">
                         All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
                     </p>
                 </div>
@@ -232,5 +239,3 @@
     </script>
 </body>
 </html>
-
-
