@@ -43,21 +43,34 @@
         header {
             position: relative;
             background-color: white; /* Background color for header */
-            /* Removed box shadow to eliminate drop shadow */
             box-shadow: none; /* Explicitly ensure no shadow is applied */
+            height: 100px; /* Set a fixed height for the header */
         }
 
         .container {
             width: 100% !important;
             max-width: 1280px !important;
             margin: 0 auto; /* Center the container */
+            position: relative; /* Needed for absolute positioning of logo */
         }
 
-        /* Additional adjustments for logo positioning */
-        .logo-container {
-            display: flex;
-            align-items: center; /* Align logo vertically */
-            padding: 16px 0; /* Adjust padding as needed */
+        /* Logo styles */
+        .logo {
+            position: absolute; /* Position the logo absolutely */
+            top: 50%; /* Center vertically */
+            left: 20px; /* Adjust this value to move the logo left/right */
+            transform: translateY(-50%); /* Adjust for perfect vertical centering */
+        }
+
+        /* Navigation styles */
+        .nav-links {
+            position: absolute; /* Position nav links absolutely */
+            top: 50%; /* Center vertically */
+            right: 20px; /* Position the links to the right */
+            transform: translateY(-50%); /* Adjust for perfect vertical centering */
+            display: flex; /* Use flex to layout the nav items */
+            gap: 20px; /* Space between the links */
+            font-size: 1.2rem; /* Font size for nav links */
         }
 
         /* Mobile menu styles */
@@ -123,19 +136,19 @@
 
 <body>
     <header class="absolute top-0 left-0 right-0 z-50">
-        <div class="container mx-auto logo-container">
-            <a href="index.html" title="Home">
+        <div class="container mx-auto">
+            <a href="index.html" title="Home" class="logo">
                 <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
             </a>
-            <button id="burgerMenu" class="lg:hidden text-black ml-auto" onclick="toggleMenu()">
+            <nav class="nav-links hidden lg:flex">
+                <a href="about.html" title="About" class="no-hover-bg">About</a>
+                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+            </nav>
+            <button id="burgerMenu" class="lg:hidden text-black absolute right-0" onclick="toggleMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
             </button>
-            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                <a href="about.html" title="About" class="no-hover-bg">About</a>
-                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-            </nav>
             <nav id="mobileMenu" class="hidden">
                 <span class="close-button" onclick="toggleMenu()">✖</span>
                 <a href="index.html" class="no-hover-bg">Home</a>
@@ -198,8 +211,7 @@
                 </div>
                 <div class="lg:text-right mt-6 lg:mt-0">
                     <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>.
-                            2024</span>
+                        All work copyright of <span class="block font-bold">Syncro 2024</span>
                     </p>
                 </div>
             </div>
@@ -208,27 +220,14 @@
 
     <script>
         function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('active');
         }
     </script>
 </body>
-
 </html>
- </div>
-    </footer>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
-        }
-    </script>
-</body>
-
-</html>
 
 
 
