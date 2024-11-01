@@ -103,11 +103,16 @@
             margin: 0 auto;    /* Center footer content */
             padding: 1rem 2rem; /* Match header padding */
             width: 100%;
+            display: flex;      /* Use flexbox for alignment */
+            justify-content: space-between; /* Space between elements */
+            align-items: center; /* Vertically center items */
         }
 
         /* Responsive adjustments for footer */
         @media (max-width: 1024px) {
             .footer-content {
+                flex-direction: column; /* Stack elements vertically on smaller screens */
+                align-items: flex-start; /* Align items to the left */
                 padding-left: 1rem;  /* Match reduced padding in header */
                 padding-right: 1rem; /* Match reduced padding in header */
             }
@@ -197,20 +202,20 @@
 
     <footer>
         <div class="footer-content">
-            <div class="lg:flex justify-between py-4">
+            <div class="lg:flex justify-between py-4 w-full">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
+                    <img src="./Syncro_WDA.png" alt="Syncro WDA Logo" class="h-12 relative -top-2" />
+                    <p class="text-xl">
                         Call us
-                        <a href="" class="block font-bold">+44 (0)1536 648 548</a>
+                        <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
                     </p>
-                    <p class="text-1xl">
+                    <p class="text-xl">
                         Send us a message
                         <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
                     </p>
                 </div>
                 <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
+                    <p class="text-xl">
                         All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
                     </p>
                 </div>
@@ -227,4 +232,5 @@
     </script>
 </body>
 </html>
+
 
