@@ -18,14 +18,10 @@
         }
     </script>
     <style>
-        .no-hover-bg:hover {
-            background-color: transparent !important;
-        }
-
         html, body {
             height: 100%;
             margin: 0;
-            font-family: 'Arial', sans-serif; /* Ensure consistent font across the site */
+            font-family: 'Arial', sans-serif; /* Consistent font across the site */
         }
 
         body {
@@ -35,24 +31,23 @@
 
         .main-content {
             flex: 1;
-            display: flex;
-            flex-direction: column;
             background-color: #f3f4f6; /* Background color for main content */
+            padding-top: 80px; /* Space for fixed header */
         }
 
         /* Header styles */
         header {
-            position: relative;
             background-color: white; /* Background color for header */
+            position: fixed; /* Fixed positioning */
+            width: 100%;
+            z-index: 50;
             box-shadow: none; /* Explicitly ensure no shadow is applied */
-            height: auto; /* Allow header to adjust based on content */
         }
 
         .container {
-            width: 100% !important;
-            max-width: 1280px !important;
+            max-width: 1280px;
             margin: 0 auto; /* Center the container */
-            position: relative; /* Needed for absolute positioning of logo */
+            padding: 0 20px; /* Add some padding */
         }
 
         /* Mobile menu styles */
@@ -98,12 +93,13 @@
         footer {
             background-color: #4BFA82; /* Background color for footer */
             color: black; /* Text color for footer */
+            padding: 20px 0;
         }
 
         /* Mobile-specific styling adjustments */
         @media (max-width: 640px) {
             .main-content {
-                padding-top: 64px; /* Space for fixed header */
+                padding-top: 80px; /* Space for fixed header */
             }
         }
 
@@ -116,15 +112,15 @@
 </head>
 
 <body>
-    <!-- Header copied from the index page -->
-    <header class="absolute top-0 left-0 right-0 z-50">
-        <div class="container mx-auto flex items-center justify-between py-4">
-            <a href="index.html" title="Home" class="logo">
+    <!-- Header -->
+    <header>
+        <div class="container flex items-center justify-between py-4">
+            <a href="index.html" title="Home" class="flex-shrink-0">
                 <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
             </a>
             <nav class="nav-links hidden lg:flex space-x-8 text-black">
-                <a href="about.html" title="About" class="no-hover-bg">About</a>
-                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                <a href="about.html" title="About">About</a>
+                <a href="contact.html" title="Contact">Contact</a>
             </nav>
             <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,9 +129,9 @@
             </button>
             <nav id="mobileMenu" class="hidden">
                 <span class="close-button" onclick="toggleMenu()">✖</span>
-                <a href="index.html" class="no-hover-bg">Home</a>
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
                 <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
                     SYNCRO - Where Design Aligns 2024
                 </div>
@@ -178,19 +174,17 @@
     </div>
 
     <footer>
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="py-4 text-center">
-                <div>
-                    <p class="text-xl">
-                        Call us
-                        <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
-                    </p>
-                    <p class="text-xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
-                </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
+        <div class="container mx-auto text-center">
+            <div class="py-4">
+                <p class="text-xl">
+                    Call us
+                    <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
+                </p>
+                <p class="text-xl">
+                    Send us a message
+                    <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
+                </p>
+                <div class="mt-4 lg:text-right">
                     <p class="text-lg">
                         All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
                     </p>
@@ -208,6 +202,7 @@
     </script>
 </body>
 </html>
+
 
 
 
