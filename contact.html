@@ -6,22 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Syncro Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         html, body {
             height: 100%;
             margin: 0;
-            font-family: 'Arial', sans-serif; /* Consistent font across the site */
+            font-family: Arial, sans-serif;
         }
 
         body {
@@ -29,93 +18,46 @@
             flex-direction: column;
         }
 
-        .main-content {
-            flex: 1;
-            background-color: #f3f4f6; /* Background color for main content */
-            padding-top: 80px; /* Space for fixed header */
-        }
-
-        /* Header styles */
         header {
-            background-color: white; /* Background color for header */
-            position: fixed; /* Fixed positioning */
+            background-color: white;
+            position: fixed;
             width: 100%;
             z-index: 50;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add slight shadow for header */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px 20px; /* Adjust padding for header */
         }
 
         .container {
             max-width: 1280px;
-            margin: 0 auto; /* Center the container */
-            padding: 0 20px; /* Add some padding */
+            margin: auto; /* Center the container */
+            padding: 0 20px; /* Padding on sides */
         }
 
-        /* Mobile menu styles */
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
+        .main-content {
+            padding-top: 100px; /* Space for fixed header */
+            flex: 1;
+            background-color: #f3f4f6; /* Background color for main content */
         }
 
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        /* Footer styles */
         footer {
-            background-color: #4BFA82; /* Background color for footer */
-            color: black; /* Text color for footer */
+            background-color: #4BFA82;
+            color: black;
             padding: 20px 0;
+            text-align: center; /* Center footer content */
         }
 
-        /* Mobile-specific styling adjustments */
         @media (max-width: 640px) {
             .main-content {
                 padding-top: 80px; /* Space for fixed header */
-            }
-        }
-
-        @media (min-width: 641px) {
-            .main-content {
-                padding-top: 120px; /* Space for fixed header */
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
     <header>
-        <div class="container flex items-center justify-between py-4">
-            <a href="index.html" title="Home" class="flex-shrink-0">
+        <div class="container flex items-center justify-between">
+            <a href="index.html" title="Home">
                 <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
             </a>
             <nav class="nav-links hidden lg:flex space-x-8 text-black">
@@ -132,22 +74,65 @@
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <div class="text-sm text-gray-400 text-center ab
+            </nav>
+        </div>
+    </header>
 
+    <div class="main-content">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <h2 class="text-4xl font-bold">Let's talk!</h2>
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="text-xl space-y-8">
+                    <p class="max-w-lg">
+                        Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
+                    </p>
+                    <p class="max-w-lg">
+                        With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
+                    </p>
+                    <a href="mailto:team@studiosyncro.co.uk" title="Say Hello!" class="inline-block px-4 py-2 border border-black rounded-xl transition-colors hover:bg-[#4BFA82] hover:border-2">
+                        Say Hello!
+                    </a>
+                </div>
+                <div class="text-xl md:text-3xl">
+                    <p>Send us a message</p>
+                    <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
+                    <br>
+                    <p>Give us a call</p>
+                    <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 648 548</a>
+                    <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
+                    <p class="text-xl">
+                        Studio Syncro,<br>
+                        Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XU, UK
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <footer>
+        <div class="container mx-auto">
+            <p class="text-xl">
+                Call us
+                <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
+            </p>
+            <p class="text-xl">
+                Send us a message
+                <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
+            </p>
+            <p class="text-lg">
+                All work copyright of <span class="underline">Studio SYNCRO</span>. 2024
+            </p>
+        </div>
+    </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
