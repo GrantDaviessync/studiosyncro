@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncro Website</title>
+    <title>Contact Us - Syncro Website</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,23 +37,9 @@
             flex: 1;
             display: flex;
             flex-direction: column;
-            background-color: #f3f4f6; /* Ensures consistent background */
-            padding: 0 1rem; /* Added padding for content */
+            background-color: #f3f4f6; /* Background color for main content */
         }
 
-        /* Footer styling */
-        footer {
-            background-color: #4BFA82; /* Matching footer color */
-            color: black;
-        }
-
-        .footer-container {
-            padding: 1rem 0; /* Consistent padding with index page */
-            max-width: 1200px; /* Optional max width for large screens */
-            margin: 0 auto; /* Centering footer container */
-        }
-
-        /* Mobile Menu Styling */
         #mobileMenu {
             background-color: black;
             color: white;
@@ -97,8 +83,9 @@
             .main-content {
                 padding-top: 64px; /* Space for fixed header */
             }
+
             .footer-container {
-                padding: 1rem; /* Padding for mobile */
+                padding: 2rem 1rem; /* Padding for mobile footer */
             }
         }
 
@@ -106,18 +93,25 @@
             .main-content {
                 padding-top: 120px; /* Space for fixed header */
             }
+
             .footer-container {
                 padding: 2rem 0; /* Padding for larger screens */
             }
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: white; /* Keep the footer background white */
+            color: black; /* Text color for visibility */
         }
     </style>
 </head>
 
 <body>
     <header class="bg-white shadow">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
             <a href="index.html" title="Home">
-                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" /> <!-- Keeping original logo -->
             </a>
 
             <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
@@ -181,7 +175,7 @@
     </div>
 
     <footer>
-        <div class="footer-container">
+        <div class="footer-container max-w-9xl mx-auto px-6 sm:px-8 lg:px-16 py-8">
             <div class="lg:flex justify-between">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
@@ -214,6 +208,7 @@
 </body>
 
 </html>
+
 
 
 
