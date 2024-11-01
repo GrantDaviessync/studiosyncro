@@ -54,25 +54,6 @@
             position: relative; /* Needed for absolute positioning of logo */
         }
 
-        /* Logo styles */
-        .logo {
-            position: absolute; /* Position the logo absolutely */
-            top: 30%; /* Adjust this value to position the logo vertically */
-            left: 20px; /* Adjust this value to move the logo left/right */
-            transform: translateY(-50%); /* Center the logo vertically based on its height */
-        }
-
-        /* Navigation styles */
-        .nav-links {
-            position: absolute; /* Position nav links absolutely */
-            top: 30%; /* Adjust this value to position the links vertically */
-            right: 20px; /* Position the links to the right */
-            transform: translateY(-50%); /* Center the nav links vertically based on their height */
-            display: flex; /* Use flex to layout the nav items */
-            gap: 20px; /* Space between the links */
-            font-size: 1.2rem; /* Font size for nav links */
-        }
-
         /* Mobile menu styles */
         #mobileMenu {
             background-color: black;
@@ -135,16 +116,17 @@
 </head>
 
 <body>
+    <!-- Header copied from the index page -->
     <header class="absolute top-0 left-0 right-0 z-50">
-        <div class="container mx-auto">
+        <div class="container mx-auto flex items-center justify-between h-24">
             <a href="index.html" title="Home" class="logo">
                 <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
             </a>
-            <nav class="nav-links hidden lg:flex">
+            <nav class="nav-links hidden lg:flex space-x-8 text-black">
                 <a href="about.html" title="About" class="no-hover-bg">About</a>
                 <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
             </nav>
-            <button id="burgerMenu" class="lg:hidden text-black absolute right-0" onclick="toggleMenu()">
+            <button id="burgerMenu" class="lg:hidden text-black">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                 </svg>
@@ -188,30 +170,20 @@
                         Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
-                        NN17 5XH
+                        NN17 5XU, UK
                     </p>
                 </div>
             </div>
         </div>
     </div>
 
-    <footer class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="Syncro WDA Logo" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
-                        Call us
-                        <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
-                    </p>
-                    <p class="text-1xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
-                </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="py-6 text-center">
+                <div>
                     <p>
-                        All work copyright of <span class="block font-bold">Syncro 2024</span>
+                        <span>&copy; </span>
+                        <span>2024</span>
                     </p>
                 </div>
             </div>
@@ -227,6 +199,7 @@
     </script>
 </body>
 </html>
+
 
 
 
