@@ -99,17 +99,17 @@
         }
 
         .footer-content {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 1rem 0; /* Only top and bottom padding */
+            max-width: 1440px; /* Set max width similar to header */
+            margin: 0 auto;    /* Center footer content */
+            padding: 1rem 2rem; /* Match header padding */
             width: 100%;
         }
 
-        /* Reduce padding on smaller screens */
+        /* Responsive adjustments for footer */
         @media (max-width: 1024px) {
             .footer-content {
-                padding-left: 0.5rem;  /* Reduced left padding */
-                padding-right: 0.5rem; /* Reduced right padding */
+                padding-left: 1rem;  /* Match reduced padding in header */
+                padding-right: 1rem; /* Match reduced padding in header */
             }
         }
 
@@ -197,7 +197,7 @@
 
     <footer>
         <div class="footer-content">
-            <div class="relative z-50 flex justify-between py-4">
+            <div class="lg:flex justify-between py-4">
                 <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
                     <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
                     <p class="text-1xl">
@@ -227,31 +227,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
