@@ -1,0 +1,51 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '100%',
+                    'md': '100%',
+                    'lg': '100%',
+                    'xl': '1280px',
+                    '2xl': '1280px',
+                },
+                container: {
+                    center: true,
+                    padding: {
+                        DEFAULT: '1rem',
+                        sm: '2rem',
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header class="absolute top-0 left-0 right-0 z-50 text-white">
+        <div class="container">
+            header content
+        </div>
+    </header>
+    <main>
+        <div class="aspect-video bg-black flex items-center justify-center text-white">Video</div>
+        <div class="container">
+            main content
+        </div>
+    </main>
+    <footer class="bg-[#4BFA82]">
+        <div class="container">
+            Footer
+        </div>
+    </footer>
+</body>
+</html>
+
+

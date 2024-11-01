@@ -1,0 +1,50 @@
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    'sm': '100%',
+                    'md': '100%',
+                    'lg': '100%',
+                    'xl': '1280px',
+                    '2xl': '1280px',
+                },
+                container: {
+                    center: true,
+                    padding: {
+                        DEFAULT: '1rem',
+                        sm: '2rem',
+                    },
+                },
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            header content
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            main content
+        </div>
+    </main>
+    <footer class="bg-[#4BFA82]">
+        <div class="container">
+            Footer
+        </div>
+    </footer>
+</body>
+</html>
+
+
