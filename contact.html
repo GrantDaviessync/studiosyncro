@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Syncro Website</title>
-    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,6 +39,7 @@
             background-color: #f3f4f6; /* Background color for main content */
         }
 
+        /* Fullscreen dropdown menu styles */
         #mobileMenu {
             background-color: black;
             color: white;
@@ -59,6 +59,7 @@
             transition: transform 0.3s ease;
         }
 
+        /* Show menu when toggled */
         #mobileMenu.active {
             transform: translateY(0);
         }
@@ -69,6 +70,7 @@
             text-align: center;
         }
 
+        /* Close button styles */
         .close-button {
             position: absolute;
             top: 20px;
@@ -93,42 +95,38 @@
 
         /* Footer styling */
         footer {
-            background-color: white; /* Keep the footer background white */
+            background-color: #4BFA82; /* Keep the footer background as green */
             color: black; /* Text color for visibility */
         }
     </style>
 </head>
 
 <body>
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between items-center py-4">
-            <a href="index.html" title="Home">
-                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-            </a>
-
-            <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
-
-            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                <a href="about.html" title="About" class="no-hover-bg">About</a>
-                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-            </nav>
-
-            <!-- Mobile Navigation Menu -->
-            <nav id="mobileMenu" class="hidden">
-                <span class="close-button" onclick="toggleMenu()">✖</span>
-                <a href="index.html" class="no-hover-bg">Home</a>
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
-
-                <!-- Footer text near the bottom of the menu -->
-                <div class="mobile-footer-text">
-                    SYNCRO - Where Design Aligns 2024
-                </div>
-            </nav>
+    <header class="absolute top-0 left-0 right-0">
+        <div class="container mx-auto">
+            <div class="relative z-50 flex justify-between py-4">
+                <a href="index.html" title="Home" class="logo-link">
+                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                </a>
+                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
+                    <a href="index.html" class="no-hover-bg home-link">Home</a>
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
+                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
+                        SYNCRO - Where Design Aligns 2024
+                    </div>
+                </nav>
+            </div>
         </div>
     </header>
 
@@ -166,24 +164,23 @@
         </div>
     </div>
 
-    <footer class="bg-white text-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
+    <footer class="bg-[#4BFA82] py-4">
+        <div class="container mx-auto">
+            <div class="lg:flex justify-between items-center w-full"> <!-- Ensure full width -->
+                <div class="lg:flex gap-16 items-center"> <!-- Center items vertically -->
+                    <img src="./Syncro_WDA.png" alt="Syncro WDA Logo" class="h-12" />
+                    <p class="text-xl">
                         Call us
                         <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
                     </p>
-                    <p class="text-1xl">
+                    <p class="text-xl">
                         Send us a message
                         <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
                     </p>
                 </div>
                 <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>.
-                            2024</span>
+                    <p class="text-lg">
+                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
                     </p>
                 </div>
             </div>
@@ -200,6 +197,7 @@
 </body>
 
 </html>
+
 
 
 
