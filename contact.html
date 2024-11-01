@@ -44,11 +44,20 @@
             position: relative;
             background-color: white; /* Background color for header */
             /* Removed box shadow to eliminate drop shadow */
+            box-shadow: none; /* Explicitly ensure no shadow is applied */
         }
 
         .container {
             width: 100% !important;
             max-width: 1280px !important;
+            margin: 0 auto; /* Center the container */
+        }
+
+        /* Additional adjustments for logo positioning */
+        .logo-container {
+            display: flex;
+            align-items: center; /* Align logo vertically */
+            padding: 16px 0; /* Adjust padding as needed */
         }
 
         /* Mobile menu styles */
@@ -113,31 +122,29 @@
 </head>
 
 <body>
-    <header class="absolute top-0 left-0 right-0">
-        <div class="container mx-auto">
-            <div class="relative z-50 flex justify-between py-4">
-                <a href="index.html" title="Home" class="logo-link">
-                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-                </a>
-                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                    <a href="about.html" title="About" class="no-hover-bg">About</a>
-                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-                </nav>
-                <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span>
-                    <a href="index.html" class="no-hover-bg">Home</a>
-                    <a href="about.html" class="no-hover-bg">About</a>
-                    <a href="contact.html" class="no-hover-bg">Contact</a>
-                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
-                        SYNCRO - Where Design Aligns 2024
-                    </div>
-                </nav>
-            </div>
+    <header class="absolute top-0 left-0 right-0 z-50">
+        <div class="container mx-auto logo-container">
+            <a href="index.html" title="Home">
+                <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+            </a>
+            <button id="burgerMenu" class="lg:hidden text-black ml-auto" onclick="toggleMenu()">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                <a href="about.html" title="About" class="no-hover-bg">About</a>
+                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+            </nav>
+            <nav id="mobileMenu" class="hidden">
+                <span class="close-button" onclick="toggleMenu()">✖</span>
+                <a href="index.html" class="no-hover-bg">Home</a>
+                <a href="about.html" class="no-hover-bg">About</a>
+                <a href="contact.html" class="no-hover-bg">Contact</a>
+                <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
+                    SYNCRO - Where Design Aligns 2024
+                </div>
+            </nav>
         </div>
     </header>
 
@@ -197,6 +204,19 @@
                 </div>
             </div>
         </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
+        }
+    </script>
+</body>
+
+</html>
+ </div>
     </footer>
 
     <script>
