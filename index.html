@@ -1,10 +1,31 @@
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncro - Where Design Aligns</title>
+    <title>Studio Syncro - Where Design Aligns</title>
+    <meta name="description" content="Studio Syncro is a leading design agency specializing in packaging design, branding, visual identity, and creative solutions. Let us help your brand stand out with expert design services.">
+    <meta name="keywords" content="Studio Syncro, packaging design, branding agency, visual identity, design studio, creative design, brand design, product packaging, branding solutions, packaging agency">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Studio Syncro",
+        "url": "https://www.studiosyncro.co.uk",
+        "logo": "https://www.studiosyncro.co.uk/path-to-your-logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+44 (0)1536 648 548",
+            "contactType": "customer service",
+            "areaServed": "GB",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+
+    <meta name="robots" content="index, follow">
+
     <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -19,7 +40,6 @@
         }
     </script>
     <style>
-        /* Prevent hover background on burger menu links */
         a.no-hover-bg:hover {
             background-color: transparent !important;
         }
@@ -27,7 +47,6 @@
             background-color: transparent !important;
         }
 
-        /* Fullscreen dropdown menu styles */
         #mobileMenu {
             background-color: black;
             color: white;
@@ -47,7 +66,6 @@
             transition: transform 0.3s ease;
         }
 
-        /* Show menu when toggled */
         #mobileMenu.active {
             transform: translateY(0);
         }
@@ -58,7 +76,6 @@
             text-align: center;
         }
 
-        /* Close button styles */
         .close-button {
             position: absolute;
             top: 20px;
@@ -68,28 +85,22 @@
             cursor: pointer;
         }
 
-        /* Desktop-specific styles */
         @media (min-width: 1024px) {
-            /* Adjust the margin on the paragraph container to align with the h2 */
             .paragraph-container {
-                margin-top: 1.5rem; /* Adjust this value as needed */
+                margin-top: 1.5rem;
             }
         }
 
-        /* Mobile-specific styles */
         @media (max-width: 1023px) {
-            /* Mobile spacing for h2 */
             h2 {
-                margin-bottom: 0.5rem; /* Adjust this value to control mobile spacing below the heading */
+                margin-bottom: 0.5rem;
             }
 
-            /* Add "Home" link to mobile menu only */
             #mobileMenu a.home-link {
                 display: block;
             }
         }
 
-        /* Hide "Home" link on desktop */
         .home-link {
             display: none;
         }
@@ -104,27 +115,23 @@
                     <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
 
-                <!-- Burger menu button for small screens -->
                 <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
                 </button>
 
-                <!-- Desktop Navigation Links -->
                 <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
                     <a href="about.html" title="About" class="no-hover-bg">About</a>
                     <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
                 </nav>
 
-                <!-- Mobile Navigation Menu -->
                 <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span> <!-- Close button -->
-                    <a href="index.html" class="no-hover-bg home-link">Home</a> <!-- Home link for mobile only -->
+                    <span class="close-button" onclick="toggleMenu()">✖</span> 
+                    <a href="index.html" class="no-hover-bg home-link">Home</a> 
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
 
-                    <!-- Footer text at the bottom of the mobile menu -->
                     <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
                         SYNCRO - Where Design Aligns 2024
                     </div>
@@ -215,6 +222,7 @@
     </script>
 </body>
 </html>
+
 
 
 
