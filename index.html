@@ -32,11 +32,17 @@
             display: block;
             width: 100%;
         }
+
+        /* Hide the header by default when scrolling down */
+        header.hidden {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
     </style>
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <div class="absolute top-0 left-0 right-0">
             <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
                 <a href="index.html" title="Home" class="logo-link">
@@ -164,9 +170,25 @@
             mobileMenu.classList.toggle("hidden");
             mobileMenu.classList.toggle("active");
         }
+
+        let lastScrollTop = 0; // Keeps track of last scroll position
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                header.classList.add("hidden");
+            } else {
+                // Scrolling up
+                header.classList.remove("hidden");
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+        });
     </script>
 </body>
 </html>
+
 
 
 
