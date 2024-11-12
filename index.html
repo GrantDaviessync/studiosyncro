@@ -40,12 +40,18 @@
             left: 0;
             right: 0;
             z-index: 50;
-            transition: top 0.3s ease; /* Smooth transition for top property */
+            transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease; /* Add box-shadow and background transition */
         }
 
         /* Hide header when scrolling down */
         header.hidden {
             top: -100px; /* Adjust this to your header's height */
+        }
+
+        /* Header with black background when scrolled up */
+        header.scrolled {
+            background-color: black; /* Set the black background */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow to make it stand out */
         }
     </style>
 </head>
@@ -174,15 +180,10 @@
     </div>
 
     <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
-        }
-
-        let lastScrollTop = 0; // Keeps track of last scroll position
+        // Initialize last scroll position
+        let lastScrollTop = 0;
         const header = document.getElementById("header");
-        let timer; // Variable to store timeout reference
+        let timer;
 
         window.addEventListener("scroll", function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -190,19 +191,22 @@
             if (currentScroll > lastScrollTop) {
                 // Scrolling down, hide header
                 header.classList.add("hidden");
+                header.classList.remove("scrolled");
             } else {
-                // Scrolling up, show header with a delay
-                clearTimeout(timer); // Clear any previous timer
+                // Scrolling up, show header and add black background
+                clearTimeout(timer);
                 timer = setTimeout(function() {
                     header.classList.remove("hidden");
-                }, 300); // Delay of 300ms before showing header
+                    header.classList.add("scrolled");
+                }, 50); // Reduced delay for smoother effect
             }
 
-            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
     </script>
 </body>
 </html>
+
 
 
 
