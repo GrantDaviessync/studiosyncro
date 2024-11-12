@@ -4,73 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Syncro - Where Design Aligns</title>
+    <meta name="description" content="Studio Syncro is a leading design agency specializing in packaging design, branding, visual identity, and creative solutions. Let us help your brand stand out with expert design services.">
+    <meta name="keywords" content="Studio Syncro, packaging design, branding agency, visual identity, design studio, creative design, brand design, product packaging, branding solutions, packaging agency">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Studio Syncro",
+        "url": "https://www.studiosyncro.co.uk",
+        "logo": "https://www.studiosyncro.co.uk/path-to-your-logo.png",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+44 (0)1536 648 548",
+            "contactType": "customer service",
+            "areaServed": "GB",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+
+    <meta name="robots" content="index, follow">
+
     <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Zoom effect container */
-        .image-frame {
-            overflow: hidden;
-            position: relative;
-            display: block;
+        a.no-hover-bg:hover {
+            background-color: transparent !important;
+        }
+        a.logo-link:hover {
+            background-color: transparent !important;
+        }
+
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
         }
 
-        /* Image zoom effect */
-        .zoom-image {
-            transition: transform 0.5s ease; /* Smooth zoom transition */
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
             width: 100%;
-            height: auto;
+            text-align: center;
         }
 
-        /* Hover effect */
-        .image-frame:hover .zoom-image {
-            transform: scale(1.1); /* Slight zoom-in */
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
         }
 
-        /* Adjusting the layout of the image container for full width */
+        @media (min-width: 1024px) {
+            .paragraph-container {
+                margin-top: 1.5rem;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            h2 {
+                margin-bottom: 0.5rem;
+            }
+
+            #mobileMenu a.home-link {
+                display: block;
+            }
+        }
+
+        .home-link {
+            display: none;
+        }
+
         .image-container {
-            display: block;
+            position: relative;
             width: 100%;
+            height: 100%;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        .text-overlay {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
     <header>
-        <div class="absolute top-0 left-0 right-0">
-            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
-                <a href="index.html" title="Home" class="logo-link">
-                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-                </a>
-
-                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-
-                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
-                    <a href="about.html" title="About" class="no-hover-bg">About</a>
-                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-                </nav>
-
-                <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span> 
-                    <a href="index.html" class="no-hover-bg home-link">Home</a> 
-                    <a href="about.html" class="no-hover-bg">About</a>
-                    <a href="contact.html" class="no-hover-bg">Contact</a>
-
-                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
-                        SYNCRO - Where Design Aligns 2024
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <!-- Header content here -->
 
         <div class="video-background">
             <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
                 <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <source src="/https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
+                    <source src="/Home_Vid_01.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
@@ -87,7 +160,7 @@
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
         <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold leading-tight">
+            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
                 Where design aligns
             </h2>
             <div class="paragraph-container space-y-12 text-xl leading-relaxed">
@@ -103,20 +176,24 @@
         </div>
     </div>
 
-    <!-- Image Section with Zoom Effect -->
+    <!-- Image Section with Text Overlay -->
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-7xl">
-        <!-- Image 1 -->
-        <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame">
-                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-            </a>
-        </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+            <!-- Toxic Knobs Image with Overlay Text -->
+            <div class="image-container relative">
+                <a href="toxicknobs.html">
+                    <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs - Packaging Design">
+                    <div class="text-overlay">Toxic Knobs - Packaging Design</div>
+                </a>
+            </div>
 
-        <!-- Image 2 -->
-        <div class="image-container mt-16">
-            <a href="magicmakers.html" class="image-frame">
-                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-            </a>
+            <!-- Magick Makers Image with Overlay Text -->
+            <div class="image-container relative">
+                <a href="magicmakers.html">
+                    <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Magick Makers - Branding and Packaging Design">
+                    <div class="text-overlay">Magick Makers - Branding and Packaging Design</div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -167,5 +244,6 @@
     </script>
 </body>
 </html>
+
 
 
