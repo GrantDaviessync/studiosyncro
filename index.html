@@ -43,6 +43,7 @@
             width: 100%;
             transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             background-color: transparent; /* Default background */
+            box-shadow: none; /* Default box-shadow */
         }
 
         /* Hide header when scrolling down */
@@ -50,9 +51,9 @@
             top: -100px; /* Adjust this to your header's height */
         }
 
-        /* Header with black background when scrolled up */
+        /* Header with black background when scrolled */
         header.scrolled {
-            background-color: black; /* Set the black background for header/menu */
+            background-color: black; /* Black background for header/menu */
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Soft shadow for the header */
         }
 
@@ -197,30 +198,25 @@
     </div>
 
     <script>
-        // Initialize last scroll position
         let lastScrollTop = 0;
 
         window.addEventListener("scroll", function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-            // Header element
             const header = document.getElementById("header");
 
             if (currentScroll > lastScrollTop) {
-                // Scrolling down
+                // Scrolling down: Hide header
                 header.classList.add("hidden");
                 header.classList.remove("scrolled");
             } else {
-                // Scrolling up
+                // Scrolling up: Show header with black background
                 header.classList.remove("hidden");
                 header.classList.add("scrolled");
             }
 
-            // Ensure lastScrollTop is updated correctly
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
 
-        // Mobile menu toggle
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("hidden");
@@ -229,6 +225,7 @@
     </script>
 </body>
 </html>
+
 
 
 
