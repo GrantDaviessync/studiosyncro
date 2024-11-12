@@ -4,105 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Syncro - Where Design Aligns</title>
-    <meta name="description" content="Studio Syncro is a leading design agency specializing in packaging design, branding, visual identity, and creative solutions. Let us help your brand stand out with expert design services.">
-    <meta name="keywords" content="Studio Syncro, packaging design, branding agency, visual identity, design studio, creative design, brand design, product packaging, branding solutions, packaging agency">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Studio Syncro",
-        "url": "https://www.studiosyncro.co.uk",
-        "logo": "https://www.studiosyncro.co.uk/path-to-your-logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+44 (0)1536 648 548",
-            "contactType": "customer service",
-            "areaServed": "GB",
-            "availableLanguage": "English"
-        }
-    }
-    </script>
-
-    <meta name="robots" content="index, follow">
-
     <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        clifford: '#da373d',
-                    }
-                }
-            }
-        }
-    </script>
     <style>
-        a.no-hover-bg:hover {
-            background-color: transparent !important;
-        }
-        a.logo-link:hover {
-            background-color: transparent !important;
-        }
-
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
+        /* Zoom effect container */
+        .image-frame {
+            overflow: hidden;
+            position: relative;
+            display: inline-block;
             width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
+            max-width: 7xl;
         }
 
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
+        /* Image zoom effect */
+        .zoom-image {
+            transition: transform 0.5s ease; /* Smooth zoom transition */
             width: 100%;
-            text-align: center;
+            height: auto;
         }
 
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        @media (min-width: 1024px) {
-            .paragraph-container {
-                margin-top: 1.5rem;
-            }
-        }
-
-        @media (max-width: 1023px) {
-            h2 {
-                margin-bottom: 0.5rem;
-            }
-
-            #mobileMenu a.home-link {
-                display: block;
-            }
-        }
-
-        .home-link {
-            display: none;
+        /* Hover effect */
+        .image-frame:hover .zoom-image {
+            transform: scale(1.1); /* Slight zoom-in */
         }
     </style>
 </head>
@@ -159,7 +82,7 @@
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
         <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
+            <h2 class="text-5xl font-bold leading-tight">
                 Where design aligns
             </h2>
             <div class="paragraph-container space-y-12 text-xl leading-relaxed">
@@ -173,16 +96,18 @@
                     class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
             </div>
         </div>
+    </div>
 
-        <!-- Adjusted spacing between images -->
-        <div class="my-8 flex justify-center">
-            <a href="toxicknobs.html" title="Toxic Knobs Page">
-                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="w-full max-w-7xl object-cover">
+    <!-- Image Section with Zoom Effect -->
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-7xl">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <!-- First Image -->
+            <a href="toxicknobs.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
             </a>
-        </div>
-        <div class="my-8 flex justify-center">
-            <a href="magicmakers.html" title="Magic Makers Page">
-                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="w-full max-w-7xl object-cover">
+            <!-- Second Image -->
+            <a href="magicmakers.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Magic Makers" class="zoom-image" />
             </a>
         </div>
     </div>
@@ -234,3 +159,4 @@
     </script>
 </body>
 </html>
+
