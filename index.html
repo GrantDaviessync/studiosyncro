@@ -22,9 +22,9 @@
             height: auto;
         }
 
-        /* Hover effect */
+        /* Hover effect with reduced zoom */
         .image-frame:hover .zoom-image {
-            transform: scale(1.05); /* Reduced zoom-in to 5% */
+            transform: scale(1.005); /* Subtle zoom-in to 0.5% */
         }
 
         /* Adjusting the layout of the image container for full width */
@@ -105,6 +105,12 @@
 
     <!-- Image Section with Zoom Effect -->
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-7xl">
+
+        <!-- Featured Work Header -->
+        <h2 class="text-5xl font-bold leading-tight mb-8">
+            Featured Work
+        </h2>
+
         <!-- Image 1 -->
         <div class="image-container">
             <a href="toxicknobs.html" class="image-frame">
@@ -167,4 +173,5 @@
     </script>
 </body>
 </html>
+
 
