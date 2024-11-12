@@ -11,9 +11,8 @@
         .image-frame {
             overflow: hidden;
             position: relative;
-            display: inline-block;
+            display: block;
             width: 100%;
-            max-width: 7xl;
         }
 
         /* Image zoom effect */
@@ -26,6 +25,12 @@
         /* Hover effect */
         .image-frame:hover .zoom-image {
             transform: scale(1.1); /* Slight zoom-in */
+        }
+
+        /* Adjusting the layout of the image container for full width */
+        .image-container {
+            display: block;
+            width: 100%;
         }
     </style>
 </head>
@@ -100,12 +105,15 @@
 
     <!-- Image Section with Zoom Effect -->
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-7xl">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <!-- First Image -->
+        <!-- Image 1 -->
+        <div class="image-container">
             <a href="toxicknobs.html" class="image-frame">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
             </a>
-            <!-- Second Image -->
+        </div>
+
+        <!-- Image 2 -->
+        <div class="image-container mt-16">
             <a href="magicmakers.html" class="image-frame">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Magic Makers" class="zoom-image" />
             </a>
@@ -159,4 +167,5 @@
     </script>
 </body>
 </html>
+
 
