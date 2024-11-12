@@ -40,6 +40,7 @@
             left: 0;
             right: 0;
             z-index: 50;
+            width: 100%;
             transition: top 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
             background-color: transparent; /* Default background */
         }
@@ -58,6 +59,7 @@
         .video-background {
             position: relative;
             padding-top: 56.25%; /* Aspect ratio for the video (16:9) */
+            z-index: -1; /* Keeps video behind the content */
         }
 
         .video-background video {
@@ -66,6 +68,15 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+
+        .content-on-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            z-index: 10; /* Ensures content stays above the video */
         }
     </style>
 </head>
@@ -106,6 +117,9 @@
             <video autoplay muted loop playsinline>
                 <source src="/Home_Vid_01.mp4" type="video/mp4">
             </video>
+        </div>
+        <div class="content-on-video hidden">
+            <h1 class="text-7xl font-bold text-white">&nbsp;</h1>
         </div>
     </header>
 
@@ -185,26 +199,37 @@
     <script>
         // Initialize last scroll position
         let lastScrollTop = 0;
-        const header = document.getElementById("header");
 
         window.addEventListener("scroll", function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+            // Header element
+            const header = document.getElementById("header");
+
             if (currentScroll > lastScrollTop) {
-                // Scrolling down, hide header
+                // Scrolling down
                 header.classList.add("hidden");
                 header.classList.remove("scrolled");
             } else {
-                // Scrolling up, show header and add black background
+                // Scrolling up
                 header.classList.remove("hidden");
                 header.classList.add("scrolled");
             }
 
+            // Ensure lastScrollTop is updated correctly
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
         });
+
+        // Mobile menu toggle
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
+        }
     </script>
 </body>
 </html>
+
 
 
 
