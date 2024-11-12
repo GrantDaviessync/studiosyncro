@@ -40,12 +40,12 @@
             left: 0;
             right: 0;
             z-index: 50;
-            transition: top 0.3s ease;
+            transition: top 0.3s ease; /* Smooth transition for top property */
         }
 
         /* Hide header when scrolling down */
         header.hidden {
-            top: -100px; /* Adjust the value based on your header's height */
+            top: -100px; /* Adjust this to your header's height */
         }
     </style>
 </head>
@@ -182,16 +182,20 @@
 
         let lastScrollTop = 0; // Keeps track of last scroll position
         const header = document.getElementById("header");
+        let timer; // Variable to store timeout reference
 
         window.addEventListener("scroll", function() {
             let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
             if (currentScroll > lastScrollTop) {
-                // Scrolling down
+                // Scrolling down, hide header
                 header.classList.add("hidden");
             } else {
-                // Scrolling up
-                header.classList.remove("hidden");
+                // Scrolling up, show header with a delay
+                clearTimeout(timer); // Clear any previous timer
+                timer = setTimeout(function() {
+                    header.classList.remove("hidden");
+                }, 300); // Delay of 300ms before showing header
             }
 
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
@@ -199,6 +203,7 @@
     </script>
 </body>
 </html>
+
 
 
 
