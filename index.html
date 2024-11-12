@@ -32,6 +32,14 @@
             display: block;
             width: 100%;
         }
+
+        /* Ensuring images extend beyond container width */
+        .extended-image-wrapper {
+            margin-left: calc(-50vw + 50%); /* Pulls the image out to align with the header/footer */
+            margin-right: calc(-50vw + 50%); /* Pulls the image out to align with the header/footer */
+            max-width: 100vw; /* Ensures the image never exceeds the viewport */
+            position: relative;
+        }
     </style>
 </head>
 
@@ -114,33 +122,39 @@
             Featured Work
         </h2>
 
-        <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame">
-                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Toxic Knobs</strong>  - Packaging Design
-                <span class="ml-1 text-black">
-                    <!-- Line-based Arrow Pointing Up-Right -->
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
+        <!-- Image Wrapper with Negative Margin for Wider Images -->
+        <div class="extended-image-wrapper">
+            <div class="image-container">
+                <a href="toxicknobs.html" class="image-frame">
+                    <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+                </a>
+                <p class="mt-4 text-left text-xl flex items-center">
+                    <strong>Toxic Knobs</strong>  - Packaging Design
+                    <span class="ml-1 text-black">
+                        <!-- Line-based Arrow Pointing Up-Right -->
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M5 5h14v14" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
         </div>
-        <div class="image-container mt-16">
-            <a href="magicmakers.html" class="image-frame">
-                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Magick Makers</strong> - Branding and Packaging Design
-                <span class="ml-1 text-black">
-                    <!-- Line-based Arrow Pointing Up-Right -->
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
+
+        <div class="extended-image-wrapper mt-16">
+            <div class="image-container">
+                <a href="magicmakers.html" class="image-frame">
+                    <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+                </a>
+                <p class="mt-4 text-left text-xl flex items-center">
+                    <strong>Magick Makers</strong> - Branding and Packaging Design
+                    <span class="ml-1 text-black">
+                        <!-- Line-based Arrow Pointing Up-Right -->
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M5 5h14v14" />
+                        </svg>
+                    </span>
+                </p>
+            </div>
         </div>
     </div>
 
@@ -159,29 +173,6 @@
         </div>
     </footer>
 
-    <div class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
-                        Call us
-                        <a href="" class="block font-bold">+44 (0)1536 648 548</a>
-                    </p>
-                    <p class="text-1xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
-                </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <script>
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
@@ -191,3 +182,4 @@
     </script>
 </body>
 </html>
+
