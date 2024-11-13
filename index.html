@@ -100,9 +100,12 @@
             transform: scale(1.050);
         }
 
+        /* Image container with negative margins to extend beyond container */
         .image-container {
             display: block;
             width: 100%;
+            margin-left: -2rem;  /* Extends image to the left */
+            margin-right: -2rem; /* Extends image to the right */
         }
     </style>
 </head>
@@ -183,71 +186,55 @@
             Featured Work
         </h2>
 
-<div class="image-container">
-    <a href="toxicknobs.html" class="image-frame">
-        <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-    </a>
-    <p class="mt-4 text-left text-xl flex items-center">
-        <strong>Toxic Knobs</strong>  - Packaging Design
-        <span class="ml-1 text-black">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 19L19 5M5 5h14v14" />
-            </svg>
-        </span>
-    </p>
-</div>
-<div class="image-container mt-16">
-    <a href="magicmakers.html" class="image-frame">
-        <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-    </a>
-    <p class="mt-4 text-left text-xl flex items-center">
-        <strong>Magick Makers</strong> - Branding and Packaging Design
-        <span class="ml-1 text-black">
-            <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path d="M5 19L19 5M5 5h14v14" />
-            </svg>
-        </span>
-    </p>
-</div>
+        <!-- Image 1 -->
+        <div class="image-container">
+            <a href="toxicknobs.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Toxic Knobs</strong>  - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="image-container mt-16">
+            <a href="magicmakers.html" class="image-frame">
+                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Magick Makers</strong> - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
     </div>
 
-    <footer class="bg-[#4BFA82] text-black hidden">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-4 max-w-7xl">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="text-left">
-                    <img src="Syncro website/Syncro_WDA.png" width="150" height="45" alt="" />
-                    <h3 class="text-2xl font-bold">&nbsp;</h3>
-                    <p class="mt-2">&nbsp;</p>
+    <!-- Footer -->
+    <footer class="bg-black text-white">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="grid-item">
+                    <img src="https://grantdavies.com/images/Syncro_WDA.png" alt="Studio Syncro Logo" />
                 </div>
-                <div class="text-right">
-                    <small>© 2024 Studio SYNCRO. All rights reserved.</small>
+                <div class="grid-item">
+                    <p>Studio SYNCRO</p>
+                    <p>All rights reserved.</p>
+                </div>
+                <div class="grid-item">
+                    <p>Website by Studio SYNCRO</p>
+                    <p class="font-semibold text-lg">info@studiosyncro.co.uk</p>
                 </div>
             </div>
         </div>
     </footer>
-
-    <div class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
-                        Call us
-                        <a href="" class="block font-bold">+44 (0)1536 648 548</a>
-                    </p>
-                    <p class="text-1xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
-                </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script>
         function toggleMenu() {
@@ -258,6 +245,7 @@
     </script>
 </body>
 </html>
+
 
 
 
