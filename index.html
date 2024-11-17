@@ -58,7 +58,7 @@
         footer form input[type="email"] {
             padding: 0.5rem;
             width: 100%;
-            margin-bottom: 0.5rem; /* Reduced space */
+            margin-bottom: 0.25rem; /* Reduced space */
             border: none;
             border-bottom: 2px solid #ccc; /* Underline effect */
             background: none; /* No background */
@@ -81,7 +81,7 @@
             display: inline-block;
             text-align: left;
             max-width: 500px;
-            margin-top: 0.5rem; /* Reduced space */
+            margin-top: 0.25rem; /* Reduced space */
         }
 
         /* Styling for the Subscribe text link (no border) */
@@ -120,23 +120,23 @@
         }
 
         /* Align "Call us" to the far right */
-        .call-us-right {
-            text-align: right;
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end; /* Ensures "Call us" is aligned to the far right */
+            align-items: flex-start;
         }
 
         /* Align copyright with subscribe section */
-        .footer-copyright {
+        .footer-copyright-container {
             display: flex;
-            justify-content: flex-start;
             align-items: center;
         }
 
         /* Adjust spacing between "Subscribe" and the email input */
         .subscribe-space {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem; /* Reduced space */
         }
 
-        /* Flex container to align content */
         .footer-container {
             display: flex;
             flex-direction: column;
@@ -149,15 +149,9 @@
             justify-content: flex-start;
         }
 
-        /* Align the copyright with the subscribe section */
-        .footer-copyright-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .call-us-right-container {
-            display: flex;
-            justify-content: flex-end;
+        /* Add some margin between copyright and address */
+        .address-copyright-spacing {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -313,6 +307,7 @@
 
 </body>
 </html>
+
 
 
 
