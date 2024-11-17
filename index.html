@@ -136,13 +136,7 @@
             margin-bottom: 0.5rem;
         }
 
-        /* Fix "Call us" alignment to the far right */
-        .call-us-right-container {
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        /* Make sure everything aligns within the grid */
+        /* Flex container to align content */
         .footer-container {
             display: flex;
             flex-direction: column;
@@ -155,6 +149,16 @@
             justify-content: flex-start;
         }
 
+        /* Align the copyright with the subscribe section */
+        .footer-copyright-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end;
+        }
     </style>
 </head>
 
@@ -271,7 +275,7 @@
                         Corby, Northamptonshire,<br>
                         NN17 5XH
                     </p>
-                    <p class="address-copyright-spacing footer-copyright">© Studio Syncro 2024</p>
+                    <p class="footer-copyright">© Studio Syncro 2024</p>
                 </div>
 
                 <!-- Middle Section (Email and Newsletter Form) -->
@@ -309,6 +313,7 @@
 
 </body>
 </html>
+
 
 
 
