@@ -134,6 +134,22 @@
             margin-right: 0;
         }
 
+        /* Zoom effect on hover for images */
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Ensures the zoomed image stays within the container */
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+            width: 100%; /* Ensure the image scales responsively */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .image-container:hover .zoom-image {
+            transform: scale(1.1); /* Zoom in the image on hover */
+        }
+
     </style>
 </head>
 
@@ -285,3 +301,4 @@
 
 </body>
 </html>
+
