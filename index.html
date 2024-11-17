@@ -154,10 +154,9 @@
             margin-bottom: 1rem;
         }
 
-        /* Remove the border and hover effect from "Find out more" button */
+        /* Style the "Find out more" link similar to the image links */
         .find-out-more {
             font-weight: bold;
-            background-color: transparent;
             color: white;
             text-decoration: none;
             display: inline-flex;
@@ -166,9 +165,16 @@
         }
 
         .find-out-more:hover {
+            color: #4BFA82;
             background-color: transparent;
-            color: white;
         }
+
+        .find-out-more svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: white;
+        }
+
     </style>
 </head>
 
@@ -234,7 +240,7 @@
                 <p>
                     We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
                 </p>
-                <!-- Find out more button without border and with the arrow -->
+                <!-- Find out more styled like the other text links -->
                 <a href="about.html" title="About" class="find-out-more">
                     Find out more
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -328,6 +334,7 @@
 
 </body>
 </html>
+
 
 
 
