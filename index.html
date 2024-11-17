@@ -124,13 +124,14 @@
             font-size: 1.2rem; /* Adjusted font size */
         }
 
-        /* Syncro_WDA.png positioned within the container (1450px width) */
+        /* Syncro_WDA.png positioned inside the 1450px max width */
         .syncro-wda-logo {
             position: absolute;
             bottom: 20px; /* 20px from the bottom of the footer */
-            right: 20px; /* 20px from the right of the footer */
-            max-width: 200px; /* Ensure the image fits within the 1450px max width */
+            right: 0;
+            max-width: 200px; /* Ensure the image fits within the 1450px width */
             height: auto;
+            margin-right: 0; /* Ensure image is within the container */
         }
 
     </style>
@@ -279,12 +280,13 @@
             </div>
         </div>
 
-        <!-- Syncro_WDA.png positioned within the container width -->
+        <!-- Syncro_WDA.png positioned within the 1450px container width -->
         <img src="Syncro_WDA.png" alt="Syncro WDA Logo" class="syncro-wda-logo" />
     </footer>
 
 </body>
 </html>
+
 
 
 
