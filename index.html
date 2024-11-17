@@ -97,6 +97,28 @@
         footer .grid-item h3 {
             margin-top: 1.5rem;
         }
+
+        /* Styling for the subscription form */
+        .newsletter-subscription {
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .subscription-intro {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-subscription form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            margin-top: 1rem;
+        }
+
+        .newsletter-subscription .consent-checkbox {
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 
@@ -221,11 +243,17 @@
                     <p>New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
-                    <h3 class="font-semibold text-xl">Subscribe to our newsletter</h3>
-                    <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                        <input type="email" name="email" placeholder="Email" required>
-                        <button type="submit">Subscribe</button>
-                    </form>
+                    <div class="newsletter-subscription">
+                        <p class="subscription-intro">Sign up for nuggets of inspiration and news straight into your inbox.</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <div class="consent-checkbox">
+                                <input type="checkbox" name="consent" required>
+                                <label for="consent">I want to stay up-to-date with the latest news and consent to providing my email to subscribe to email marketing updates.</label>
+                            </div>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
                 </div>
 
                 <!-- Right Section (Phone Number) -->
@@ -244,6 +272,7 @@
 
 </body>
 </html>
+
 
 
 
