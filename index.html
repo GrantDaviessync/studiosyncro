@@ -33,7 +33,7 @@
 
         footer .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columns for the footer layout */
             gap: 2rem;
             text-align: left;
         }
@@ -71,20 +71,20 @@
 
         /* Styling for the subscription form */
         .newsletter-subscription {
-            margin-top: 0.5rem; /* Reduced space between "Call us" and phone number */
+            margin-top: 0.5rem;
             text-align: left;
         }
 
         .subscription-intro {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem; /* Reduced space */
+            margin-bottom: 0.5rem;
         }
 
         .newsletter-subscription form {
             display: inline-block;
             text-align: left;
             max-width: 500px;
-            margin-top: 0.5rem; /* Reduced space */
+            margin-top: 0.5rem;
         }
 
         /* Styling for the Subscribe text link (no border) */
@@ -114,14 +114,14 @@
 
         /* Adjust font size for the email address */
         .footer-email {
-            font-size: 1rem; /* Smaller font size for email */
-            font-weight: normal; /* Removed bold */
+            font-size: 1rem;
+            font-weight: normal;
         }
 
         /* Making "New business" and "Call us" bold and matching font size with "Subscribe to our newsletter" */
         .footer-new-business, .footer-call-us {
             font-weight: bold;
-            font-size: 1.2rem; /* Adjusted font size */
+            font-size: 1.2rem;
         }
 
         /* Syncro_WDA.png positioned inside the 1450px max width */
@@ -131,7 +131,7 @@
             right: 0;
             max-width: 200px; /* Ensure the image fits within the 1450px width */
             height: auto;
-            margin-right: 0; /* Ensure image is within the container */
+            margin-right: 0;
         }
 
     </style>
@@ -280,12 +280,13 @@
             </div>
         </div>
 
-        <!-- Syncro_WDA.png positioned within the 1450px container width -->
+        <!-- Syncro_WDA.png positioned inside the 1450px max width -->
         <img src="Syncro_WDA.png" alt="Syncro WDA Logo" class="syncro-wda-logo" />
     </footer>
 
 </body>
 </html>
+
 
 
 
