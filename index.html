@@ -15,13 +15,6 @@
                 }
             }
         };
-
-        // Toggle the mobile menu on/off
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
-        }
     </script>
     <style>
         /* General styling */
@@ -215,6 +208,39 @@
                 display: block;
             }
         }
+
+        /* Video background styling */
+        .video-background {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Ensure correct visibility based on screen size */
+        .hidden {
+            display: none;
+        }
+
+        .block {
+            display: block;
+        }
+
+        @media (min-width: 1024px) {
+            .hidden {
+                display: block;
+            }
+            .block {
+                display: none;
+            }
+        }
     </style>
 </head>
 
@@ -251,19 +277,17 @@
         </div>
 
         <div class="video-background">
+            <!-- Desktop Video -->
             <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
-                <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
                     <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
                 </video>
             </div>
+            <!-- Mobile Video -->
             <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
-                <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
+                <video autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
                 </video>
-            </div>
-
-            <div class="content-on-video hidden">
-                <h1 class="text-7xl font-bold text-white">&nbsp;</h1>
             </div>
         </div>
     </header>
@@ -335,6 +359,7 @@
 
 </body>
 </html>
+
 
 
 
