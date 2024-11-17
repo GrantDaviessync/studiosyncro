@@ -311,10 +311,55 @@
 
     <footer>
         <!-- Footer content here -->
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Left Section (Address & Copyright) -->
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p class="footer-copyright">© Studio Syncro 2024</p>
+                </div>
+
+                <!-- Middle Section (Email and Newsletter Form) -->
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
+                    </p>
+                    <div class="newsletter-subscription">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <!-- Subscribe text as a link with correct arrow -->
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Section (Phone Number) -->
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
 
 </body>
 </html>
+
 
 
 
