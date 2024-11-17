@@ -58,7 +58,7 @@
         footer form input[type="email"] {
             padding: 0.5rem;
             width: 100%;
-            margin-bottom: 0.25rem; /* Reduced space */
+            margin-bottom: 1rem;
             border: none;
             border-bottom: 2px solid #ccc; /* Underline effect */
             background: none; /* No background */
@@ -68,23 +68,23 @@
 
         /* Styling for the subscription form */
         .newsletter-subscription {
-            margin-top: 0.5rem; /* Reduced space */
+            margin-top: 1rem; /* Reduced space */
             text-align: left;
         }
 
         .subscription-intro {
             font-size: 1.2rem;
-            margin-bottom: 0.25rem; /* Reduced space */
+            margin-bottom: 0.5rem; /* Reduced space */
         }
 
         .newsletter-subscription form {
             display: inline-block;
             text-align: left;
             max-width: 500px;
-            margin-top: 0.25rem; /* Reduced space */
+            margin-top: 0.5rem; /* Reduced space */
         }
 
-        /* Styling for the Subscribe text (no border) */
+        /* Styling for the Subscribe text link (no border) */
         .subscribe-text {
             display: inline-block;
             background-color: transparent;
@@ -107,61 +107,6 @@
             width: 1.2rem;
             height: 1.2rem;
             fill: white;
-        }
-
-        /* Styling for bold text */
-        .bold-text {
-            font-weight: bold;
-        }
-
-        /* Adjust spacing between address and copyright */
-        .address-copyright-spacing {
-            margin-bottom: 1rem; /* Decreased margin */
-        }
-
-        /* Align "Call us" to the left, but move the whole section to the right */
-        .call-us-right-container {
-            display: flex;
-            justify-content: flex-end; /* Align to right */
-            align-items: flex-start;
-            text-align: left; /* Align "Call us" text to the left */
-        }
-
-        /* Align copyright with subscribe section */
-        .footer-copyright-container {
-            display: flex;
-            align-items: center;
-        }
-
-        /* Adjust spacing between "Subscribe" and the email input */
-        .subscribe-space {
-            margin-bottom: 0.25rem; /* Reduced space */
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .call-us-right-container p {
-            margin-right: 0; /* Remove extra margin to align properly */
-        }
-
-        /* Fix the copyright alignment */
-        .address-copyright-spacing {
-            margin-bottom: 1rem;
-        }
-
-        /* Add margin-top to move "Subscribe to our newsletter" down */
-        .subscription-intro {
-            margin-top: 0.5rem; /* Move it down */
         }
 
     </style>
@@ -271,41 +216,41 @@
     <!-- New Footer Based on Refined Layout -->
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Left Section (Address & Copyright) -->
-                <div class="footer-column">
-                    <p class="bold-text">Studio Syncro</p>
-                    <p>Shelton Road,<br>
+                <div class="grid-item footer-address">
+                    <p>Studio Syncro<br>
+                        Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
                         NN17 5XH
                     </p>
-                    <p class="footer-copyright">© Studio Syncro 2024</p>
+                    <p>© Studio Syncro 2024</p>
                 </div>
 
                 <!-- Middle Section (Email and Newsletter Form) -->
-                <div class="footer-column">
-                    <p class="bold-text">New business<br>
+                <div class="grid-item">
+                    <p>New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
                     <div class="newsletter-subscription">
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <!-- Correct up-right arrow for subscribe link -->
-                           <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-        <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <!-- Subscribe text as a link with correct arrow -->
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M5 19L19 5M5 5h14v14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
                             </a>
                         </form>
                     </div>
                 </div>
 
                 <!-- Right Section (Phone Number) -->
-                <div class="footer-column call-us-right-container">
-                    <p class="bold-text">Call us<br>
-                        <span class="font-normal">+44 (0)1536 648 548</span>
+                <div class="grid-item text-right">
+                    <p>Call us<br>
+                        <strong>+44 (0)1536 648 548</strong>
                     </p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -318,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
