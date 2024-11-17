@@ -135,6 +135,26 @@
         .subscribe-space {
             margin-bottom: 0.5rem;
         }
+
+        /* Fix "Call us" alignment to the far right */
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        /* Make sure everything aligns within the grid */
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
     </style>
 </head>
 
@@ -242,9 +262,9 @@
     <!-- New Footer Based on Refined Layout -->
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Left Section (Address & Copyright) -->
-                <div class="grid-item footer-address">
+                <div class="footer-column">
                     <p class="bold-text">Studio Syncro</p>
                     <p>Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
@@ -255,7 +275,7 @@
                 </div>
 
                 <!-- Middle Section (Email and Newsletter Form) -->
-                <div class="grid-item">
+                <div class="footer-column">
                     <p class="bold-text">New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
@@ -274,7 +294,7 @@
                 </div>
 
                 <!-- Right Section (Phone Number) -->
-                <div class="grid-item text-right call-us-right">
+                <div class="footer-column call-us-right-container">
                     <p class="bold-text">Call us<br>
                         <span class="font-normal">+44 (0)1536 648 548</span>
                     </p>
@@ -289,6 +309,7 @@
 
 </body>
 </html>
+
 
 
 
