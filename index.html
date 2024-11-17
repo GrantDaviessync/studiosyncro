@@ -164,6 +164,20 @@
             margin-top: 0.5rem; /* Move it down */
         }
 
+        /* Ensure the image container is a frame with hidden overflow */
+        .image-container {
+            position: relative;
+            overflow: hidden; /* Crops the zoomed-in image */
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
+            object-fit: cover; /* Ensures the image maintains aspect ratio while filling container */
+        }
+
+        .image-container:hover .zoom-image {
+            transform: scale(1.2); /* Zooms the image on hover */
+        }
     </style>
 </head>
 
@@ -318,6 +332,7 @@
 
 </body>
 </html>
+
 
 
 
