@@ -67,40 +67,6 @@
             box-shadow: none; /* Remove any shadow */
         }
 
-        footer form button {
-            padding: 0.5rem 1.5rem;
-            background-color: #4BFA82;
-            border: none;
-            color: white;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        footer form button:hover {
-            background-color: #3fa670;
-        }
-
-        footer .footer-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        /* Added margin-bottom to create larger gap between address and copyright */
-        .footer-address {
-            margin-bottom: 2rem;
-        }
-
-        /* Additional padding between columns */
-        footer .grid-item p {
-            margin-bottom: 1.5rem;
-        }
-
-        footer .grid-item h3 {
-            margin-top: 1.5rem;
-        }
-
         /* Styling for the subscription form */
         .newsletter-subscription {
             margin-top: 2rem;
@@ -119,10 +85,6 @@
             margin-top: 1rem;
         }
 
-        .newsletter-subscription .consent-checkbox {
-            margin-bottom: 1rem;
-        }
-
         /* Styling for the form button */
         footer .newsletter-subscription button {
             width: 100%;
@@ -138,6 +100,33 @@
         footer .newsletter-subscription button:hover {
             background-color: #3fa670;
         }
+
+        /* Updated version of Subscribe text with arrow */
+        .subscribe-text {
+            display: inline-block;
+            background-color: #4BFA82;
+            color: white;
+            font-weight: bold;
+            padding: 1rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subscribe-text:hover {
+            background-color: #3fa670;
+        }
+
+        .subscribe-text svg {
+            width: 1rem;
+            height: 1rem;
+            fill: white;
+        }
+
     </style>
 </head>
 
@@ -266,11 +255,12 @@
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
                             <input type="email" name="email" placeholder="Enter your email" required>
-                            <div class="consent-checkbox">
-                                <input type="checkbox" name="consent" required>
-                                <label for="consent">I want to stay up-to-date with the latest news and consent to providing my email to subscribe to email marketing updates.</label>
-                            </div>
-                            <button type="submit">Subscribe</button>
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">
+                                Subscribe
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                    <path d="M10.5 1a.5.5 0 0 1 .5.5v6.793l3.854-3.854a.5.5 0 0 1 .708.708l-5 5a.5.5 0 0 1-.708 0l-5-5a.5.5 0 0 1 .708-.708l3.854 3.854V1.5a.5.5 0 0 1 .5-.5h6z"/>
+                                </svg>
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -291,6 +281,7 @@
 
 </body>
 </html>
+
 
 
 
