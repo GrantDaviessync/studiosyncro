@@ -168,6 +168,8 @@
         .image-container {
             position: relative;
             overflow: hidden; /* Crops the zoomed-in image */
+            width: 100%; /* Ensure it takes the full width */
+            height: 100%; /* Ensure it takes the full height */
         }
 
         /* The zoomed image will be absolutely positioned to stay inside the container */
@@ -176,11 +178,15 @@
             object-fit: cover; /* Ensures the image maintains aspect ratio while filling container */
             width: 100%; /* Ensures the image fills the container */
             height: 100%; /* Ensures the image fills the container */
+            position: absolute; /* Positioning the image within the container */
+            top: 0; /* Align image to the top */
+            left: 0; /* Align image to the left */
         }
 
         /* On hover, the image zooms in */
         .image-container:hover .zoom-image {
             transform: scale(1.2); /* Zooms the image on hover */
+            transform-origin: center center; /* Make the zoom effect come from the center */
         }
     </style>
 </head>
@@ -336,6 +342,7 @@
 
 </body>
 </html>
+
 
 
 
