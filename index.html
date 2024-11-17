@@ -22,6 +22,7 @@
             background-color: #2D2F34; /* Dark background for the footer */
             color: white;
             padding: 3rem 0;
+            position: relative; /* To allow positioning of the image */
         }
 
         footer .container {
@@ -119,6 +120,15 @@
         .footer-new-business, .footer-call-us {
             font-weight: bold;
             font-size: 1.2rem; /* Adjusted font size */
+        }
+
+        /* Position the Syncro_WDA.png at the bottom right corner */
+        .syncro-wda-logo {
+            position: absolute;
+            bottom: 20px; /* 20px from the bottom of the footer */
+            right: 20px; /* 20px from the right of the footer */
+            width: auto;
+            height: 50px; /* Adjust this size to your preference */
         }
 
     </style>
@@ -266,10 +276,14 @@
                 </div>
             </div>
         </div>
+
+        <!-- Syncro_WDA.png positioned at the bottom right -->
+        <img src="https://grantdavies.com/images/Syncro_WDA.png" alt="Syncro WDA Logo" class="syncro-wda-logo" />
     </footer>
 
 </body>
 </html>
+
 
 
 
