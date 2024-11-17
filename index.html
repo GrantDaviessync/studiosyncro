@@ -122,7 +122,8 @@
         /* Align "Call us" to the far right */
         .call-us-right-container {
             display: flex;
-            justify-content: flex-end; /* Ensures "Call us" is aligned to the far right */
+            justify-content: flex-end; /* Align to right */
+            text-align: right;
             align-items: flex-start;
         }
 
@@ -149,7 +150,11 @@
             justify-content: flex-start;
         }
 
-        /* Add some margin between copyright and address */
+        .call-us-right-container p {
+            margin-right: 0; /* Remove extra margin to align properly */
+        }
+
+        /* Fix the copyright alignment */
         .address-copyright-spacing {
             margin-bottom: 1rem;
         }
@@ -307,6 +312,7 @@
 
 </body>
 </html>
+
 
 
 
