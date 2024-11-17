@@ -4,105 +4,159 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio Syncro - Where Design Aligns</title>
-    <meta name="description" content="Studio Syncro is a leading design agency specializing in packaging design, branding, visual identity, and creative solutions. Let us help your brand stand out with expert design services.">
-    <meta name="keywords" content="Studio Syncro, packaging design, branding agency, visual identity, design studio, creative design, brand design, product packaging, branding solutions, packaging agency">
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Studio Syncro",
-        "url": "https://www.studiosyncro.co.uk",
-        "logo": "https://www.studiosyncro.co.uk/path-to-your-logo.png",
-        "contactPoint": {
-            "@type": "ContactPoint",
-            "telephone": "+44 (0)1536 648 548",
-            "contactType": "customer service",
-            "areaServed": "GB",
-            "availableLanguage": "English"
-        }
-    }
-    </script>
-
-    <meta name="robots" content="index, follow">
-
-    <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        clifford: '#da373d',
+                    maxWidth: {
+                        'custom': '1450px',
                     }
                 }
             }
-        }
+        };
     </script>
     <style>
-        a.no-hover-bg:hover {
-            background-color: transparent !important;
-        }
-        a.logo-link:hover {
-            background-color: transparent !important;
+        /* General styling */
+        footer {
+            background-color: #2D2F34; /* Dark background for the footer */
+            color: white;
+            padding: 3rem 0;
         }
 
-        #mobileMenu {
-            background-color: black;
+        footer .container {
+            max-width: 1450px;
+        }
+
+        footer .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        footer .grid-item {
+            text-align: left;
+        }
+
+        footer a {
             color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
+            text-decoration: none;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        footer form input[type="email"] {
+            padding: 0.5rem;
             width: 100%;
-            height: 100%;
+            margin-bottom: 0.25rem; /* Reduced space */
+            border: none;
+            border-bottom: 2px solid #ccc; /* Underline effect */
+            background: none; /* No background */
+            color: black;
+            box-shadow: none; /* Remove shadow */
+        }
+
+        /* Styling for the subscription form */
+        .newsletter-subscription {
+            margin-top: 0.5rem; /* Reduced space */
+            text-align: left;
+        }
+
+        .subscription-intro {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem; /* Reduced space */
+        }
+
+        .newsletter-subscription form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            margin-top: 0.25rem; /* Reduced space */
+        }
+
+        /* Styling for the Subscribe text link (no border) */
+        .subscribe-text {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subscribe-text:hover {
+            color: #4BFA82; /* Hover effect to match the brand color */
+        }
+
+        .subscribe-text svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: white;
+        }
+
+        /* Styling for bold text */
+        .bold-text {
+            font-weight: bold;
+        }
+
+        /* Adjust spacing between address and copyright */
+        .address-copyright-spacing {
+            margin-bottom: 1rem; /* Decreased margin */
+        }
+
+        /* Align "Call us" to the far right */
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end; /* Align to right */
+            text-align: right;
+            align-items: flex-start;
+        }
+
+        /* Align copyright with subscribe section */
+        .footer-copyright-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Adjust spacing between "Subscribe" and the email input */
+        .subscribe-space {
+            margin-bottom: 0.25rem; /* Reduced space */
+        }
+
+        .footer-container {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
+            justify-content: space-between;
         }
 
-        #mobileMenu.active {
-            transform: translateY(0);
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
 
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
+        .call-us-right-container p {
+            margin-right: 0; /* Remove extra margin to align properly */
         }
 
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        @media (min-width: 1024px) {
-            .paragraph-container {
-                margin-top: 1.5rem;
-            }
-        }
-
-        @media (max-width: 1023px) {
-            h2 {
-                margin-bottom: 0.5rem;
-            }
-
-            #mobileMenu a.home-link {
-                display: block;
-            }
-        }
-
-        .home-link {
-            display: none;
+        /* Fix the copyright alignment */
+        .address-copyright-spacing {
+            margin-bottom: 1rem;
         }
     </style>
 </head>
@@ -110,7 +164,7 @@
 <body>
     <header>
         <div class="absolute top-0 left-0 right-0">
-            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
                 <a href="index.html" title="Home" class="logo-link">
                     <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
@@ -142,12 +196,12 @@
         <div class="video-background">
             <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
                 <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <source src="/Home_Vid_01.mp4" type="video/mp4">
+                    <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
                 </video>
             </div>
             <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
                 <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                    <source src="/Home_Vid_01P.mp4" type="video/mp4">
+                    <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
                 </video>
             </div>
 
@@ -157,9 +211,9 @@
         </div>
     </header>
 
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-custom">
         <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight">
+            <h2 class="text-5xl font-bold leading-tight">
                 Where design aligns
             </h2>
             <div class="paragraph-container space-y-12 text-xl leading-relaxed">
@@ -175,37 +229,87 @@
         </div>
     </div>
 
-    <!-- New Footer -->
-    <footer class="bg-[#4BFA82] text-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-9xl">
-            <div class="lg:flex justify-between">
-                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
-                    <img src="./Syncro_WDA.png" alt="" class="h-12 relative -top-2" />
-                    <p class="text-1xl">
-                        Call us
-                        <a href="" class="block font-bold">+44 (0)1536 648 548</a>
+    <!-- Image Section with Zoom Effect -->
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
+        <h2 class="text-8xl font-bold leading-tight mb-8">
+            Featured Work
+        </h2>
+        <div class="image-container">
+            <a href="toxicknobs.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Toxic Knobs</strong>  - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+        <div class="image-container mt-16">
+            <a href="magicmakers.html" class="image-frame">
+                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Magick Makers</strong> - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <!-- New Footer Based on Refined Layout -->
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Left Section (Address & Copyright) -->
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
                     </p>
-                    <p class="text-1xl">
-                        Send us a message
-                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
-                    </p>
+                    <p class="footer-copyright">© Studio Syncro 2024</p>
                 </div>
-                <div class="lg:text-right mt-6 lg:mt-0">
-                    <p>
-                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>. 2024</span>
+
+                <!-- Middle Section (Email and Newsletter Form) -->
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
+                    <div class="newsletter-subscription">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <!-- Subscribe text as a link with correct arrow -->
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Section (Phone Number) -->
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const mobileMenu = document.getElementById("mobileMenu");
-            mobileMenu.classList.toggle("hidden");
-            mobileMenu.classList.toggle("active");
-        }
-    </script>
 </body>
 </html>
 
