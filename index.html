@@ -138,12 +138,13 @@
         .image-container {
             position: relative;
             overflow: hidden; /* Ensures the zoomed image stays within the container */
+            height: 500px; /* Add a fixed height to the container to maintain consistency */
         }
 
         .zoom-image {
             transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
             width: 100%; /* Ensure the image scales responsively */
-            height: auto; /* Maintain aspect ratio */
+            height: 100%; /* Ensure the image covers the container height */
             object-fit: cover; /* Ensures the image covers the container */
         }
 
@@ -302,5 +303,6 @@
 
 </body>
 </html>
+
 
 
