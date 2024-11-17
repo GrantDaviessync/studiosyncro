@@ -26,7 +26,7 @@
         }
 
         footer .container {
-            max-width: 1450px;
+            max-width: 1450px; /* Max width of the container */
         }
 
         footer .grid {
@@ -122,13 +122,14 @@
             font-size: 1.2rem; /* Adjusted font size */
         }
 
-        /* Position the Syncro_WDA.png at the bottom right */
+        /* Position the Syncro_WDA.png within the container's width (1450px) */
         .syncro-wda-logo {
             position: absolute;
             bottom: 20px; /* 20px from the bottom of the footer */
             right: 20px; /* 20px from the right of the footer */
             width: auto;
             height: 50px; /* Adjust this size to your preference */
+            max-width: 200px; /* Ensure the image does not exceed the max width of the footer */
         }
 
     </style>
@@ -277,12 +278,13 @@
             </div>
         </div>
 
-        <!-- Syncro_WDA.png positioned at the bottom right within footer width -->
+        <!-- Syncro_WDA.png positioned within the footer width -->
         <img src="Syncro_WDA.png" alt="Syncro WDA Logo" class="syncro-wda-logo" />
     </footer>
 
 </body>
 </html>
+
 
 
 
