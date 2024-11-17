@@ -109,9 +109,15 @@
             fill: white;
         }
 
-        /* Making the "New Business" text size same as "Call Us" */
+        /* Adjust font size for the email address */
+        .footer-email {
+            font-size: 1rem; /* Smaller font size for email */
+        }
+
+        /* Making "New business" and "Call us" bold and matching font size with "Subscribe to our newsletter" */
         .footer-new-business, .footer-call-us {
-            font-size: 1.5rem; /* Adjusted font size to match "Call us" */
+            font-weight: bold;
+            font-size: 1.2rem; /* Adjusted font size */
         }
 
     </style>
@@ -237,7 +243,7 @@
                 <!-- Middle Section (New Business & Email, Call us and Phone Number) -->
                 <div class="grid-item">
                     <p class="footer-new-business">New business<br>
-                        <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
+                        <a href="mailto:team@studiosyncro.co.uk" class="footer-email">team@studiosyncro.co.uk</a>
                     </p>
                     <div class="newsletter-subscription">
                         <p class="footer-call-us">Call us</p>
@@ -263,6 +269,7 @@
 
 </body>
 </html>
+
 
 
 
