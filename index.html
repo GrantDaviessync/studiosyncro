@@ -68,7 +68,7 @@
 
         /* Styling for the subscription form */
         .newsletter-subscription {
-            margin-top: 1rem; /* Reduced space */
+            margin-top: 0.5rem; /* Reduced space between "Call us" and phone number */
             text-align: left;
         }
 
@@ -107,6 +107,11 @@
             width: 1.2rem;
             height: 1.2rem;
             fill: white;
+        }
+
+        /* Making the "New Business" text size same as "Call Us" */
+        .footer-new-business, .footer-call-us {
+            font-size: 1.5rem; /* Adjusted font size to match "Call us" */
         }
 
     </style>
@@ -219,7 +224,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Left Section (Address & Copyright) -->
                 <div class="grid-item footer-address">
-                    <p>Studio Syncro </strong><br>
+                    <p><strong>Studio Syncro</strong><br>
                         Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
@@ -231,11 +236,11 @@
 
                 <!-- Middle Section (New Business & Email, Call us and Phone Number) -->
                 <div class="grid-item">
-                    <p>New business<br>
+                    <p class="footer-new-business">New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
                     <div class="newsletter-subscription">
-                        <p class="subscription-intro">Call us</p>
+                        <p class="footer-call-us">Call us</p>
                         <p class="font-normal">+44 (0)1536 648 548</p>
                     </div>
                 </div>
@@ -258,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 
