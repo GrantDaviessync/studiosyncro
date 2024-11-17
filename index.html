@@ -170,11 +170,15 @@
             overflow: hidden; /* Crops the zoomed-in image */
         }
 
+        /* The zoomed image will be absolutely positioned to stay inside the container */
         .zoom-image {
             transition: transform 0.3s ease-in-out; /* Smooth zoom transition */
             object-fit: cover; /* Ensures the image maintains aspect ratio while filling container */
+            width: 100%; /* Ensures the image fills the container */
+            height: 100%; /* Ensures the image fills the container */
         }
 
+        /* On hover, the image zooms in */
         .image-container:hover .zoom-image {
             transform: scale(1.2); /* Zooms the image on hover */
         }
@@ -332,6 +336,7 @@
 
 </body>
 </html>
+
 
 
 
