@@ -194,6 +194,7 @@
         </div>
     </div>
 
+    <!-- New Footer -->
     <footer class="bg-black text-white">
         <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-custom">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
@@ -203,27 +204,30 @@
                 <div class="grid-item">
                     <p>Studio SYNCRO</p>
                     <p>All rights reserved.</p>
+                    <p>Studio Syncro<br>
+                        Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p>Email: <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a></p>
+                    <p>Call us: +44 (0)1536 648 548</p>
                 </div>
                 <div class="grid-item">
-                    <p>Website by Studio SYNCRO</p>
-                    <p class="font-semibold text-lg">info@studiosyncro.co.uk</p>
+                    <h3 class="font-semibold text-xl mb-4">Subscribe</h3>
+                    <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                        <label for="email" class="block text-lg mb-2">Subscribe to our newsletter</label>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" class="p-2 text-black rounded mb-4 w-full" required>
+                        <button type="submit" class="bg-white text-black px-6 py-2 rounded-md hover:bg-[#4BFA82] transition-all">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script>
-        functionThe updated HTML ensures that containers utilize a custom width of **1550px** via the `max-w-custom` class added in Tailwind configuration. For the issue of missing images, check the following:
+</body>
+</html>
 
-1. **Ensure Correct Paths:** Verify that the image paths are correct. For example:
-   - `https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg`
-   - `https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg`
-
-2. **Host Accessibility:** Confirm that the images are accessible from your browser by visiting the URLs directly. If they don’t load, the issue may be on the hosting side.
-
-3. **Alt Text for Fallback:** The `alt` attributes provide fallbacks if images fail to load, ensuring better UX.
-
-Let me know if you'd like additional support, such as debugging the image paths or tailoring further enhancements!
 
 
 
