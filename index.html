@@ -58,7 +58,7 @@
         footer form input[type="email"] {
             padding: 0.5rem;
             width: 100%;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem; /* Reduced space */
             border: none;
             border-bottom: 2px solid #ccc; /* Underline effect */
             background: none; /* No background */
@@ -74,7 +74,7 @@
 
         .subscription-intro {
             font-size: 1.2rem;
-            margin-bottom: 0.5rem; /* Reduced space */
+            margin-bottom: 0.25rem; /* Reduced space */
         }
 
         .newsletter-subscription form {
@@ -107,6 +107,21 @@
             width: 1.2rem;
             height: 1.2rem;
             fill: white;
+        }
+
+        /* Styling for bold text */
+        .bold-text {
+            font-weight: bold;
+        }
+
+        /* Adjust spacing between address and copyright */
+        .address-copyright-spacing {
+            margin-bottom: 2rem;
+        }
+
+        /* Align "Call us" to the far right */
+        .call-us-right {
+            text-align: right;
         }
 
     </style>
@@ -219,18 +234,18 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Left Section (Address & Copyright) -->
                 <div class="grid-item footer-address">
-                    <p>Studio Syncro<br>
-                        Shelton Road,<br>
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
                         NN17 5XH
                     </p>
-                    <p>© Studio Syncro 2024</p>
+                    <p class="address-copyright-spacing">© Studio Syncro 2024</p>
                 </div>
 
                 <!-- Middle Section (Email and Newsletter Form) -->
                 <div class="grid-item">
-                    <p>New business<br>
+                    <p class="bold-text">New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white">team@studiosyncro.co.uk</a>
                     </p>
                     <div class="newsletter-subscription">
@@ -240,7 +255,7 @@
                             <!-- Subscribe text as a link with correct arrow -->
                             <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M5 19L19 5M5 5h14v14" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
                             </a>
                         </form>
@@ -248,9 +263,9 @@
                 </div>
 
                 <!-- Right Section (Phone Number) -->
-                <div class="grid-item text-right">
-                    <p>Call us<br>
-                        <strong>+44 (0)1536 648 548</strong>
+                <div class="grid-item text-right call-us-right">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
                     </p>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -263,6 +278,7 @@
 
 </body>
 </html>
+
 
 
 
