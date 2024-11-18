@@ -111,7 +111,7 @@
             border: none;
             border-bottom: 2px solid #ccc;
             background: none;
-            color: black;
+            color: white;
             box-shadow: none;
             outline: none;
         }
@@ -192,6 +192,20 @@
                 display: block; /* Show mobile video on smaller screens */
             }
         }
+
+        /* Featured Work */
+        .image-container .image-frame img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-container p {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
     </style>
 </head>
 <body>
@@ -216,7 +230,7 @@
                 <nav id="mobileMenu" class="hidden">
                     <span class="close-button text-4xl absolute top-8 right-8 cursor-pointer" onclick="toggleMenu()">✖</span> 
                     <a href="index.html" class="no-hover-bg home-link">Home</a> 
-                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="about.html" class="no-hover-bg">About</a> 
                     <a href="contact.html" class="no-hover-bg">Contact</a>
 
                     <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
@@ -264,6 +278,38 @@
                     </svg>
                 </a>
             </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
+        <h2 class="text-5xl font-bold leading-tight mb-8">
+            Featured Work
+        </h2>
+        <div class="image-container">
+            <a href="toxicknobs.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Toxic Knobs</strong> - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+        <div class="image-container mt-16">
+            <a href="magicmakers.html" class="image-frame">
+                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Magick Makers</strong> - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
         </div>
     </div>
 
@@ -315,6 +361,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
