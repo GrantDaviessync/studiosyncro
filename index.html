@@ -22,7 +22,6 @@
             mobileMenu.classList.toggle("hidden");
             mobileMenu.classList.toggle("active");
 
-            // Add animation class
             if (mobileMenu.classList.contains("active")) {
                 mobileMenu.style.transform = "translateY(0)";
                 burgerIcon.setAttribute("aria-expanded", "true");
@@ -62,9 +61,49 @@
             margin-top: 1rem;
         }
 
-        .newsletter-subscription {
-            margin-top: 0.5rem;
-            text-align: left;
+        footer .newsletter-subscription p.subscription-intro {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .newsletter-subscription form input[type="email"] {
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background: none;
+            color: white;
+            box-shadow: none;
+            outline: none;
+        }
+
+        footer .newsletter-subscription form input[type="email"]::placeholder {
+            color: #ccc;
+        }
+
+        footer .newsletter-subscription .subscribe-text {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        footer .newsletter-subscription .subscribe-text:hover {
+            color: #4BFA82;
+        }
+
+        footer .newsletter-subscription .subscribe-text svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: white;
         }
 
         @media (max-width: 768px) {
@@ -218,9 +257,11 @@
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
                             <input type="email" name="email" placeholder="Enter your email" required>
-                            <button type="submit" class="subscribe-text">
-                                Subscribe
-                            </button>
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                    <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -239,6 +280,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
