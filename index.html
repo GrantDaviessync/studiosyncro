@@ -109,6 +109,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            text-align: left; /* Ensure text stays left-aligned */
         }
 
         .address-copyright-spacing {
@@ -118,15 +119,7 @@
         @media (max-width: 768px) {
             footer .grid {
                 grid-template-columns: 1fr; /* Switch to single column layout */
-                text-align: center; /* Center text for better readability */
-            }
-
-            footer .footer-column {
-                text-align: center; /* Center-align columns in mobile view */
-            }
-
-            footer .social-icons {
-                justify-content: center; /* Center social icons */
+                text-align: left; /* Keep text left-aligned */
             }
         }
     </style>
@@ -162,7 +155,79 @@
                 </nav>
             </div>
         </div>
+
+        <div class="video-background">
+            <div class="desktop-video">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="mobile-video">
+                <div style="padding:177.77% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
     </header>
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-custom">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <h2 class="text-5xl font-bold leading-tight">
+                Design, Creative and Packaging Solutions
+            </h2>
+            <div class="paragraph-container space-y-12 text-xl leading-relaxed">
+                <p>
+                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
+                </p>
+                <p>
+                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
+                </p>
+                <a href="about.html" title="About" class="find-out-more">
+                    Find out more
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
+        <h2 class="text-5xl font-bold leading-tight mb-8">
+            Featured Work
+        </h2>
+        <div class="image-container">
+            <a href="toxicknobs.html" class="image-frame">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Toxic Knobs</strong> - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+        <div class="image-container mt-16">
+            <a href="magicmakers.html" class="image-frame">
+                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Magick Makers</strong> - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+    </div>
 
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
@@ -206,6 +271,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
