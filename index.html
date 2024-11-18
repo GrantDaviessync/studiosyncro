@@ -64,6 +64,16 @@
             grid-area: column3;
         }
 
+        footer .subscribe-section {
+            grid-area: column3;
+        }
+
+        footer .footer-logo {
+            grid-area: column3;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
         @media (max-width: 768px) {
             footer .grid {
                 grid-template-columns: 1fr; /* Single column layout for mobile */
@@ -79,16 +89,13 @@
                 text-align: left; /* Keep content left-aligned in mobile view */
             }
 
-            .subscribe-section {
+            footer .subscribe-section {
                 grid-area: subscribe;
+                margin-bottom: 1rem;
             }
 
-            .footer-logo {
+            footer .footer-logo {
                 grid-area: logo;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-top: 1rem;
             }
         }
 
@@ -118,7 +125,7 @@
             background-color: transparent;
             color: white;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             text-decoration: none;
             padding: 0;
             cursor: pointer;
@@ -132,8 +139,8 @@
         }
 
         footer .newsletter-subscription .subscribe-text svg {
-            width: 1.2rem;
-            height: 1.2rem;
+            width: 1rem;
+            height: 1rem;
             fill: white;
         }
 
@@ -340,6 +347,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
