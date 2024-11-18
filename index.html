@@ -23,9 +23,8 @@
         }
     </script>
     <style>
-        /* General styling */
         footer {
-            background-color: #000; /* Dark background for the footer */
+            background-color: #000;
             color: white;
             padding: 3rem 0;
         }
@@ -64,33 +63,31 @@
         footer form input[type="email"] {
             padding: 0.5rem;
             width: 100%;
-            margin-bottom: 0.25rem; /* Reduced space */
+            margin-bottom: 0.25rem;
             border: none;
-            border-bottom: 2px solid #ccc; /* Underline effect */
-            background: none; /* No background */
+            border-bottom: 2px solid #ccc;
+            background: none;
             color: black;
-            box-shadow: none; /* Remove shadow */
+            box-shadow: none;
         }
 
-        /* Styling for the subscription form */
         .newsletter-subscription {
-            margin-top: 0.5rem; /* Reduced space */
+            margin-top: 0.5rem;
             text-align: left;
         }
 
         .subscription-intro {
             font-size: 1.2rem;
-            margin-bottom: 0.25rem; /* Reduced space */
+            margin-bottom: 0.25rem;
         }
 
         .newsletter-subscription form {
             display: inline-block;
             text-align: left;
             max-width: 500px;
-            margin-top: 0.25rem; /* Reduced space */
+            margin-top: 0.25rem;
         }
 
-        /* Styling for the Subscribe text link (no border) */
         .subscribe-text {
             display: inline-block;
             background-color: transparent;
@@ -106,7 +103,7 @@
         }
 
         .subscribe-text:hover {
-            color: #4BFA82; /* Hover effect to match the brand color */
+            color: #4BFA82;
         }
 
         .subscribe-text svg {
@@ -115,32 +112,27 @@
             fill: white;
         }
 
-        /* Styling for bold text */
         .bold-text {
             font-weight: bold;
         }
 
-        /* Adjust spacing between address and copyright */
         .address-copyright-spacing {
-            margin-bottom: 1rem; /* Decreased margin */
+            margin-bottom: 1rem;
         }
 
-        /* Align "Call us" to the far right */
         .call-us-right-container {
             display: flex;
-            justify-content: flex-end; /* Ensures "Call us" is aligned to the far right */
+            justify-content: flex-end;
             align-items: flex-start;
         }
 
-        /* Align copyright with subscribe section */
         .footer-copyright-container {
             display: flex;
             align-items: center;
         }
 
-        /* Adjust spacing between "Subscribe" and the email input */
         .subscribe-space {
-            margin-bottom: 0.25rem; /* Reduced space */
+            margin-bottom: 0.25rem;
         }
 
         .footer-container {
@@ -155,15 +147,9 @@
             justify-content: flex-start;
         }
 
-        /* Add some margin between copyright and address */
-        .address-copyright-spacing {
-            margin-bottom: 1rem;
-        }
-
-        /* Style the "Find out more" link like the image links */
         .find-out-more {
             font-weight: bold;
-            color: black; /* Set text color to black */
+            color: black;
             text-decoration: none;
             display: inline-flex;
             align-items: center;
@@ -171,18 +157,17 @@
         }
 
         .find-out-more:hover {
-            color: black; /* Ensure color stays black even on hover */
-            background-color: transparent; /* Remove background on hover */
+            color: black;
+            background-color: transparent;
         }
 
         .find-out-more svg {
             width: 1.2rem;
             height: 1.2rem;
-            fill: none; /* Set fill to none */
-            stroke: currentColor; /* Set stroke color to match the text color */
+            fill: none;
+            stroke: currentColor;
         }
 
-        /* Mobile Menu Styling */
         #mobileMenu {
             background-color: black;
             color: white;
@@ -212,7 +197,6 @@
             text-align: center;
         }
 
-        /* Video change on mobile view */
         .video-background .desktop-video {
             display: block;
         }
@@ -253,8 +237,8 @@
                 </nav>
 
                 <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span> 
-                    <a href="index.html" class="no-hover-bg home-link">Home</a> 
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
+                    <a href="index.html" class="no-hover-bg home-link">Home</a>
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
 
@@ -266,7 +250,6 @@
         </div>
 
         <div class="video-background">
-            <!-- Desktop Video -->
             <div class="desktop-video">
                 <div style="padding:56.25% 0 0 0;position:relative;">
                     <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -274,8 +257,7 @@
                     </video>
                 </div>
             </div>
-            
-            <!-- Mobile Video -->
+
             <div class="mobile-video">
                 <div style="padding:177.77% 0 0 0;position:relative;">
                     <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
@@ -298,7 +280,6 @@
                 <p>
                     We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
                 </p>
-                <!-- Find out more styled like the image links -->
                 <a href="about.html" title="About" class="find-out-more">
                     Find out more
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
@@ -309,7 +290,6 @@
         </div>
     </div>
 
-    <!-- Image Section with Zoom Effect -->
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
         <h2 class="text-5xl font-bold leading-tight mb-8">
             Featured Work
@@ -345,20 +325,16 @@
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
             <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Left Section (Address & Copyright) -->
                 <div class="footer-column">
                     <p class="bold-text">Studio Syncro</p>
                     <p>Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
                         NN17 5XH
-                        <br>
                     </p>
-                    <br>
                     <p class="footer-copyright">© Studio Syncro 2024</p>
                 </div>
 
-                <!-- Middle Section (Email and Newsletter Form) -->
                 <div class="footer-column">
                     <p class="bold-text">New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
@@ -367,7 +343,6 @@
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
                             <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <!-- Subscribe text as a link with correct arrow -->
                             <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                     <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -377,7 +352,6 @@
                     </div>
                 </div>
 
-                <!-- Right Section (Phone Number) -->
                 <div class="footer-column call-us-right-container">
                     <p class="bold-text">Call us<br>
                         <span class="font-normal">+44 (0)1536 648 548</span>
@@ -386,7 +360,6 @@
                         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <!-- Syncro_WDA.png logo added here -->
                     <div class="footer-logo mt-4">
                         <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12"/>
                     </div>
@@ -394,9 +367,9 @@
             </div>
         </div>
     </footer>
-
 </body>
 </html>
+
 
 
 
