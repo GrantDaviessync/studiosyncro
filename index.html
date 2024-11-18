@@ -35,12 +35,8 @@
 
         footer .grid {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr); /* Default to 3 columns */
             gap: 2rem;
-            text-align: left;
-        }
-
-        footer .grid-item {
             text-align: left;
         }
 
@@ -81,13 +77,6 @@
             margin-bottom: 0rem;
         }
 
-        .newsletter-subscription form {
-            display: inline-block;
-            text-align: left;
-            max-width: 500px;
-            margin-top: 0rem;
-        }
-
         .subscribe-text {
             display: inline-block;
             background-color: transparent;
@@ -106,12 +95,6 @@
             color: #4BFA82;
         }
 
-        .subscribe-text svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: white;
-        }
-
         .bold-text {
             font-weight: bold;
         }
@@ -120,21 +103,6 @@
             display: flex;
             justify-content: flex-end;
             align-items: flex-start;
-        }
-
-        .footer-copyright-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .subscribe-space {
-            margin-bottom: 0.25rem;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .footer-column {
@@ -147,76 +115,22 @@
             margin-bottom: 1rem;
         }
 
-        .find-out-more {
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .find-out-more:hover {
-            color: black;
-            background-color: transparent;
-        }
-
-        .find-out-more svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: none;
-            stroke: currentColor;
-        }
-
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .video-background .desktop-video {
-            display: block;
-        }
-
-        .video-background .mobile-video {
-            display: none;
-        }
-
         @media (max-width: 768px) {
-            .video-background .desktop-video {
-                display: none;
+            footer .grid {
+                grid-template-columns: 1fr; /* Switch to single column layout */
+                text-align: center; /* Center text for better readability */
             }
 
-            .video-background .mobile-video {
-                display: block;
+            footer .footer-column {
+                text-align: center; /* Center-align columns in mobile view */
+            }
+
+            footer .social-icons {
+                justify-content: center; /* Center social icons */
             }
         }
     </style>
 </head>
-
 <body>
     <header>
         <div class="absolute top-0 left-0 right-0">
@@ -248,83 +162,11 @@
                 </nav>
             </div>
         </div>
-
-        <div class="video-background">
-            <div class="desktop-video">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="mobile-video">
-                <div style="padding:177.77% 0 0 0;position:relative;">
-                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
     </header>
-
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-custom">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-5xl font-bold leading-tight">
-                Design, Creative and Packaging Solutions
-            </h2>
-            <div class="paragraph-container space-y-12 text-xl leading-relaxed">
-                <p>
-                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
-                </p>
-                <p>
-                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
-                </p>
-                <a href="about.html" title="About" class="find-out-more">
-                    Find out more
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
-        <h2 class="text-5xl font-bold leading-tight mb-8">
-            Featured Work
-        </h2>
-        <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame">
-                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Toxic Knobs</strong>  - Packaging Design
-                <span class="ml-1 text-black">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
-        </div>
-        <div class="image-container mt-16">
-            <a href="magicmakers.html" class="image-frame">
-                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Magick Makers</strong> - Branding and Packaging Design
-                <span class="ml-1 text-black">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
-        </div>
-    </div>
 
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="footer-container grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="footer-column">
                     <p class="bold-text">Studio Syncro</p>
                     <p>Shelton Road,<br>
@@ -332,7 +174,7 @@
                         Corby, Northamptonshire,<br>
                         NN17 5XH
                     </p>
-                    <p class="footer-copyright">© Studio Syncro 2024</p>
+                    <p>© Studio Syncro 2024</p>
                 </div>
 
                 <div class="footer-column">
@@ -342,17 +184,15 @@
                     <div class="newsletter-subscription">
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                    <path d="M5 12l7 7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
-                            </a>
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <button type="submit" class="subscribe-text">
+                                Subscribe
+                            </button>
                         </form>
                     </div>
                 </div>
 
-                <div class="footer-column call-us-right-container">
+                <div class="footer-column">
                     <p class="bold-text">Call us<br>
                         <span class="font-normal">+44 (0)1536 648 548</span>
                     </p>
@@ -360,15 +200,13 @@
                         <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
                         <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
-                    <div class="footer-logo mt-4">
-                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12"/>
-                    </div>
                 </div>
             </div>
         </div>
     </footer>
 </body>
 </html>
+
 
 
 
