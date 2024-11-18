@@ -18,11 +18,22 @@
 
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
+            const burgerIcon = document.getElementById("burgerMenu");
             mobileMenu.classList.toggle("hidden");
             mobileMenu.classList.toggle("active");
+
+            // Add animation class
+            if (mobileMenu.classList.contains("active")) {
+                mobileMenu.style.transform = "translateY(0)";
+                burgerIcon.setAttribute("aria-expanded", "true");
+            } else {
+                mobileMenu.style.transform = "translateY(-100%)";
+                burgerIcon.setAttribute("aria-expanded", "false");
+            }
         }
     </script>
     <style>
+        /* General Styles */
         footer {
             background-color: #000;
             color: white;
@@ -51,63 +62,9 @@
             margin-top: 1rem;
         }
 
-        footer .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        footer form input[type="email"] {
-            padding: 0.5rem;
-            width: 100%;
-            margin-bottom: 0.25rem;
-            border: none;
-            border-bottom: 2px solid #ccc;
-            background: none;
-            color: black;
-            box-shadow: none;
-        }
-
         .newsletter-subscription {
             margin-top: 0.5rem;
             text-align: left;
-        }
-
-        .subscription-intro {
-            font-size: 1.2rem;
-            margin-bottom: 0rem;
-        }
-
-        .subscribe-text {
-            display: inline-block;
-            background-color: transparent;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            padding: 0;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .subscribe-text:hover {
-            color: #4BFA82;
-        }
-
-        .bold-text {
-            font-weight: bold;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            text-align: left; /* Ensure text stays left-aligned */
-        }
-
-        .address-copyright-spacing {
-            margin-bottom: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -117,6 +74,37 @@
             }
         }
 
+        /* Burger Menu */
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Video Background */
         .video-background .desktop-video {
             display: block; /* Default: show desktop video */
         }
@@ -144,7 +132,7 @@
                     <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
 
-                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
+                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()" aria-expanded="false">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
                     </svg>
@@ -156,7 +144,7 @@
                 </nav>
 
                 <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span> 
+                    <span class="close-button text-4xl absolute top-8 right-8 cursor-pointer" onclick="toggleMenu()">✖</span> 
                     <a href="index.html" class="no-hover-bg home-link">Home</a> 
                     <a href="about.html" class="no-hover-bg">About</a>
                     <a href="contact.html" class="no-hover-bg">Contact</a>
@@ -209,38 +197,6 @@
         </div>
     </div>
 
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 max-w-custom">
-        <h2 class="text-5xl font-bold leading-tight mb-8">
-            Featured Work
-        </h2>
-        <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame">
-                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Toxic Knobs</strong> - Packaging Design
-                <span class="ml-1 text-black">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
-        </div>
-        <div class="image-container mt-16">
-            <a href="magicmakers.html" class="image-frame">
-                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-            </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Magick Makers</strong> - Branding and Packaging Design
-                <span class="ml-1 text-black">
-                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                        <path d="M5 19L19 5M5 5h14v14" />
-                    </svg>
-                </span>
-            </p>
-        </div>
-    </div>
-
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -283,6 +239,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
