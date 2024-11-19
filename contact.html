@@ -114,18 +114,19 @@
 
         @media (min-width: 1025px) {
             .main-content {
-                padding-top: 30px !important; /* Even more reduction in padding-top */
+                padding-top: 30px !important;
             }
 
             .letstalk-section {
-                margin-top: 10px; /* Reduce the top margin even further */
+                margin-top: 10px;
             }
 
             .last-line-space {
-                margin-top: 20px; /* Add a little more space if needed */
+                margin-top: 20px;
             }
         }
 
+        /* Footer styles */
         footer {
             background-color: #4BFA82;
             color: black;
@@ -134,22 +135,6 @@
 
         footer .container {
             max-width: 1450px;
-        }
-
-        footer .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            text-align: left;
-        }
-
-        footer .grid-item {
-            text-align: left;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
         }
 
         footer .social-icons {
@@ -232,10 +217,6 @@
         .footer-copyright-container {
             display: flex;
             align-items: center;
-        }
-
-        .subscribe-space {
-            margin-bottom: 0.25rem;
         }
 
         .footer-container {
@@ -340,51 +321,23 @@
 
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
-                <div class="footer-column">
-                    <p class="bold-text">Studio Syncro</p>
-                    <p>Shelton Road,<br>
-                        Willowbrook East Industrial Estate,<br>
-                        Corby, Northamptonshire,<br>
-                        NN17 5XH
+            <div class="lg:flex justify-between">
+                <div class="lg:flex gap-16 items-end space-y-6 lg:space-y-0">
+                    <img src="./Syncro_WDA.png" alt="Syncro Branding Logo" class="h-12 relative -top-2" />
+                    <p class="text-1xl">
+                        Call us
+                        <a href="tel:+441536648548" class="block font-bold">+44 (0)1536 648 548</a>
                     </p>
-                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
+                    <p class="text-1xl">
+                        Send us a message
+                        <a href="mailto:team@studiosyncro.co.uk" class="block font-bold underline">team@studiosyncro.co.uk</a>
+                    </p>
                 </div>
-
-                <div class="footer-column">
-                    <p class="bold-text">New business<br>
-                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
+                <div class="lg:text-right mt-6 lg:mt-0">
+                    <p>
+                        All work copyright of <span class="block">Studio <span class="underline">SYNCRO</span>.
+                            2024</span>
                     </p>
-                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required
-                                class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="footer-column call-us-right-container">
-                    <p class="bold-text">Call us<br>
-                        <span class="font-normal">+44 (0)1536 648 548</span>
-                    </p>
-                    <div class="block md:hidden newsletter-subscription my-8">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="footer-logo mt-auto">
-                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
-                    </div>
                 </div>
             </div>
         </div>
@@ -400,4 +353,5 @@
 </body>
 
 </html>
+
 
