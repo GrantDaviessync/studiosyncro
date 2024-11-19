@@ -35,13 +35,11 @@
             flex-direction: column;
         }
 
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            background-color: #f3f4f6;
-            margin-top: 2rem; /* Adjusted space between header and content */
-            margin-bottom: 2rem; /* Adjusted space between content and footer */
+        /* New wrapper for content with grey background */
+        .content-wrapper {
+            background-color: #f3f4f6; /* Grey background for the newly added space */
+            padding-top: 2rem; /* Adjusted space between header and content */
+            padding-bottom: 2rem; /* Adjusted space between content and footer */
         }
 
         #mobileMenu {
@@ -86,7 +84,6 @@
             background-color: #000;
             color: white;
             padding: 3rem 0;
-            margin-top: 2rem; /* Added gap between content and footer */
         }
 
         footer .container {
@@ -280,7 +277,8 @@
         </div>
     </header>
 
-    <div class="main-content">
+    <!-- New Wrapper with grey background for the space -->
+    <div class="content-wrapper">
         <div class="container m-auto px-6 sm:px-8 lg:px-16 max-w-7xl">
             <h2 class="text-4xl font-bold letstalk-section">Let's talk!</h2>
             <div class="grid lg:grid-cols-2 gap-16">
@@ -374,6 +372,7 @@
 </body>
 
 </html>
+
 
 
 
