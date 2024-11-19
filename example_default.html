@@ -1,70 +1,193 @@
-
 <!doctype html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syncro Website - Contact</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
-                screens: {
-                    'sm': '100%',
-                    'md': '100%',
-                    'lg': '100%',
-                    'xl': '1280px',
-                    '2xl': '1280px',
-                },
-                container: {
-                    center: true,
-                    padding: {
-                        DEFAULT: '1rem',
-                        sm: '2rem',
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
                     },
-                },
+                    maxWidth: {
+                        'custom': '1450px',
+                    }
+                }
             }
         }
     </script>
+    <style>
+        .no-hover-bg:hover {
+            background-color: transparent !important;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .main-content {
+            background-color: #f3f4f6;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1450px;
+        }
+
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        footer .container {
+            max-width: 1450px;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .footer-logo {
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            header content
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
+            <a href="index.html" title="Home">
+                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+            </a>
+
+            <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+
+            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                <a href="about.html" title="About" class="no-hover-bg">About</a>
+                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+            </nav>
+
+            <nav id="mobileMenu" class="hidden">
+                <span class="close-button" onclick="toggleMenu()">✖</span>
+                <a href="index.html" class="no-hover-bg">Home</a>
+                <a href="about.html" class="no-hover-bg">About</a>
+                <a href="contact.html" class="no-hover-bg">Contact</a>
+            </nav>
         </div>
     </header>
-    <main>
-        <div class="container">
-            <div class="grid lg:grid-cols-2 gap-8">
-            <h2 class="text-4xl font-bold">
-                Where design aligns
-            </h2>
-            <div class="space-y-8 text-xl">
-                <p>
-                    With extensive experience in design and print
-                    specialising in packaging, POS, and visual
-                    identity, we partner with you to bring your ideas
-                    and products to life.
-                </p>
-                <p>
-                    We assist brands at every stage, whether starting
-                    from scratch, expanding, or refreshing your
-                    packaging.
-                </p>
-                <a href="about.html" title="About" class="inline-block px-4 py-2 border border-black rounded-xl">
-                    Find out more
-                </a>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <h2 class="text-4xl font-bold mb-8">Let's talk!</h2>
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div class="text-xl space-y-8">
+                    <p class="max-w-lg">
+                        Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
+                    </p>
+                    <p class="max-w-lg">
+                        With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
+                    </p>
+                    <a href="mailto:team@studiosyncro.co.uk" title="Say Hello!" class="inline-block px-4 py-2 border border-black rounded-xl transition-colors hover:bg-[#4BFA82] hover:border-2">
+                        Say Hello!
+                    </a>
+                </div>
+                <div class="text-xl md:text-3xl">
+                    <p>Send us a message</p>
+                    <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
+                    <br>
+                    <p>Give us a call</p>
+                    <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 648 548</a>
+                    <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
+                    <p class="text-xl">
+                        Studio Syncro,<br>
+                        Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                </div>
             </div>
         </div>
-            main content
-        </div>
-    </main>
-    <footer class="bg-[#4BFA82]">
-        <div class="container">
-            Footer
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
+                </div>
+
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
+                    </p>
+                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe</a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="block md:hidden newsletter-subscription my-8">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe</a>
+                        </form>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-logo mt-auto">
+                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
+        }
+    </script>
 </body>
+
 </html>
+
 
