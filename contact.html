@@ -30,52 +30,10 @@
             margin: 0;
         }
 
-        body {
-            display: block; /* Remove flex to stop centering the body */
-        }
-
         .main-content {
-            background-color: #f3f4f6; /* Grey background for the space */
-            padding-top: 2rem; /* Adjusted space between header and content */
-            padding-bottom: 2rem; /* Adjusted space between content and footer */
-        }
-
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
+            background-color: #f3f4f6;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
         }
 
         footer {
@@ -223,35 +181,78 @@
             stroke: currentColor;
         }
 
-        /* Mobile-specific adjustments */
-        @media (max-width: 768px) {
-            .main-content {
-                padding-top: 3rem; /* Extra space on mobile */
-                padding-bottom: 3rem; /* Extra space on mobile */
-            }
-
-            footer {
-                margin-top: 3rem; /* Extra space on mobile */
-            }
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
         }
 
-        /* Custom container */
-        .header-container {
-            max-width: 1450px;
-            margin-left: auto;
-            margin-right: auto;
+        #mobileMenu.active {
+            transform: translateY(0);
         }
-        .footer-container {
-            max-width: 1450px;
-            margin-left: auto;
-            margin-right: auto;
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
         }
+
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            padding: 1rem;
+            border: none;
+            border-bottom: 2px solid #ccc; /* Add a bottom border */
+            background-color: transparent; /* Transparent background */
+            border-radius: 0; /* Remove border radius for clean edges */
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .form-container textarea {
+            min-height: 80px; /* Adjusted to make the message area taller */
+            resize: vertical;
+        }
+
+        .form-container button {
+            padding: 1rem;
+            background-color: transparent; /* No background */
+            border: none;
+            color: black; /* Black text */
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        .form-container button:hover {
+            background-color: transparent; /* No hover effect */
+            color: black; /* Ensuring the color stays black on hover */
+        }
+
     </style>
 </head>
 
 <body>
     <header class="bg-white shadow">
-        <div class="header-container container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
             <a href="index.html" title="Home">
                 <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
             </a>
@@ -276,30 +277,38 @@
         </div>
     </header>
 
-    <!-- Content with added space and grey background -->
+    <!-- Main content -->
     <div class="main-content">
-        <div class="container m-auto px-6 sm:px-8 lg:px-16 max-w-7xl">
-            <h2 class="text-4xl font-bold letstalk-section">Let's talk!</h2>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <h2 class="text-4xl font-bold mb-8">Let's talk!</h2>
             <div class="grid lg:grid-cols-2 gap-16">
                 <div class="text-xl space-y-8">
-                    <p class="max-w-lg letstalk-title">
+                    <p class="max-w-lg">
                         Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
                     </p>
                     <p class="max-w-lg">
                         With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
                     </p>
-                    <a href="mailto:team@studiosyncro.co.uk" title="Say Hello!" class="inline-block px-4 py-2 border border-black rounded-xl transition-colors hover:bg-[#4BFA82] hover:border-2">
-                        Say Hello!
-                    </a>
+
+                    <!-- Form placed under the text on the left column -->
+                    <h3 class="text-2xl font-bold">Send us a message</h3>
+                    <div class="form-container">
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="text" name="name" placeholder="Name" required />
+                            <input type="email" name="email" placeholder="Email" required />
+                            <textarea name="message" placeholder="Message" required></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
                 </div>
                 <div class="text-xl md:text-3xl">
-                    <p>Send us a message</p>
+                    <p>Email</p>
                     <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
                     <br>
                     <p>Give us a call</p>
                     <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 648 548</a>
                     <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
-                    <p class="text-xl last-line-space">
+                    <p class="text-xl">
                         Studio Syncro,<br>
                         Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
@@ -311,7 +320,6 @@
         </div>
     </div>
 
-    <!-- Footer -->
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
             <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
@@ -332,8 +340,10 @@
                     <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe</a>
+                            <input type="email" name="email" placeholder="Enter your email" required
+                                class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -346,7 +356,8 @@
                         <p class="subscription-intro">Subscribe to our newsletter</p>
                         <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
                             <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe</a>
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
                         </form>
                     </div>
                     <div class="social-icons">
