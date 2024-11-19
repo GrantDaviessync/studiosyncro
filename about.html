@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncro Website - Contact</title>
+    <title>About Syncro</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,10 +30,59 @@
             margin: 0;
         }
 
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
         .main-content {
-            background-color: #f3f4f6;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .flex-grow {
+                margin-top: -4rem;
+            }
         }
 
         footer {
@@ -181,144 +230,71 @@
             stroke: currentColor;
         }
 
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-container input,
-        .form-container textarea {
-            padding: 1rem;
-            border: none;
-            border-bottom: 2px solid #ccc; /* Add a bottom border */
-            background-color: transparent; /* Transparent background */
-            border-radius: 0; /* Remove border radius for clean edges */
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        .form-container textarea {
-            min-height: 80px; /* Adjusted to make the message area taller */
-            resize: vertical;
-        }
-
-        .form-container button {
-            padding: 1rem;
-            background-color: transparent; /* No background */
-            border: none;
-            color: black; /* Black text */
-            font-weight: bold;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-
-        .form-container button:hover {
-            background-color: transparent; /* No hover effect */
-            color: black; /* Ensuring the color stays black on hover */
-        }
-
     </style>
 </head>
 
 <body>
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
-            <a href="index.html" title="Home">
-                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-            </a>
+    <header>
+        <div class="absolute top-0 left-0 right-0">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
+                <a href="index.html" title="Home">
+                    <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                </a>
 
-            <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+                <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
 
-            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                <a href="about.html" title="About" class="no-hover-bg">About</a>
-                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-            </nav>
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
 
-            <nav id="mobileMenu" class="hidden">
-                <span class="close-button" onclick="toggleMenu()">✖</span>
-                <a href="index.html" class="no-hover-bg">Home</a>
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
-            </nav>
+                <!-- Mobile Navigation Menu -->
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
+                    <a href="index.html" class="no-hover-bg">Home</a>
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <!-- Main content -->
-    <div class="main-content">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom">
-            <h2 class="text-4xl font-bold mb-8">Let's talk!</h2>
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="text-xl space-y-8">
-                    <p class="max-w-lg">
-                        Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
-                    </p>
-                    <p class="max-w-lg">
-                        With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
-                    </p>
-
-                    <!-- Form placed under the text on the left column -->
-                    <h3 class="text-2xl font-bold">Send us a message</h3>
-                    <div class="form-container">
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="text" name="name" placeholder="Name" required />
-                            <input type="email" name="email" placeholder="Email" required />
-                            <textarea name="message" placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="text-xl md:text-3xl">
-                    <p>Send us a message</p>
-                    <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
-                    <br>
-                    <p>Give us a call</p>
-                    <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 648 548</a>
-                    <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
-                    <p class="text-xl">
-                        Studio Syncro,<br>
-                        Shelton Road,<br>
-                        Willowbrook East Industrial Estate,<br>
-                        Corby, Northamptonshire,<br>
-                        NN17 5XH
+    <main class="main-content">
+        <section class="container mx-auto py-32 max-w-7xl">
+            <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-7xl items-baseline">
+                <h2 class="text-4xl font-bold">About Us</h2>
+                <div class="space-y-8 text-3xl">
+                    <p class="mt-1">
+                        We craft bold packaging, displays, and visual identities from startups to large businesses. We collaborate with brands
+                        ready to push boundaries and make lasting impressions.
                     </p>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+
+        <section class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
+            <div class="container mx-auto max-w-6xl bg-gray-100">
+                <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
+                <p class="max-w-xl text-xl mb-12">
+                    In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
+                    project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
+                </p>
+
+                <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
+                    <li class="border-b border-black py-2 text-2xl font-bold">Retail Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">E-commerce</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Luxury Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Visual Identity, Branding and Assets</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Point of Sale and Displays</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
