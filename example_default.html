@@ -81,24 +81,23 @@
         }
 
         .form-container textarea {
-            min-height: 150px;
+            min-height: 40px; /* Adjusted to make the message area 2 lines high */
             resize: vertical;
         }
 
         .form-container button {
             padding: 1rem;
-            background-color: #4BFA82;
+            background-color: transparent; /* No background */
             border: none;
-            color: white;
+            color: black; /* Black text */
             font-weight: bold;
             cursor: pointer;
-            border-radius: 8px;
             font-size: 1.2rem;
-            transition: background-color 0.3s;
         }
 
         .form-container button:hover {
-            background-color: #3b9a6d;
+            background-color: transparent; /* No hover effect */
+            color: black; /* Ensuring the color stays black on hover */
         }
 
     </style>
@@ -220,3 +219,4 @@
 </body>
 
 </html>
+
