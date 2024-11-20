@@ -50,50 +50,6 @@
             padding-right: 1.5rem;
         }
 
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        #mobileMenu.active {
-            transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .close-button {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .flex-grow {
-                margin-top: -4rem;
-            }
-        }
-
         footer {
             background-color: #000;
             color: white;
@@ -274,7 +230,7 @@
 
     <main class="main-content">
         <section class="container mx-auto py-32">
-            <div class="grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16 max-w-custom mx-auto">
+            <div class="max-w-custom mx-auto grid lg:grid-cols-2 gap-8 px-6 sm:px-8 lg:px-16">
                 <h2 class="text-4xl font-bold">About Us</h2>
                 <div class="space-y-8 text-3xl">
                     <p class="mt-1">
@@ -285,25 +241,24 @@
             </div>
         </section>
 
- <section class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
-    <div class="max-w-custom mx-auto px-6 sm:px-8 lg:px-16"> <!-- Added max-w-custom here -->
-        <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
-        <p class="max-w-xl text-xl mb-12">
-            In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
-            project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
-        </p>
+        <section class="flex-grow bg-gray-100 px-6 sm:px-8 lg:px-16 py-24">
+            <div class="max-w-custom mx-auto px-6 sm:px-8 lg:px-16"> <!-- Added max-w-custom here -->
+                <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
+                <p class="max-w-xl text-xl mb-12">
+                    In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
+                    project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
+                </p>
 
-        <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
-            <li class="border-b border-black py-2 text-2xl font-bold">Retail Packaging</li>
-            <li class="border-b border-black py-2 text-2xl font-bold">E-commerce</li>
-            <li class="border-b border-black py-2 text-2xl font-bold">Luxury Packaging</li>
-            <li class="border-b border-black py-2 text-2xl font-bold">Visual Identity, Branding and Assets</li>
-            <li class="border-b border-black py-2 text-2xl font-bold">Point of Sale and Displays</li>
-            <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
-        </ul>
-    </div>
-</section>
-
+                <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
+                    <li class="border-b border-black py-2 text-2xl font-bold">Retail Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">E-commerce</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Luxury Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Visual Identity, Branding and Assets</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Point of Sale and Displays</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <footer>
@@ -368,3 +323,4 @@
 </body>
 
 </html>
+
