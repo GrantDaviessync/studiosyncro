@@ -116,40 +116,124 @@
             font-weight: bold;
         }
 
-        .image-frame {
-            position: relative;
-            overflow: hidden;
+        .address-copyright-spacing {
+            margin-bottom: 1rem;
+        }
+
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .footer-copyright-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .subscribe-space {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .find-out-more {
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .find-out-more:hover {
+            color: black;
+            background-color: transparent;
+        }
+
+        .find-out-more svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: none;
+            stroke: currentColor;
+        }
+
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .video-background .desktop-video {
             display: block;
+        }
+
+        .video-background .mobile-video {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .video-background .desktop-video {
+                display: none;
+            }
+
+            .video-background .mobile-video {
+                display: block;
+            }
+        }
+
+        .image-frame {
+            display: block;
+            position: relative;
+            overflow: hidden; /* Ensures the image doesn't overflow outside the frame */
         }
 
         .zoom-image {
             display: block;
-            width: 100%;
-            height: auto;
-            transition: transform 0.3s ease;
+            width: 100%; /* Ensures the image fits its container */
+            height: 100%;
+            transition: transform 0.3s ease; /* Smooth zoom effect */
         }
 
         .image-frame:hover .zoom-image {
-            transform: scale(1.05);
-        }
-
-        .text-hover {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            pointer-events: none;
-            font-size: 2rem;
-            font-weight: bold;
-            mix-blend-mode: difference; /* Dynamically inverts the color */
-            color: white;
-        }
-
-        .image-frame {
-            position: relative;
+            transform: scale(1.05); /* Scale image on hover */
         }
     </style>
 </head>
+
 <body>
     <header>
         <div class="absolute top-0 left-0 right-0">
@@ -181,37 +265,79 @@
                 </nav>
             </div>
         </div>
+
+        <div class="video-background">
+            <div class="desktop-video">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+
+            <div class="mobile-video">
+                <div style="padding:177.77% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
     </header>
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <h2 class="text-5xl font-bold leading-tight">
+                Where design aligns
+            </h2>
+            <div class="paragraph-container space-y-12 text-xl leading-relaxed lg:pt-6">
+                <p>
+                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
+                </p>
+                <p>
+                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
+                </p>
+                <a href="about.html" title="About" class="find-out-more">
+                    Find out more
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-custom">
         <h2 class="text-5xl font-bold leading-tight mb-8">
             Featured Work
         </h2>
         <div class="image-container">
             <a href="toxicknobs.html" class="image-frame">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
-                <span class="text-hover" id="hoverText1">View Project</span>
             </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Toxic Knobs</strong>  - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
         </div>
-        <div class="image-container mt-16">
+        <div class="image-container mt-16 mb-8">
             <a href="magicmakers.html" class="image-frame">
                 <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
-                <span class="text-hover" id="hoverText2">View Project</span>
             </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                <strong>Magick Makers</strong> - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
         </div>
     </div>
-
-    <script>
-        // Add cursor tracking for "View Project" text
-        document.querySelectorAll('.image-frame').forEach((frame) => {
-            const text = frame.querySelector('.text-hover');
-            frame.addEventListener('mousemove', (e) => {
-                const rect = frame.getBoundingClientRect();
-                text.style.left = `${e.clientX - rect.left}px`;
-                text.style.top = `${e.clientY - rect.top}px`;
-            });
-        });
-    </script>
 
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
@@ -225,10 +351,41 @@
                     </p>
                     <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
                 </div>
+
                 <div class="footer-column">
                     <p class="bold-text">New business<br>
                         <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
                     </p>
+                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required
+                                class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="block md:hidden newsletter-subscription my-8">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-logo mt-auto">
+                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+                    </div>
                 </div>
             </div>
         </div>
