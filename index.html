@@ -213,6 +213,11 @@
             .video-background .mobile-video {
                 display: block;
             }
+
+            /* Hide specific elements on mobile */
+            .hide-on-mobile {
+                display: none;
+            }
         }
 
         .image-frame {
@@ -236,53 +241,7 @@
 
 <body>
     <header>
-        <div class="absolute top-0 left-0 right-0">
-            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
-                <a href="index.html" title="Home" class="logo-link">
-                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-                </a>
-
-                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-
-                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
-                    <a href="about.html" title="About" class="no-hover-bg">About</a>
-                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-                </nav>
-
-                <nav id="mobileMenu" class="hidden">
-                    <span class="close-button" onclick="toggleMenu()">✖</span>
-                    <a href="index.html" class="no-hover-bg home-link">Home</a>
-                    <a href="about.html" class="no-hover-bg">About</a>
-                    <a href="contact.html" class="no-hover-bg">Contact</a>
-
-                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
-                        SYNCRO - Where Design Aligns 2024
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-        <div class="video-background">
-            <div class="desktop-video">
-                <div style="padding:56.25% 0 0 0;position:relative;">
-                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
-            <div class="mobile-video">
-                <div style="padding:177.77% 0 0 0;position:relative;">
-                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
-                        <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-        </div>
+        <!-- Header Content -->
     </header>
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
@@ -315,8 +274,8 @@
             <a href="toxicknobs.html" class="image-frame">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
             </a>
-            <p class="mt-4 text-left text-xl flex items-center">
-                <strong>Toxic Knobs</strong>  - Packaging Design
+            <p class="mt-4 text-left text-xl flex items-center hide-on-mobile">
+                <strong>Toxic Knobs</strong> - Packaging Design
                 <span class="ml-1 text-black">
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                         <path d="M5 19L19 5M5 5h14v14" />
@@ -328,7 +287,7 @@
             <a href="magicmakers.html" class="image-frame">
                 <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
             </a>
-            <p class="mt-4 text-left text-xl flex items-center">
+            <p class="mt-4 text-left text-xl flex items-center hide-on-mobile">
                 <strong>Magick Makers</strong> - Branding and Packaging Design
                 <span class="ml-1 text-black">
                     <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -340,58 +299,11 @@
     </div>
 
     <footer>
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
-                <div class="footer-column">
-                    <p class="bold-text">Studio Syncro</p>
-                    <p>Shelton Road,<br>
-                        Willowbrook East Industrial Estate,<br>
-                        Corby, Northamptonshire,<br>
-                        NN17 5XH
-                    </p>
-                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
-                </div>
-
-                <div class="footer-column">
-                    <p class="bold-text">New business<br>
-                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
-                    </p>
-                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required
-                                class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="footer-column call-us-right-container">
-                    <p class="bold-text">Call us<br>
-                        <span class="font-normal">+44 (0)1536 648 548</span>
-                    </p>
-                    <div class="block md:hidden newsletter-subscription my-8">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="footer-logo mt-auto">
-                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Footer Content -->
     </footer>
 </body>
 </html>
+
 
 
 
