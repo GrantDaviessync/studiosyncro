@@ -29,238 +29,35 @@
             padding: 3rem 0;
         }
 
-        footer .container {
-            max-width: 1450px;
+        .hidden-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease, transform 1s ease;
         }
 
-        footer .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            text-align: left;
-        }
-
-        footer .grid-item {
-            text-align: left;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        footer form input[type="email"] {
-            padding: 0.5rem;
-            width: 100%;
-            margin-bottom: 0.25rem;
-            border: none;
-            border-bottom: 2px solid #ccc;
-            background: none;
-            color: black;
-            box-shadow: none;
-        }
-
-        .newsletter-subscription {
-            margin-top: 0.5rem;
-            text-align: left;
-        }
-
-        .subscription-intro {
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .newsletter-subscription form {
-            display: inline-block;
-            text-align: left;
-            max-width: 500px;
-            margin-top: 0.25rem;
-        }
-
-        .subscribe-text {
-            display: inline-block;
-            background-color: transparent;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            padding: 0;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .subscribe-text:hover {
-            color: #4BFA82;
-        }
-
-        .subscribe-text svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: white;
-        }
-
-        .bold-text {
-            font-weight: bold;
-        }
-
-        .address-copyright-spacing {
-            margin-bottom: 1rem;
-        }
-
-        .call-us-right-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        .footer-copyright-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .subscribe-space {
-            margin-bottom: 0.25rem;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .find-out-more {
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .find-out-more:hover {
-            color: black;
-            background-color: transparent;
-        }
-
-        .find-out-more svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: none;
-            stroke: currentColor;
-        }
-
-        #mobileMenu {
-            background-color: black;
-            color: white;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 2.5rem;
-            font-weight: bold;
-            z-index: 100;
-            transform: translateY(-100%);
-            transition: transform 0.3s ease;
-        }
-
-        #mobileMenu.active {
+        .fade-in {
+            opacity: 1;
             transform: translateY(0);
-        }
-
-        #mobileMenu a {
-            padding: 1rem;
-            width: 100%;
-            text-align: center;
-        }
-
-        .video-background .desktop-video {
-            display: block;
-        }
-
-        .video-background .mobile-video {
-            display: none;
-        }
-
-        @media (max-width: 768px) {
-            .video-background .desktop-video {
-                display: none;
-            }
-
-            .video-background .mobile-video {
-                display: block;
-            }
         }
 
         .image-frame {
             display: block;
             position: relative;
-            overflow: hidden; /* Ensures the image doesn't overflow outside the frame */
+            overflow: hidden;
         }
 
         .zoom-image {
             display: block;
-            width: 100%; /* Ensures the image fits its container */
+            width: 100%;
             height: 100%;
-            transition: transform 0.3s ease; /* Smooth zoom effect */
+            transition: transform 0.3s ease;
         }
 
         .image-frame:hover .zoom-image {
-            transform: scale(1.05); /* Scale image on hover */
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            transform: scale(1.05);
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const faders = document.querySelectorAll(".fade-in");
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("visible");
-                    }
-                });
-            });
-
-            faders.forEach((fader) => {
-                observer.observe(fader);
-            });
-        });
-    </script>
 </head>
-
 <body>
     <header>
         <div class="absolute top-0 left-0 right-0">
@@ -313,7 +110,7 @@
     </header>
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
-        <div class="grid lg:grid-cols-2 gap-16">
+        <div class="grid lg:grid-cols-2 gap-16 hidden-element">
             <h2 class="text-5xl font-bold leading-tight">
                 Where design aligns
             </h2>
@@ -334,12 +131,12 @@
         </div>
     </div>
 
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-custom">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-custom hidden-element">
         <h2 class="text-5xl font-bold leading-tight mb-8">
             Featured Work
         </h2>
         <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame fade-in">
+            <a href="toxicknobs.html" class="image-frame">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
             </a>
             <p class="mt-4 text-left text-xl flex items-center">
@@ -351,8 +148,8 @@
                 </span>
             </p>
         </div>
-        <div class="image-container mt-16 mb-8">
-            <a href="magicmakers.html" class="image-frame fade-in">
+        <div class="image-container mt-16 mb-8 hidden-element">
+            <a href="magicmakers.html" class="image-frame">
                 <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
             </a>
             <p class="mt-4 text-left text-xl flex items-center">
@@ -365,6 +162,7 @@
             </p>
         </div>
     </div>
+
     <footer>
         <div class="container mx-auto px-6 sm:px-8 lg:px-16">
             <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
@@ -416,8 +214,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target); // Prevent observing again
+                }
+            });
+        });
+
+        document.querySelectorAll('.hidden-element').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
+
 
 
 
