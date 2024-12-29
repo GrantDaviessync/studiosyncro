@@ -231,7 +231,34 @@
         .image-frame:hover .zoom-image {
             transform: scale(1.05); /* Scale image on hover */
         }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faders = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            });
+
+            faders.forEach((fader) => {
+                observer.observe(fader);
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -312,7 +339,7 @@
             Featured Work
         </h2>
         <div class="image-container">
-            <a href="toxicknobs.html" class="image-frame">
+            <a href="toxicknobs.html" class="image-frame fade-in">
                 <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
             </a>
             <p class="mt-4 text-left text-xl flex items-center">
@@ -325,7 +352,7 @@
             </p>
         </div>
         <div class="image-container mt-16 mb-8">
-            <a href="magicmakers.html" class="image-frame">
+            <a href="magicmakers.html" class="image-frame fade-in">
                 <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
             </a>
             <p class="mt-4 text-left text-xl flex items-center">
@@ -347,51 +374,8 @@
                     <p>Shelton Road,<br>
                         Willowbrook East Industrial Estate,<br>
                         Corby, Northamptonshire,<br>
-                        NN17 5XH
-                    </p>
-                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
-                </div>
+                        NN17 5X
 
-                <div class="footer-column">
-                    <p class="bold-text">New business<br>
-                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
-                    </p>
-                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required
-                                class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="footer-column call-us-right-container">
-                    <p class="bold-text">Call us<br>
-                        <span class="font-normal">+44 (0)1536 648 548</span>
-                    </p>
-                    <div class="block md:hidden newsletter-subscription my-8">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="footer-logo mt-auto">
-                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
 
 
 
