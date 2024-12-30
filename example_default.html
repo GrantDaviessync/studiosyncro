@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Syncro Website - Contact</title>
+    <title>Syncro - Where Design Aligns</title>
+    <link rel="stylesheet" href="./Styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,175 +12,21 @@
                 extend: {
                     colors: {
                         clifford: '#da373d',
-                    },
-                    maxWidth: {
-                        'custom': '1450px',
                     }
                 }
             }
         }
     </script>
     <style>
-        .no-hover-bg:hover {
+        /* Prevent hover background on burger menu links */
+        a.no-hover-bg:hover {
+            background-color: transparent !important;
+        }
+        a.logo-link:hover {
             background-color: transparent !important;
         }
 
-        html, body {
-            height: 100%;
-            margin: 0;
-        }
-
-        .main-content {
-            background-color: #f3f4f6;
-            padding-top: 2rem;
-            padding-bottom: 2rem;
-        }
-
-        footer {
-            background-color: #000;
-            color: white;
-            padding: 3rem 0;
-        }
-
-        footer .container {
-            max-width: 1450px;
-        }
-
-        footer .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 2rem;
-            text-align: left;
-        }
-
-        footer .grid-item {
-            text-align: left;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-        }
-
-        footer .social-icons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        footer .social-icons a {
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        footer form input[type="email"] {
-            padding: 0.5rem;
-            width: 100%;
-            margin-bottom: 0.25rem;
-            border: none;
-            border-bottom: 2px solid #ccc;
-            background: none;
-            color: black;
-            box-shadow: none;
-        }
-
-        .newsletter-subscription {
-            margin-top: 0.5rem;
-            text-align: left;
-        }
-
-        .subscription-intro {
-            font-size: 1.2rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .newsletter-subscription form {
-            display: inline-block;
-            text-align: left;
-            max-width: 500px;
-            margin-top: 0.25rem;
-        }
-
-        .subscribe-text {
-            display: inline-block;
-            background-color: transparent;
-            color: white;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-decoration: none;
-            padding: 0;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .subscribe-text:hover {
-            color: #4BFA82;
-        }
-
-        .subscribe-text svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: white;
-        }
-
-        .bold-text {
-            font-weight: bold;
-        }
-
-        .address-copyright-spacing {
-            margin-bottom: 1rem;
-        }
-
-        .call-us-right-container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        .footer-copyright-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .subscribe-space {
-            margin-bottom: 0.25rem;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .footer-column {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .find-out-more {
-            font-weight: bold;
-            color: black;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .find-out-more:hover {
-            color: black;
-            background-color: transparent;
-        }
-
-        .find-out-more svg {
-            width: 1.2rem;
-            height: 1.2rem;
-            fill: none;
-            stroke: currentColor;
-        }
-
+        /* Fullscreen dropdown menu styles */
         #mobileMenu {
             background-color: black;
             color: white;
@@ -200,6 +46,7 @@
             transition: transform 0.3s ease;
         }
 
+        /* Show menu when toggled */
         #mobileMenu.active {
             transform: translateY(0);
         }
@@ -210,169 +57,137 @@
             text-align: center;
         }
 
-        .form-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .form-container input,
-        .form-container textarea {
-            padding: 1rem;
-            border: none;
-            border-bottom: 2px solid #ccc; /* Add a bottom border */
-            background-color: transparent; /* Transparent background */
-            border-radius: 0; /* Remove border radius for clean edges */
-            width: 100%;
-            font-size: 1rem;
-        }
-
-        .form-container textarea {
-            min-height: 80px; /* Adjusted to make the message area taller */
-            resize: vertical;
-        }
-
-        .form-container button {
-            padding: 1rem;
-            background-color: transparent; /* No background */
-            border: none;
-            color: black; /* Black text */
-            font-weight: bold;
+        /* Close button styles */
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 2rem;
             cursor: pointer;
-            font-size: 1.2rem;
         }
 
-        .form-container button:hover {
-            background-color: transparent; /* No hover effect */
-            color: black; /* Ensuring the color stays black on hover */
+        /* Desktop-specific styles */
+        @media (min-width: 1024px) {
+            .paragraph-container {
+                margin-top: 1.5rem;
+            }
         }
 
+        /* Mobile-specific styles */
+        @media (max-width: 1023px) {
+            h2 {
+                margin-bottom: 0.5rem;
+            }
+
+            #mobileMenu a.home-link {
+                display: block;
+            }
+        }
+
+        /* Hide "Home" link on desktop */
+        .home-link {
+            display: none;
+        }
     </style>
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body>
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 flex justify-between py-4">
-            <a href="index.html" title="Home">
-                <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
-            </a>
+    <header>
+        <div class="absolute top-0 left-0 right-0">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-9xl flex justify-between py-4">
+                <a href="index.html" title="Home" class="logo-link">
+                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                </a>
 
-            <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-            </button>
+                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
 
-            <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-black">
-                <a href="about.html" title="About" class="no-hover-bg">About</a>
-                <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
-            </nav>
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
 
-            <nav id="mobileMenu" class="hidden">
-                <span class="close-button" onclick="toggleMenu()">✖</span>
-                <a href="index.html" class="no-hover-bg">Home</a>
-                <a href="about.html" class="no-hover-bg">About</a>
-                <a href="contact.html" class="no-hover-bg">Contact</a>
-            </nav>
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
+                    <a href="index.html" class="no-hover-bg home-link">Home</a>
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
+
+                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
+                        SYNCRO - Where Design Aligns 2024
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="video-background">
+            <div class="hidden md:block" style="padding:56.25% 0 0 0;position:relative;">
+                <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <source src="/Home_Vid_01.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="block md:hidden" style="padding:177.77% 0 0 0;position:relative;">
+                <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <source src="/Home_Vid_01P.mp4" type="video/mp4">
+                </video>
+            </div>
         </div>
     </header>
 
-    <!-- Main content -->
-    <div class="main-content">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <h2 class="text-4xl font-bold mb-8">Let's talk!</h2>
-            <div class="grid lg:grid-cols-2 gap-16">
-                <div class="text-xl space-y-8">
-                    <p class="max-w-lg">
-                        Are you a brand aiming to disrupt your industry or elevate your visual identity or customer experience? We’re here to help.
-                    </p>
-                    <p class="max-w-lg">
-                        With expertise in packaging, POS, and visual identity, we create impactful, memorable solutions that resonate with your audience and set you apart. Let’s work together to bring your ideas to life.
-                    </p>
-
-                    <!-- Form placed under the text on the left column -->
-                    <h3 class="text-2xl font-bold">Send us a message</h3>
-                    <div class="form-container">
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="text" name="name" placeholder="Name" required />
-                            <input type="email" name="email" placeholder="Email" required />
-                            <textarea name="message" placeholder="Message" required></textarea>
-                            <button type="submit">Send</button>
-                        </form>
-                    </div>
-                </div>
-                <div class="text-xl md:text-3xl">
-                    <p>Email</p>
-                    <a href="mailto:team@studiosyncro.co.uk" class="block font-bold text-2xl md:text-4xl">team@studiosyncro.co.uk</a>
-                    <br>
-                    <p>Give us a call</p>
-                    <a href="tel:+441536111111" class="block font-bold text-2xl md:text-4xl">+44 (0)1536 648 548</a>
-                    <h3 class="text-2xl font-bold mt-8">Visit Us</h3>
-                    <p class="text-xl">
-                        Studio Syncro,<br>
-                        Shelton Road,<br>
-                        Willowbrook East Industrial Estate,<br>
-                        Corby, Northamptonshire,<br>
-                        NN17 5XH
-                    </p>
-                </div>
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-16 lg:py-40 max-w-7xl">
+        <div class="grid lg:grid-cols-2 gap-16">
+            <h2 class="text-5xl font-bold desktop-h2-spacing leading-tight animate-heading">
+                Where design aligns
+            </h2>
+            <div class="paragraph-container space-y-12 text-xl leading-relaxed animate-paragraph">
+                <p>
+                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
+                </p>
+                <p>
+                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
+                </p>
+                <a href="about.html" title="About"
+                    class="find-out-more inline-block border rounded-xl hover:bg-[#4BFA82] transition-colors">Find out more</a>
             </div>
         </div>
     </div>
 
-    <footer>
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
-            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
-                <div class="footer-column">
-                    <p class="bold-text">Studio Syncro</p>
-                    <p>Shelton Road,<br>
-                        Willowbrook East Industrial Estate,<br>
-                        Corby, Northamptonshire,<br>
-                        NN17 5XH
-                    </p>
-                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
-                </div>
-
-                <div class="footer-column">
-                    <p class="bold-text">New business<br>
-                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
-                    </p>
-                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required
-                                class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="footer-column call-us-right-container">
-                    <p class="bold-text">Call us<br>
-                        <span class="font-normal">+44 (0)1536 648 548</span>
-                    </p>
-                    <div class="block md:hidden newsletter-subscription my-8">
-                        <p class="subscription-intro">Subscribe to our newsletter</p>
-                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
-                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
-                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
-                            </a>
-                        </form>
-                    </div>
-                    <div class="social-icons">
-                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                    <div class="footer-logo mt-auto">
-                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.from(".animate-heading", {
+                scrollTrigger: {
+                    trigger: ".animate-heading",
+                    start: "top 80%",
+                    toggleActions: "play none none none",
+                },
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                ease: "power2.out",
+            });
+
+            gsap.from(".animate-paragraph", {
+                scrollTrigger: {
+                    trigger: ".animate-paragraph",
+                    start: "top 90%",
+                    toggleActions: "play none none none",
+                },
+                duration: 1,
+                opacity: 0,
+                y: 50,
+                ease: "power2.out",
+            });
+        });
+
         function toggleMenu() {
             const mobileMenu = document.getElementById("mobileMenu");
             mobileMenu.classList.toggle("hidden");
@@ -380,8 +195,8 @@
         }
     </script>
 </body>
-
 </html>
+
 
 
 
