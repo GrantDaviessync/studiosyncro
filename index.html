@@ -270,7 +270,14 @@
 .bounce-animation {
     animation: bounce 1s ease-in-out infinite; /* Adjust the duration for slower/faster bounce */
 }
-
+ .arrow-scroll {
+        position: absolute;
+        bottom: 10%; /* Adjust to place it near the bottom of the video */
+        left: 50%;
+        transform: translateX(-50%);
+        filter: invert(1); /* Inverts the color */
+        z-index: 50; /* Ensures it's above the video */
+    }
 
     </style>
     <script>
@@ -329,6 +336,7 @@
                     <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
                         <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
                     </video>
+                 <img src="https://studiosyncro.co.uk/arrowscroll.svg" alt="Arrow Scroll" class="arrow-scroll bounce-animation">
                 </div>
             </div>
 
