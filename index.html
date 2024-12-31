@@ -22,13 +22,240 @@
             mobileMenu.classList.toggle("hidden");
             mobileMenu.classList.toggle("active");
         }
+    </script>
+    <style>
+    h3 {
+        font-family: "lust-text", serif;
+        font-weight: 400;
+        font-style: italic;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 3rem 0;
+        }
 
+        footer .container {
+            max-width: 1450px;
+        }
+
+        footer .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        footer .grid-item {
+            text-align: left;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        footer form input[type="email"] {
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 0.25rem;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background: none;
+            color: black;
+            box-shadow: none;
+        }
+
+        .newsletter-subscription {
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+
+        .subscription-intro {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .newsletter-subscription form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            margin-top: 0.25rem;
+        }
+
+        .subscribe-text {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subscribe-text:hover {
+            color: #4BFA82;
+        }
+
+        .subscribe-text svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: white;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .address-copyright-spacing {
+            margin-bottom: 1rem;
+        }
+
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .footer-copyright-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .subscribe-space {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .find-out-more {
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .find-out-more:hover {
+            color: black;
+            background-color: transparent;
+        }
+
+        .find-out-more svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: none;
+            stroke: currentColor;
+        }
+
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .video-background .desktop-video {
+            display: block;
+        }
+
+        .video-background .mobile-video {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .video-background .desktop-video {
+                display: none;
+            }
+
+            .video-background .mobile-video {
+                display: block;
+            }
+        }
+
+        .image-frame {
+            display: block;
+            position: relative;
+            overflow: hidden; /* Ensures the image doesn't overflow outside the frame */
+        }
+
+        .zoom-image {
+            display: block;
+            width: 100%; /* Ensures the image fits its container */
+            height: 100%;
+            transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+
+        .image-frame:hover .zoom-image {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const faders = document.querySelectorAll(".scroll-grow");
+            const faders = document.querySelectorAll(".fade-in");
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add("scale-up");
+                        entry.target.classList.add("visible");
                     }
                 });
             });
@@ -38,93 +265,6 @@
             });
         });
     </script>
-    <style>
-        .scroll-grow {
-            transform: scale(0.5);
-            transition: transform 1s ease-out;
-            opacity: 0;
-            transform-origin: center center;
-        }
-
-        .scroll-grow.scale-up {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        h2, h3 {
-            transition: all 1s ease-out;
-        }
-
-        .text-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-        }
-
-        h2, h3 {
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        h2 {
-            font-size: 4vw;
-        }
-
-        h3 {
-            font-size: 4vw;
-            margin-left: 0.5rem;
-        }
-
-        @media (min-width: 640px) {
-            h2 {
-                font-size: 5vw;
-            }
-
-            h3 {
-                font-size: 5vw;
-            }
-        }
-
-        @media (min-width: 768px) {
-            h2 {
-                font-size: 6vw;
-            }
-
-            h3 {
-                font-size: 6vw;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            h2 {
-                font-size: 7vw;
-            }
-
-            h3 {
-                font-size: 7vw;
-            }
-        }
-
-        @media (min-width: 1280px) {
-            h2 {
-                font-size: 8vw;
-            }
-
-            h3 {
-                font-size: 8vw;
-            }
-        }
-
-        @media (min-width: 1536px) {
-            h2 {
-                font-size: 6vw;
-            }
-
-            h3 {
-                font-size: 6vw;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -198,15 +338,19 @@
                 </a>
             </div>
         </div>
+<div class="flex items-center w-full justify-center">
+    <h2 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw]">
+        <span>Elevate the</span>
+    </h2>
+    <h3 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw] ml-4">
+        <span>ordinary</span>
+    </h3>
+</div>
 
-        <div class="text-container">
-            <h2 class="scroll-grow">
-                <span>Elevate the</span>
-            </h2>
-            <h3 class="scroll-grow">
-                <span>ordinary</span>
-            </h3>
-        </div>
+</div>
+
+</div>
+
     </div>
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 max-w-custom">
@@ -240,13 +384,57 @@
             </p>
         </div>
     </div>
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
+                </div>
 
-    <footer class="text-center py-6 text-white bg-black">
-        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom">
-            <p class="text-sm text-gray-400">© 2024 Studio Syncro - Where Design Aligns</p>
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
+                    </p>
+                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required
+                                class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="block md:hidden newsletter-subscription my-8">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-logo mt-auto">
+                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
-
 </body>
 </html>
 
