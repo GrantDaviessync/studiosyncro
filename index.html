@@ -302,9 +302,10 @@
                 margin-bottom: 0.25rem;
             }
 .my-spacing {
-    margin-top: 4rem;  /* Adjust top margin */
-    margin-bottom: 4rem;  /* Adjust bottom margin */
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
 }
+
 
     }
 
@@ -382,9 +383,7 @@
 
 
 <div class="flex flex-col justify-center items-center my-spacing">
-    <!-- Centered Text -->
     <div class="text-center">
-        <!-- Small screens (breaks into two lines) -->
         <div class="block md:hidden">
             <h2 class="font-bold leading-tight text-7xl fade-in">
                 <span>Elevate the</span>
@@ -394,7 +393,6 @@
             </h3>
         </div>
 
-        <!-- Large screens (single line with space between "the" and "ordinary") -->
         <div class="hidden md:flex">
             <h2 class="font-bold leading-tight text-10xl fade-in inline mr-2">
                 <span>Elevate the</span>
@@ -405,6 +403,7 @@
         </div>
     </div>
 </div>
+
 
 </div>
 
