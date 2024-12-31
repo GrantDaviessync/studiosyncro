@@ -248,10 +248,10 @@
             opacity: 1;
             transform: translateY(0);
         
-        }
 .fade-in-word {
     opacity: 0;
     animation: fadeIn 1s forwards;
+    display: inline-block; /* Ensure it's inline */
 }
 
 .fade-in-word:nth-child(1) {
@@ -270,6 +270,12 @@
     to {
         opacity: 1;
     }
+}
+
+.ml-1 {
+    margin-left: 0.25rem; /* Adjust space between 'the' and 'ordinary' */
+}
+
 }
 
     </style>
@@ -366,8 +372,9 @@
     <span class="fade-in-word">the</span>
 </h2>
 <h3 class="font-bold leading-tight text-[3vw] sm:text-[4vw] md:text-[5vw] lg:text-[6vw] xl:text-[7vw]">
-    <span class="fade-in-word">ordinary</span>
+    <span class="fade-in-word ml-1">ordinary</span>
 </h3>
+
 
 </div>
 
