@@ -270,13 +270,16 @@
 .bounce-animation {
     animation: bounce 1s ease-in-out infinite; /* Adjust the duration for slower/faster bounce */
 }
- .arrow-scroll {
+    .arrow-scroll {
         position: absolute;
         bottom: 10%; /* Adjust to place it near the bottom of the video */
         left: 50%;
         transform: translateX(-50%);
         filter: invert(1); /* Inverts the color */
         z-index: 50; /* Ensures it's above the video */
+        width: 128px; /* Set the arrow size */
+        height: auto; /* Maintain aspect ratio */
+    }
     }
 
     </style>
