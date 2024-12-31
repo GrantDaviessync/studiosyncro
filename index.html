@@ -360,7 +360,7 @@
 <div class="flex flex-col h-screen justify-between">
     <!-- Centered Text -->
     <div class="flex flex-col items-center w-full justify-center flex-grow mt-8 text-center">
-        <!-- Two lines on small screens -->
+        <!-- Small screens (breaks into two lines) -->
         <div class="block md:hidden">
             <h2 class="font-bold leading-tight text-7xl fade-in">
                 <span>Elevate the</span>
@@ -370,17 +370,18 @@
             </h3>
         </div>
 
-        <!-- One line on larger screens, both in h2 and h3-->
-        <div class="hidden md:block">
-            <h2 class="font-bold leading-tight text-9xl fade-in">
+        <!-- Large screens (single line) -->
+        <div class="hidden md:flex">
+            <h2 class="font-bold leading-tight text-9xl fade-in inline">
                 <span>Elevate the</span>
             </h2>
-            <h3 class="font-bold leading-tight text-9xl fade-in">
+            <h3 class="font-bold leading-tight text-9xl fade-in inline">
                 <span>ordinary</span>
             </h3>
         </div>
     </div>
 </div>
+
 
 
 
