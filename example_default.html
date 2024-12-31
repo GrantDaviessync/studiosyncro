@@ -2,20 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>We Craft Bold</title>
+  <title>Create Unforgettable</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 50px;
-    }
     .container {
       font-size: 2em;
       font-weight: bold;
     }
-    .fade-text {
+    .dynamic-text {
       display: inline-block;
       opacity: 0;
     }
@@ -23,36 +17,35 @@
 </head>
 <body>
   <div class="container">
-    we craft bold <span id="dynamic-text" class="fade-text">packaging</span>
+    Create <span id="dynamic-text" class="dynamic-text">Unforgettable</span>
   </div>
 
   <script>
-    const phrases = ["packaging", "displays", "luxury packaging"];
+    const words = ["Unforgettable", "Experiences", "Brands"];
     const dynamicText = document.getElementById("dynamic-text");
-
     let index = 0;
 
-    function changeText() {
+    function changeWord() {
       gsap.to(dynamicText, {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
-          index = (index + 1) % phrases.length; // Cycle through phrases
-          dynamicText.textContent = phrases[index];
+          index = (index + 1) % words.length;
+          dynamicText.textContent = words[index];
           gsap.to(dynamicText, {
             opacity: 1,
             duration: 0.5,
-            delay: 0.5, // Small delay for a smooth transition
+            delay: 0.5,
           });
         },
       });
     }
 
-    // Start the loop
-    setInterval(changeText, 3000); // Change text every 3 seconds
+    setInterval(changeWord, 3000);
   </script>
 </body>
 </html>
+
 
 
 
