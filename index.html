@@ -248,6 +248,17 @@
             opacity: 1;
             transform: translateY(0);
         }
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -339,15 +350,14 @@
             </div>
         </div>
 <div class="flex items-center w-full justify-center">
-    <h2 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw]">
+    <h2 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw] fade-in">
         <span>Elevate the</span>
     </h2>
-    <h3 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw] ml-4">
+    <h3 class="font-bold leading-tight text-[4vw] sm:text-[5vw] md:text-[6vw] lg:text-[7vw] xl:text-[8vw] ml-4 fade-in">
         <span>ordinary</span>
     </h3>
 </div>
 
-</div>
 
 </div>
 
