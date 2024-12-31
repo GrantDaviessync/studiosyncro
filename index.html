@@ -258,6 +258,19 @@
     opacity: 1;
     transform: translateY(0);
 }
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px); /* Change this value to adjust the bounce height */
+    }
+}
+
+.bounce-animation {
+    animation: bounce 2s ease-in-out infinite; /* Adjust the duration for slower/faster bounce */
+}
+
 
     </style>
     <script>
