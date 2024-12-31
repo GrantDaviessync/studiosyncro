@@ -302,14 +302,24 @@
                 margin-bottom: 0.25rem;
             }
 .elevate-section {
-    height: 50vh; /* Set the height to 50% of the viewport height */
+    height: 50vh; /* Ensures it takes up 50% of the viewport height */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center the content */
-    align-items: center; /* Horizontally center the content */
-    text-align: center; /* Ensure the text is centered */
-    margin-top: 0; /* Ensure no margin at the top */
-    margin-bottom: 0; /* Ensure no margin at the bottom */
+    justify-content: center; /* Vertically center content */
+    align-items: center; /* Horizontally center content */
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0; /* Remove extra padding if there's any */
+}
+
+/* Ensure the height is still valid on smaller screens (responsive) */
+@media (max-width: 768px) {
+    .elevate-section {
+        height: 50vh; /* Keep the 50% height even on mobile */
+    }
+}
+
 }
 
 /* For smooth fade-in effect */
