@@ -308,6 +308,22 @@
     justify-content: center; /* Vertically center the content */
     align-items: center; /* Horizontally center the content */
     text-align: center; /* Ensure the text is centered */
+    margin-top: 0; /* Ensure no margin at the top */
+    margin-bottom: 0; /* Ensure no margin at the bottom */
+}
+
+/* For smooth fade-in effect */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 }
     }
 
@@ -381,7 +397,8 @@
             </div>
         </div>
     </header>
-<div class="flex flex-col justify-center items-center my-spacing elevate-section">
+
+    <div class="flex flex-col justify-center items-center w-full elevate-section">
     <div class="text-center">
         <div class="block md:hidden">
             <h2 class="font-bold leading-tight text-7xl fade-in">
@@ -400,6 +417,11 @@
                 <span>ordinary</span>
             </h3>
         </div>
+    </div>
+</div>
+
+
+    
     </div>
 </div>
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
