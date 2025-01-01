@@ -276,7 +276,7 @@
 }
     .arrow-scroll {
         position: absolute;
-        bottom: 10%; /* Adjust to place it near the bottom of the video */
+        bottom: 5%; /* Adjust to place it near the bottom of the video */
         left: 50%;
         transform: translate(-50%, 0);;
         z-index: 50; /* Ensures it's above the video */
@@ -358,40 +358,36 @@
 
 
 
-<div class="flex flex-col justify-center h-[calc(50vh+115px)]">
-    <!-- Responsive Text Container with Scaling -->
-    <div class="w-full max-w-[90%] mx-auto text-center px-6 flex items-center justify-center">
-        <!-- Use Tailwind's text-clamp for responsive scaling -->
-        <h2 class="font-bold leading-tight fade-in inline-block mr-2 text-[clamp(3rem, 8vw, 10rem)]">
-            <span>Elevate</span>
-        </h2>
-        <h2 class="font-bold leading-tight fade-in inline-block mr-2 text-[clamp(3rem, 8vw, 10rem)]">
-            <span>the</span>
-        </h2>
-        <h3 class="font-bold leading-tight fade-in inline-block text-[clamp(3rem, 8vw, 10rem)]">
-            <span>ordinary</span>
-        </h3>
+<div class="flex flex-col justify-center h-[calc(50vh+130px)]">
+    <!-- Centered Text -->
+    <div class="flex flex-col items-center w-full text-center">
+        <!-- Small screens (breaks into two lines) -->
+        <div class="block md:hidden">
+            <h2 class="font-bold leading-tight text-10xl fade-in">
+                <span>Elevate the</span>
+            </h2>
+            <h3 class="font-bold leading-tight text-10xl fade-in">
+                <span>ordinary</span>
+            </h3>
+        </div>
+
+        <!-- Large screens (single line with space between "the" and "ordinary") -->
+        <div class="hidden md:flex">
+            <h2 class="font-bold leading-tight text-10xl fade-in inline mr-2">
+                <span>Elevate the</span>
+            </h2>
+            <h3 class="font-bold leading-tight text-10xl fade-in inline">
+                <span>ordinary</span>
+            </h3>
+        </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
         <div class="grid lg:grid-cols-2 gap-16">
             <h2 class="text-5xl font-bold leading-tight">
-                Creative Solutions for Brands
+                Where design aligns
             </h2>
             <div class="paragraph-container space-y-12 text-xl leading-relaxed lg:pt-6">
                 <p>
