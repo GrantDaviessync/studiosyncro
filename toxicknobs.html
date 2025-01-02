@@ -18,11 +18,21 @@
         }
     </script>
     <style>
-    h3 {
-        font-family: "lust-text", serif;
-        font-weight: 400;
-        font-style: italic;
+        .no-hover-bg:hover {
+            background-color: transparent !important;
         }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .main-content {
+            background-color: #f3f4f6;
+            padding-top: 4rem;
+            padding-bottom: 2rem;
+        }
+
         footer {
             background-color: #000;
             color: white;
@@ -197,104 +207,42 @@
             text-align: center;
         }
 
-        .video-background .desktop-video {
-            display: block;
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .video-background .mobile-video {
-            display: none;
+        .form-container input,
+        .form-container textarea {
+            padding: 1rem;
+            border: none;
+            border-bottom: 2px solid #ccc; /* Add a bottom border */
+            background-color: transparent; /* Transparent background */
+            border-radius: 0; /* Remove border radius for clean edges */
+            width: 100%;
+            font-size: 1rem;
         }
 
-        @media (max-width: 768px) {
-            .video-background .desktop-video {
-                display: none;
-            }
-
-            .video-background .mobile-video {
-                display: block;
-            }
+        .form-container textarea {
+            min-height: 80px; /* Adjusted to make the message area taller */
+            resize: vertical;
         }
 
-        .image-frame {
-            display: block;
-            position: relative;
-            overflow: hidden; /* Ensures the image doesn't overflow outside the frame */
+        .form-container button {
+            padding: 1rem;
+            background-color: transparent; /* No background */
+            border: none;
+            color: black; /* Black text */
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1.2rem;
         }
 
-        .zoom-image {
-            display: block;
-            width: 100%; /* Ensures the image fits its container */
-            height: 100%;
-            transition: transform 0.3s ease; /* Smooth zoom effect */
+        .form-container button:hover {
+            background-color: transparent; /* No hover effect */
+            color: black; /* Ensuring the color stays black on hover */
         }
-
-        .image-frame:hover .zoom-image {
-            transform: scale(1.05); /* Scale image on hover */
-        }
-
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 2s ease-out, transform 1s ease-out;
-}
-
-.fade-in.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px); /* Change this value to adjust the bounce height */
-    }
-}
-
-.bounce-animation {
-    animation: bounce 2s ease-in-out infinite; /* Adjust the duration for slower/faster bounce */
-}
-    .arrow-scroll {
-        position: absolute;
-        bottom: 9%; /* Adjust to place it near the bottom of the video */
-        left: 48%;
-        transform: translate(-50%, 0);;
-        z-index: 50; /* Ensures it's above the video */
-        width: 60px; /* Set the arrow size */
-        height: auto; /* Maintain aspect ratio */
-    }
-/* Full-width light grey background for this section */
-.bg-light-grey-section {
-    background-color: #f0f0f0; /* Light grey background */
-    width: 100vw; /* Full viewport width */
-    margin-left: calc(-50vw + 50%); /* Align with viewport */
-    padding: 2rem 0; /* Adjust top and bottom spacing as needed */
-}
-
-.aligns-section {
-    max-width: 1200px; /* Maintain container width */
-    margin: 0 auto; /* Center the content within the section */
-    color: black; /* Text color stays black */
-}
-
-.aligns-section a.find-out-more svg {
-    stroke: black; /* Ensure SVG stroke is black */
-}
-
-
-    }
-        
-
     </style>
 </head>
 
@@ -327,7 +275,7 @@
         </div>
     </header>
 
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom fade-in">
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
         <div class="grid lg:grid-cols-2 gap-16">
           <h2 class="text-3xl font-bold leading-tight">
     Toxic Knobs - <span class="font-normal">Packaging Design</span>
@@ -338,34 +286,34 @@
             </div>
         </div>
 
-       <div class="mt-16 space-y-8 mt-16 fade-in">
+       <div class="mt-16 space-y-8 mt-16">
     <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs Front View" class="w-full h-auto">
 
-    <video autoplay muted loop class="w-full h-auto fade-in">
+    <video autoplay muted loop class="w-full h-auto">
         <source src="https://grantdavies.com/images/Toxic%20knobs/005_openclose.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mt-16 fade-in">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mt-16">
         <div class="w-full md:w-1/2">
             <img src="https://studiosyncro.co.uk/tk008.jpg" alt="Toxic Knobs Packaging" class="w-full h-auto">
         </div>
-        <div class="w-full md:w-1/2 text-xl leading-relaxed fade-in">
+        <div class="w-full md:w-1/2 text-xl leading-relaxed">
             <p>
                 We incorporated into the design a product description section to be filled in by hand. This idea was to reduce waste from having pre-determined packaging that could only be used for a specific model of gear knob. This enables Toxic Knobs to have limitless options and production run sizes, which, due to the nature of demand and material availability, is crucial.
             </p>
         </div>
     </div>
 
-    <img src="https://grantdavies.com/images/Toxic%20knobs/003_4up_Black.jpg" alt="Toxic Knobs 4up Black" class="w-full h-auto fade-in">
+    <img src="https://grantdavies.com/images/Toxic%20knobs/003_4up_Black.jpg" alt="Toxic Knobs 4up Black" class="w-full h-auto">
 
-    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mt-16 fade-in">
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8 mt-16">
         <div class="w-full md:w-1/2 text-xl leading-relaxed">
             <p>
                 The packaging, crafted from 100% recyclable card, was designed to reflect the product’s eco-friendly ethos. The brand’s updated visual identity was integrated into a tube-style design, evoking a “science capsule” aesthetic. Typeface-inspired elements and touches of the signature “Toxic neon green” further emphasised the scientific theme.
             </p>
         </div>
-        <div class="w-full md:w-1/2 fade-in">
+        <div class="w-full md:w-1/2">
             <img src="https://studiosyncro.co.uk/009.jpg" alt="Toxic Knobs Packaging Design" class="w-full h-auto">
         </div>
     </div>
