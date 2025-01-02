@@ -1,48 +1,515 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Create Unforgettable</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-  <style>
-    .container {
-      font-size: 2em;
-      font-weight: bold;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Syncro - Where Design Aligns</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pns2atg.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    maxWidth: {
+                        'custom': '1450px',
+                    },
+                         fontSize: {
+                '10xl': '9rem',
+                '11xl': '12rem',
+                '5.5xl' : '4rem',            
+                    }
+                }
+            }
+        };
+
+        function toggleMenu() {
+            const mobileMenu = document.getElementById("mobileMenu");
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("active");
+        }
+    </script>
+    <style>
+    h3 {
+        font-family: "lust-text", serif;
+        font-weight: 400;
+        font-style: italic;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            padding: 3rem 0;
+        }
+
+        footer .container {
+            max-width: 1450px;
+        }
+
+        footer .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            text-align: left;
+        }
+
+        footer .grid-item {
+            text-align: left;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        footer .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        footer form input[type="email"] {
+            padding: 0.5rem;
+            width: 100%;
+            margin-bottom: 0.25rem;
+            border: none;
+            border-bottom: 2px solid #ccc;
+            background: none;
+            color: black;
+            box-shadow: none;
+        }
+
+        .newsletter-subscription {
+            margin-top: 0.5rem;
+            text-align: left;
+        }
+
+        .subscription-intro {
+            font-size: 1.2rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .newsletter-subscription form {
+            display: inline-block;
+            text-align: left;
+            max-width: 500px;
+            margin-top: 0.25rem;
+        }
+
+        .subscribe-text {
+            display: inline-block;
+            background-color: transparent;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-decoration: none;
+            padding: 0;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .subscribe-text:hover {
+            color: #4BFA82;
+        }
+
+        .subscribe-text svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: white;
+        }
+
+        .bold-text {
+            font-weight: bold;
+        }
+
+        .address-copyright-spacing {
+            margin-bottom: 1rem;
+        }
+
+        .call-us-right-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+        }
+
+        .footer-copyright-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .subscribe-space {
+            margin-bottom: 0.25rem;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-column {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .find-out-more {
+            font-weight: bold;
+            color: black;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .find-out-more:hover {
+            color: black;
+            background-color: transparent;
+        }
+
+        .find-out-more svg {
+            width: 1.2rem;
+            height: 1.2rem;
+            fill: none;
+            stroke: currentColor;
+        }
+
+        #mobileMenu {
+            background-color: black;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            z-index: 100;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        #mobileMenu.active {
+            transform: translateY(0);
+        }
+
+        #mobileMenu a {
+            padding: 1rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .video-background .desktop-video {
+            display: block;
+        }
+
+        .video-background .mobile-video {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .video-background .desktop-video {
+                display: none;
+            }
+
+            .video-background .mobile-video {
+                display: block;
+            }
+        }
+
+        .image-frame {
+            display: block;
+            position: relative;
+            overflow: hidden; /* Ensures the image doesn't overflow outside the frame */
+        }
+
+        .zoom-image {
+            display: block;
+            width: 100%; /* Ensures the image fits its container */
+            height: 100%;
+            transition: transform 0.3s ease; /* Smooth zoom effect */
+        }
+
+        .image-frame:hover .zoom-image {
+            transform: scale(1.05); /* Scale image on hover */
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 2s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
     }
-    .dynamic-text {
-      display: inline-block;
-      opacity: 0;
+    50% {
+        transform: translateY(-10px); /* Change this value to adjust the bounce height */
     }
-  </style>
+}
+
+.bounce-animation {
+    animation: bounce 2s ease-in-out infinite; /* Adjust the duration for slower/faster bounce */
+}
+    .arrow-scroll {
+        position: absolute;
+        bottom: 9%; /* Adjust to place it near the bottom of the video */
+        left: 50%;
+        transform: translate(-50%, 0);;
+        z-index: 50; /* Ensures it's above the video */
+        width: 60px; /* Set the arrow size */
+        height: auto; /* Maintain aspect ratio */
+    }
+/* Full-width light grey background for this section */
+.bg-light-grey-section {
+    background-color: #f0f0f0; /* Light grey background */
+    width: 100vw; /* Full viewport width */
+    margin-left: calc(-50vw + 50%); /* Align with viewport */
+    padding: 2rem 0; /* Adjust top and bottom spacing as needed */
+}
+
+.aligns-section {
+    max-width: 1200px; /* Maintain container width */
+    margin: 0 auto; /* Center the content within the section */
+    color: black; /* Text color stays black */
+}
+
+.aligns-section a.find-out-more svg {
+    stroke: black; /* Ensure SVG stroke is black */
+}
+
+
+    }
+        
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faders = document.querySelectorAll(".fade-in");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                    }
+                });
+            });
+
+            faders.forEach((fader) => {
+                observer.observe(fader);
+            });
+        });
+    </script>
 </head>
+
 <body>
-  <div class="container">
-    Create <span id="dynamic-text" class="dynamic-text">Unforgettable</span>
-  </div>
+    <header>
+        <div class="absolute top-0 left-0 right-0">
+            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
+                <a href="index.html" title="Home" class="logo-link">
+                    <img src="./Syncro_Logo.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
+                </a>
 
-  <script>
-    const words = ["Unforgettable", "Experiences", "Brands"];
-    const dynamicText = document.getElementById("dynamic-text");
-    let index = 0;
+                <button id="burgerMenu" class="lg:hidden text-white" onclick="toggleMenu()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
 
-    function changeWord() {
-      gsap.to(dynamicText, {
-        opacity: 0,
-        duration: 0.5,
-        onComplete: () => {
-          index = (index + 1) % words.length;
-          dynamicText.textContent = words[index];
-          gsap.to(dynamicText, {
-            opacity: 1,
-            duration: 0.5,
-            delay: 0.5,
-          });
-        },
-      });
-    }
+                <nav id="navLinks" class="hidden lg:flex gap-8 text-xl font-medium text-white">
+                    <a href="about.html" title="About" class="no-hover-bg">About</a>
+                    <a href="contact.html" title="Contact" class="no-hover-bg">Contact</a>
+                </nav>
 
-    setInterval(changeWord, 3000);
-  </script>
+                <nav id="mobileMenu" class="hidden">
+                    <span class="close-button" onclick="toggleMenu()">✖</span>
+                    <a href="index.html" class="no-hover-bg home-link">Home</a>
+                    <a href="about.html" class="no-hover-bg">About</a>
+                    <a href="contact.html" class="no-hover-bg">Contact</a>
+
+                    <div class="text-sm text-gray-400 text-center absolute bottom-0 mb-4">
+                        SYNCRO - Where Design Aligns 2024
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="video-background">
+            <div class="desktop-video">
+                <div style="padding:56.25% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01.mp4" type="video/mp4">
+                    </video>
+                 <img src="https://studiosyncro.co.uk/arrowscroll_White.svg" alt="Arrow Scroll" class="arrow-scroll bounce-animation">
+                </div>
+            </div>
+
+            <div class="mobile-video">
+                <div style="padding:177.77% 0 0 0;position:relative;">
+                    <video width="320" height="240" autoplay muted loop playsinline style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <source src="https://studiosyncro.co.uk/Home_Vid_01P.mp4" type="video/mp4">
+                    </video>
+                     <img src="https://studiosyncro.co.uk/arrowscroll_White.svg" alt="Arrow Scroll" class="arrow-scroll bounce-animation">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-light-grey-section">
+    <div class="container aligns-section mx-auto px-8 sm:px-8 lg:px-16 py-14 mt-2 max-w-custom">
+        <div class="grid lg:grid-cols-1 gap-16">
+            <h3 class="text-5xl font-bold leading-tight">
+            </h3>
+            <div class="paragraph-container space-y-12 text-5xl leading-relaxed lg:pt-6">
+                <p>
+                    With extensive experience in design and print specialising in packaging, POS, and visual identity, we partner with you to bring your ideas and products to life.
+                </p>
+                <p>
+                    We assist brands at every stage, whether starting from scratch, expanding, or refreshing your packaging.
+                </p>
+                <a href="about.html" title="About" class="find-out-more">
+                    Find out more
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container mx-auto px-6 sm:px-8 lg:px-16 py-0 mt-24 max-w-custom">
+    <!-- Two-Column Layout -->
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Column -->
+        <div>
+            <h3 class="text-5.5xl leading-tight">
+                Crafting memorable experiences through bespoke design solutions
+            </h3>
+        </div>
+
+        <!-- Right Column -->
+        <div class="paragraph-container space-y-12 text-xl leading-relaxed -mt-4 lg:pt-0">
+            <h2>
+                We help brands build lasting connections with their customers through exceptional design.
+                From bespoke packaging to innovative graphic design solutions, we create experiences that go
+                beyond the functional to leave a lasting impression. Our flexible, full-service approach
+                ensures every detail is crafted with care, providing brands with tailored solutions that
+                resonate with their audience and enhance their overall brand presence.
+            </h2>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <div class="container mx-auto px-6 sm:px-8 lg:px-16 py-8 mt-16 max-w-custom">
+        <h2 class="text-5xl font-bold leading-tight mb-8">
+            Featured work
+        </h2>
+        <div class="image-container">
+            <a href="toxicknobs.html" class="image-frame fade-in">
+                <img src="https://grantdavies.com/images/Toxic%20knobs/001_3x_front%202.jpg" alt="Toxic Knobs" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                Toxic Knobs  - Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+        <div class="image-container mt-16 mb-8">
+            <a href="magicmakers.html" class="image-frame fade-in">
+                <img src="https://grantdavies.com/images/magickmakers/001_Box_bottle.jpg" alt="Magic Makers" class="zoom-image" />
+            </a>
+            <p class="mt-4 text-left text-xl flex items-center">
+                Magick Makers - Branding and Packaging Design
+                <span class="ml-1 text-black">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M5 19L19 5M5 5h14v14" />
+                    </svg>
+                </span>
+            </p>
+        </div>
+    </div>
+    <footer>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16">
+            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
+                </div>
+
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
+                    </p>
+                    <div class="hidden md:block newsletter-subscription mt-4 md:mt-auto">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required
+                                class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="footer-column call-us-right-container">
+                    <p class="bold-text">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                    <div class="block md:hidden newsletter-subscription my-8">
+                        <p class="subscription-intro">Subscribe to our newsletter</p>
+                        <form action="mailto:team@studiosyncro.co.uk" method="POST" enctype="text/plain">
+                            <input type="email" name="email" placeholder="Enter your email" required class="subscribe-space">
+                            <a href="mailto:team@studiosyncro.co.uk" class="subscribe-text">Subscribe
+                            </a>
+                        </form>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-logo mt-auto">
+                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
 
