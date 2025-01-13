@@ -255,13 +255,20 @@
     .fade-in {
         animation: fadeIn 1.5s ease-in-out;
     }
+            .header {
+            transition: transform 0.3s ease;
+        }
+
+        .header.hide {
+            transform: translateY(-100%);
+        }
     </style>
 </head>
 
 <body>
     <header>
         <div class="absolute top-0 left-0 right-0">
-            <div class="relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
+            <div class="fade-in container relative z-50 container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom flex justify-between py-4">
                 <a href="index.html" title="Home">
                     <img src="./Syncro_Logo_black.png" alt="Syncro Logo" width="160" class="h-auto max-w-full" />
                 </a>
@@ -376,5 +383,23 @@
         function toggleMenu() {
             document.getElementById('mobileMenu').classList.toggle('active');
         }
+    </script>
+    <script>
+        // Detect scroll direction
+        let lastScrollTop = 0; // Store last scroll position
+        const header = document.querySelector('.header'); // Select the header element
+
+        window.addEventListener('scroll', function() {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+            if (currentScroll > lastScrollTop) {
+                // Scrolling down
+                header.classList.add('hide');
+            } else {
+                // Scrolling up
+                header.classList.remove('hide');
+            }
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll value
+        });
     </script>
 </body>
