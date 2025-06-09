@@ -25,7 +25,8 @@
             background-color: transparent !important;
         }
 
-        html, body {
+        html,
+        body {
             height: 100%;
             margin: 0;
         }
@@ -42,7 +43,6 @@
             width: 100%;
         }
 
-        /* This will ensure the content is within a max-width of 1450px */
         .main-content-inner {
             max-width: 1450px;
             margin: 0 auto;
@@ -194,7 +194,6 @@
             fill: none;
             stroke: currentColor;
         }
-
     </style>
 </head>
 
@@ -208,7 +207,8 @@
 
                 <button id="burgerMenu" class="lg:hidden text-black" onclick="toggleMenu()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
 
@@ -229,75 +229,84 @@
     </header>
 
     <main class="main-content">
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 pt-32 pb-8 max-w-custom">
-        <div class="grid lg:grid-cols-2 gap-16">
-            <h2 class="text-4xl font-bold">About Us</h2>
-            <div class="space-y-8 text-3xl">
-                <p class="mt-1">
-                    We craft bold packaging, displays, and visual identities from startups to large businesses. We collaborate with brands
-                    ready to push boundaries and make lasting impressions.
-                </p>
+        <!-- Updated About Section -->
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 pt-32 pb-8 max-w-custom">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <!-- Left column: Image placeholder -->
+                <div class="w-full aspect-square bg-gray-300 flex items-center justify-center">
+                    <span class="text-gray-500 text-xl">Image Placeholder</span>
+                </div>
+
+                <!-- Right column: Text content -->
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-bold">
+                        We design impactful packaging, displays, and marketing materials that bring brands to life.
+                    </h2>
+                    <p class="text-xl">
+                        From early concepts to final production, we manage the full packaging lifecycle—including structural engineering, material sourcing, prototyping, and print. With a focus on sustainability, functionality, and the unboxing experience, we help turn packaging into a true brand asset. Whether you're launching something new or refreshing your existing packaging, we collaborate with startups, established brands, and creative teams to deliver purposeful, standout results.
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <section class="flex-grow bg-gray-100 w-full py-24">
-        <div class="max-w-custom mx-auto px-6 sm:px-8 lg:px-16">
-            <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
-            <p class="max-w-xl text-xl mb-12">
-                In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
-                project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
-            </p>
+        <section class="flex-grow bg-gray-100 w-full py-24">
+            <div class="max-w-custom mx-auto px-6 sm:px-8 lg:px-16">
+                <h2 class="text-4xl font-bold mb-8">What We Offer</h2>
+                <p class="max-w-xl text-xl mb-12">
+                    In a fast-paced world, we believe design should be a force that sparks connection and drives change. Every
+                    project is a chance to fuse creativity with purpose, ensuring your brand cuts through the noise.
+                </p>
 
-            <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
-                <li class="border-b border-black py-2 text-2xl font-bold">Retail Packaging</li>
-                <li class="border-b border-black py-2 text-2xl font-bold">E-commerce</li>
-                <li class="border-b border-black py-2 text-2xl font-bold">Luxury Packaging</li>
-                <li class="border-b border-black py-2 text-2xl font-bold">Visual Identity, Branding and Assets</li>
-                <li class="border-b border-black py-2 text-2xl font-bold">Point of Sale and Displays</li>
-                <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
-            </ul>
-        </div>
-    </section>
-</main>
+                <ul class="grid lg:grid-cols-2 gap-4 lg:gap-8">
+                    <li class="border-b border-black py-2 text-2xl font-bold">Retail Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">E-commerce</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Luxury Packaging</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Visual Identity, Branding and Assets</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Point of Sale and Displays</li>
+                    <li class="border-b border-black py-2 text-2xl font-bold">Print Management</li>
+                </ul>
+            </div>
+        </section>
+    </main>
 
     <footer>
-    <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom">
-        <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
-            <!-- Left Section -->
-            <div class="footer-column">
-                <p class="bold-text">Studio Syncro</p>
-                <p>Shelton Road,<br>
-                    Willowbrook East Industrial Estate,<br>
-                    Corby, Northamptonshire,<br>
-                    NN17 5XH
-                </p>
-                <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
-            </div>
-
-            <!-- Middle Section -->
-            <div class="footer-column">
-                <p class="bold-text">New business<br>
-                    <a href="mailto:team@studiosyncro.co.uk" class="text-white font-normal">team@studiosyncro.co.uk</a>
-                </p>
-                <p class="bold-text mt-4">Call us<br>
-                    <span class="font-normal">+44 (0)1536 648 548</span>
-                </p>
-            </div>
-
-            <!-- Right Section -->
-            <div class="footer-column call-us-right-container">
-                <div class="social-icons">
-                    <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <div class="container mx-auto px-6 sm:px-8 lg:px-16 max-w-custom">
+            <div class="md:flex justify-between gap-8 space-y-8 md:space-y-0">
+                <!-- Left Section -->
+                <div class="footer-column">
+                    <p class="bold-text">Studio Syncro</p>
+                    <p>Shelton Road,<br>
+                        Willowbrook East Industrial Estate,<br>
+                        Corby, Northamptonshire,<br>
+                        NN17 5XH
+                    </p>
+                    <p class="footer-copyright mt-4 md:mt-12">© Studio Syncro 2024</p>
                 </div>
-                <div class="footer-logo mt-auto">
-                    <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+
+                <!-- Middle Section -->
+                <div class="footer-column">
+                    <p class="bold-text">New business<br>
+                        <a href="mailto:team@studiosyncro.co.uk"
+                            class="text-white font-normal">team@studiosyncro.co.uk</a>
+                    </p>
+                    <p class="bold-text mt-4">Call us<br>
+                        <span class="font-normal">+44 (0)1536 648 548</span>
+                    </p>
+                </div>
+
+                <!-- Right Section -->
+                <div class="footer-column call-us-right-container">
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="footer-logo mt-auto">
+                        <img src="Syncro_WDA.png" alt="Syncro Logo" class="h-12" />
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <script>
         function toggleMenu() {
@@ -309,4 +318,5 @@
 </body>
 
 </html>
+
 
